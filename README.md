@@ -80,7 +80,7 @@ Accuracy is only half the deployment question — the harness also logs **latenc
 
 | System | Routing latency (median) | Output tokens / item | Engine |
 |---|---:|---:|---|
-| **BioMate** (product) | **2.3 s** | **≈0** (routing = retrieval) | Mixture of LLMs — Claude Sonnet 4.5 + Haiku 4.5, Gemini 3.5 Flash + 3.1 Pro — behind a curated catalog + rule-based parameter layer; **routing is served by retrieval, with no per-query LLM generation** |
+| **BioMate** (product) | **2.3 s** | **≈0** (routing = retrieval) | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro. Routing is served by retrieval, with no per-query LLM generation |
 | Claude Opus 5 | 2.7 s | 335 | Anthropic Claude Opus 5 |
 | Gemini 3.1 Pro | 3.6 s | 1184 | Google Gemini 3.1 Pro |
 | GPT-5.6 | — | 483 | OpenAI GPT-5.6 |
