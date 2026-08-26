@@ -135,27 +135,45 @@ Columns are grouped by capability band: **Orchestration** (Routing, Param) · **
 
 Every cell is a same-item, same-scorer result that re-scores from the committed prediction files under `results/`.
 
-### Efficiency & engine (measured, same protocol)
+### Efficiency & engine (measured)
 
-Accuracy is only half the deployment question — the harness also logs **latency** and **tokens** per item, and **$/item is filled for every system**. Two honesty notes so these numbers aren't over-read:
+**Latency** below is the **routing** task (same 200 items) — the *one* metric measured identically for every system, and so the only clean head-to-head. Cost is reported separately (next block), because no single task logged tokens for all systems.
 
-- **Token counts differ across models because of different *tokenizers*, not different prompts and not OpenRouter.** The *same* 15 PBPK prompts tokenize to 147 (GPT-5.6) vs 216 (Claude Opus 5) vs 200 (Qwen) — a 1.5× spread from tokenization alone. OpenRouter passes each provider's native token counts through unchanged; its only effect is the ~5% price fee (already folded into the $ below).
-- **The measurements are on different tasks.** Latency is the **routing** task (same 200 items, apples-to-apples). The LLMs' token/$ are the mean over the **pharmacology tasks** (PBPK/BOIN/drug-discovery — the only ones that logged token usage). **†** BioMate's token/$ are from **routing**, and its meter counts only the *user's message* (21 tok), not the system prompt + retrieved catalog it feeds its own LLM — so its 146-token / $0.0019 figure is a **lower bound on the routing turn, not comparable** to the LLMs' pharmacology-task totals. Dollars are tokens × each model's **published OpenRouter price** × 1.05. **§** GPT-5.6 uses OpenRouter's standard GPT-5.6 tier ($2/$10 per 1M); **‡** GLM-5.2 was delisted, so its price uses the closest live version GLM-5.3 ($1.40/$4.40 per 1M).
+| System | Routing latency (median) | Engine |
+|---|---:|---|
+| **BioMate** (product) | **2.3 s** | Mixture of LLMs — primary Claude Sonnet 4.5; secondary Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro, GPT-5.6-luna |
+| Claude Opus 5 | 2.7 s | Anthropic Claude Opus 5 |
+| Gemini 3.1 Pro | 3.6 s | Google Gemini 3.1 Pro |
+| GPT-5.6 | — (subset only) | OpenAI GPT-5.6 |
+| GPT-5.6-luna | 1.6 s | OpenAI GPT-5.6-luna |
+| Kimi K3 | 3.2 s | Moonshot Kimi K3 |
+| DeepSeek V4 | 3.8 s | DeepSeek V4 |
+| GLM-5.2 | 0.8 s | Z.ai GLM-5.2 |
+| Qwen3.8-Max | 4.0 s | Alibaba Qwen3.8-Max |
+| Biomni (A1) | 3.9 s | Agent scaffold — Claude Opus 5 (routing/param/protocol), Claude Sonnet 4.5 (PBPK/BOIN; Opus-5's API rejects Biomni's assistant-prefill loop, removed across Claude ≥ 4.6) |
 
-| System | Routing latency (median) | Tokens / item (in + out) | $ / item | Engine |
-|---|---:|---:|---:|---|
-| **BioMate** (product) | **2.3 s** | 21 + 125 = 146 † | **$0.0019** † (measured) | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro, GPT-5.6-luna |
-| Claude Opus 5 | 2.7 s | 349 + 335 = 684 | **$0.0106** | Anthropic Claude Opus 5 |
-| Gemini 3.1 Pro | 3.6 s | 250 + 1184 = 1434 | **$0.0065** | Google Gemini 3.1 Pro |
-| GPT-5.6 | — | 232 + 483 = 715 | **$0.0056**§ | OpenAI GPT-5.6 |
-| GPT-5.6-luna | 1.6 s | 232 + 727 = 959 | **$0.0010** | OpenAI GPT-5.6-luna |
-| Kimi K3 | 3.2 s | 314 + 1272 = 1586 | **$0.0210** | Moonshot Kimi K3 |
-| DeepSeek V4 | 3.8 s | 239 + 1190 = 1429 | **$0.0045** | DeepSeek V4 |
-| GLM-5.2 | 0.8 s | 240 + 1147 = 1387 | **$0.0057**‡ | Z.ai GLM-5.2 |
-| Qwen3.8-Max | 4.0 s | 290 + 1326 = 1616 | **$0.0090** | Alibaba Qwen3.8-Max |
-| Biomni (A1) | 3.9 s | not token-logged | **$0.59** (measured, agentic) | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
+#### Per-call cost — reported per task, **not** as a shared column
 
-Latency is wall-clock median over the routing items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). **BioMate's $** is measured directly via its own `llm_usage` meter on routing (on its own provider keys — no OpenRouter fee), and is a lower bound (see †). **Biomni's $** is its logged OpenRouter spend on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77, mean $0.59) — an agent making many tool/LLM calls per item. Bottom line: **latency is the one clean same-task comparison; the $/item figures are real per-system costs but are drawn from different tasks and different tokenizers, so read them as per-call order-of-magnitude, not a same-task race.**
+Cost is *not* a clean cross-system race: different systems logged tokens on different tasks, and different models tokenize identically-worded prompts differently (see the tokenizer table below). So the numbers are grouped by what they actually measure — never mixed in one column.
+
+**The 8 direct-LLM systems — on the pharmacology tasks** (PBPK / BOIN / drug-discovery, the only tasks that logged token usage; **comparable among themselves**). $/item = mean tokens × the model's published OpenRouter price × 1.05 (the ~5% OpenRouter fee):
+
+| Model | Tokens/item (in+out) | $/item |
+|---|---:|---:|
+| GPT-5.6-luna | 232 + 727 = 959 | **$0.0010** |
+| DeepSeek V4 | 239 + 1190 = 1429 | **$0.0045** |
+| GPT-5.6 | 232 + 483 = 715 | **$0.0056** § |
+| GLM-5.2 | 240 + 1147 = 1387 | **$0.0057** ‡ |
+| Gemini 3.1 Pro | 250 + 1184 = 1434 | **$0.0065** |
+| Qwen3.8-Max | 290 + 1326 = 1616 | **$0.0090** |
+| Claude Opus 5 | 349 + 335 = 684 | **$0.0106** |
+| Kimi K3 | 314 + 1272 = 1586 | **$0.0210** |
+
+**§** GPT-5.6 uses OpenRouter's standard GPT-5.6 tier ($2/$10 per 1M); **‡** GLM-5.2 was delisted, so its price uses the closest live version GLM-5.3 ($1.40/$4.40 per 1M).
+
+**BioMate** and **Biomni** are on *different* tasks, so they get their own line — **not** placed in the table above:
+- **BioMate** — measured on **routing** via its own `llm_usage` meter: **$0.0019/item** (21 in / 125 out tok, GPT-5.6-luna, its own provider keys — no OpenRouter fee). This counts only the user turn, not the injected system prompt + retrieved catalog, so it is a **lower bound** and is *not* comparable to the pharmacology-task figures above.
+- **Biomni** — measured **$/item** on the agentic tasks it completed: PBPK **$0.41**, drug-discovery **$0.77** (mean $0.59) — an agent making many tool/LLM calls per item.
 
 #### The tokenizer effect, documented
 
