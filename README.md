@@ -26,7 +26,7 @@ RealBio fixes that: **505 fixed public items across 5 real drug-development / ge
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-**🌐 Project:** [biomate.ai](https://biomate.ai) · **🏆 Leaderboard:** [biomate.ai/realbio.html](https://biomate.ai/realbio.html) · **📄 Datasheet:** [`DATASHEET.md`](DATASHEET.md)
+**🌐 Project:** [biomate.ai](https://biomate.ai) · **🏆 Leaderboard:** [on GitHub](https://github.com/bioMate-AI/realbio-benchmark#results) · **📄 Datasheet:** [`DATASHEET.md`](DATASHEET.md)
 
 > **Growing benchmark.** Three further tasks (execution auto-repair, workflow generation, drug-discovery ligand ranking) are validated and re-added as every system — including BioMate — is measured on the same items with the same metric. We report a task only when the whole board is measured on it.
 
@@ -162,7 +162,7 @@ Every system was run on the **same fixed items** and scored by the **same** `src
 
 | System | Organization | Link | Reference |
 |---|---|---|---|
-| **BioMate** (product) | BioMate AI | [biomate.ai](https://biomate.ai) · [leaderboard](https://biomate.ai/realbio.html) | This benchmark — see [Citation](#citation) |
+| **BioMate** (product) | BioMate AI | [biomate.ai](https://biomate.ai) · [leaderboard](https://github.com/bioMate-AI/realbio-benchmark#results) | This benchmark — see [Citation](#citation) |
 | Claude Opus 5 | Anthropic | [anthropic.com/claude](https://www.anthropic.com/claude) | — |
 | Gemini 3.1 Pro | Google DeepMind | [deepmind.google/models/gemini](https://deepmind.google/models/gemini/) | — |
 | GPT-5.6 · GPT-5.6-luna | OpenAI | [openai.com](https://openai.com/) | — |
@@ -196,7 +196,7 @@ python3 src/score.py cross_domain_routing my_system/cross_domain_routing.jsonl
   author = {Zhang, Yaoyun and Dike, Andrew},
   year   = {2026},
   note   = {BioMate AI},
-  url    = {https://biomate.ai/realbio.html}
+  url    = {https://github.com/bioMate-AI/realbio-benchmark}
 }
 ```
 
@@ -210,4 +210,4 @@ python3 src/score.py cross_domain_routing my_system/cross_domain_routing.jsonl
 **CC-BY-4.0** — data, ground truth, scorer, and harness. See [`LICENSE`](LICENSE).
 
 ---
-Built by **[BioMate AI](https://biomate.ai)** · leaderboard: **[biomate.ai/realbio.html](https://biomate.ai/realbio.html)**
+Built by **[BioMate AI](https://biomate.ai)** · leaderboard: **[on GitHub](https://github.com/bioMate-AI/realbio-benchmark#results)**
