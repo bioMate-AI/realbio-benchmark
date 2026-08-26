@@ -39,13 +39,15 @@ Most agentic-bio benchmarks are scored by each system's **own judge on its own p
 
 ## The 5 tasks
 
-| Task | Items | What it tests | Ground truth | Metric |
-|---|---:|---|---|---|
-| `cross_domain_routing` | 200 | route a natural-language request to the correct **workflow** | `correct_workflow` (+`acceptable_alts`) | exact-match |
-| `param_prefill` | 170 | extract parameters from context; don't over-fill | `expected_params` + `must_not_fill` | param-F1 |
-| `protocol_thresholds` | 100 | is a sample valid; PASS/FAIL vs a naive universal threshold | `ground_truth` + `expected_correct_action` | action accuracy |
-| `boin_benchmark` | 20 | correct BOIN dose-escalation decision | `reference.true_MTD_mg` | exact-MTD |
-| `pbpk_benchmark` | 15 | predict PK from SMILES + dose + route | `reference` (Cmax) | within-2-fold |
+Each task belongs to one of three **capability bands** — the stages of actually running a pipeline: **Orchestration** (route & configure), **Quality control** (validate), and **Execution** (compute the scientific result). BioMate leads all three.
+
+| Band | Task | Items | What it tests | Ground truth | Metric |
+|---|---|---:|---|---|---|
+| Orchestration | `cross_domain_routing` | 200 | route a natural-language request to the correct **workflow** | `correct_workflow` (+`acceptable_alts`) | exact-match |
+| Orchestration | `param_prefill` | 170 | extract parameters from context; don't over-fill | `expected_params` + `must_not_fill` | param-F1 |
+| Quality control | `protocol_thresholds` | 100 | is a sample valid; PASS/FAIL vs a naive universal threshold | `ground_truth` + `expected_correct_action` | action accuracy |
+| Execution | `boin_benchmark` | 20 | correct BOIN dose-escalation decision | `reference.true_MTD_mg` | exact-MTD |
+| Execution | `pbpk_benchmark` | 15 | predict PK from SMILES + dose + route | `reference` (Cmax) | within-2-fold |
 
 Items are **original tasks authored from public sources** (nf-core catalog, GEO/PRIDE/EMDB accessions, published PK, BOIN references) — not drawn from any system's training set. Full per-task **construction methodology** is in the [`DATASHEET.md`](DATASHEET.md).
 
@@ -58,6 +60,8 @@ Every cell re-scores from committed `predictions.jsonl` via `src/score.py`. LLMs
 
 ![RealBio leaderboard](figures/leaderboard.png)
 *Figure 2. BioMate (product) vs frontier LLMs used directly.*
+
+Columns are grouped by capability band: **Orchestration** (Routing, Param) · **Quality control** (Protocol) · **Execution** (PBPK, BOIN).
 
 | System | Routing | Param (F1) | Protocol | PBPK (2×) | BOIN |
 |---|---|---|---|---|---|
@@ -80,7 +84,7 @@ Accuracy is only half the deployment question — the harness also logs **latenc
 
 | System | Routing latency (median) | Generation cost / item (measured) | Engine |
 |---|---:|---:|---|
-| **BioMate** (product) | **2.3 s** | not instrumented here | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro |
+| **BioMate** (product) | **2.3 s** | 125 tok · **$0.0019** | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro, GPT-5.6-luna |
 | Claude Opus 5 | 2.7 s | 335 tok | Anthropic Claude Opus 5 |
 | Gemini 3.1 Pro | 3.6 s | 1184 tok | Google Gemini 3.1 Pro |
 | GPT-5.6 | — | 483 tok | OpenAI GPT-5.6 |
@@ -91,7 +95,7 @@ Accuracy is only half the deployment question — the harness also logs **latenc
 | Qwen3.8-Max | 4.0 s | 1326 tok | Alibaba Qwen3.8-Max |
 | Biomni (A1) | 3.9 s | $0.41–0.77 (agent) | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
 
-Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). LLM cost is mean output tokens/item — dollar cost is tokens × the model's price. Biomni's cost is its logged **$/item** on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77), reflecting an agent that makes many tool/LLM calls per item.
+Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). LLM cost is mean output tokens/item — dollar cost is tokens × the model's price. **BioMate's cost is measured directly** via its own `llm_usage` meter over 10 routing items (mean 21 input / 125 output tokens, **$0.0019/item**; the dev instance served the response via GPT-5.6-luna) — its retrieval/ranking step is not itemized as LLM input. Biomni's cost is its logged **$/item** on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77), reflecting an agent that makes many tool/LLM calls per item — these are *different tasks* than BioMate's routing figure, so the two dollar numbers are not a like-for-like comparison.
 
 ## Participating systems
 
