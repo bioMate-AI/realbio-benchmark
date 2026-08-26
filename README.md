@@ -152,45 +152,9 @@ Every cell is a same-item, same-scorer result that re-scores from the committed 
 | Qwen3.8-Max | 4.0 s | Alibaba Qwen3.8-Max |
 | Biomni (A1) | 3.9 s | Agent scaffold — Claude Opus 5 (routing/param/protocol), Claude Sonnet 4.5 (PBPK/BOIN; Opus-5's API rejects Biomni's assistant-prefill loop, removed across Claude ≥ 4.6) |
 
-#### Per-call cost — reported per task, **not** as a shared column
+#### Per-call cost — being revised
 
-Cost is *not* a clean cross-system race: different systems logged tokens on different tasks, and different models tokenize identically-worded prompts differently (see the tokenizer table below). So the numbers are grouped by what they actually measure — never mixed in one column.
-
-**The 8 direct-LLM systems — on the pharmacology tasks** (PBPK / BOIN / drug-discovery, the only tasks that logged token usage; **comparable among themselves**). $/item = mean tokens × the model's published OpenRouter price × 1.05 (the ~5% OpenRouter fee):
-
-| Model | Tokens/item (in+out) | $/item |
-|---|---:|---:|
-| GPT-5.6-luna | 232 + 727 = 959 | **$0.0010** |
-| DeepSeek V4 | 239 + 1190 = 1429 | **$0.0045** |
-| GPT-5.6 | 232 + 483 = 715 | **$0.0056** § |
-| GLM-5.2 | 240 + 1147 = 1387 | **$0.0057** ‡ |
-| Gemini 3.1 Pro | 250 + 1184 = 1434 | **$0.0065** |
-| Qwen3.8-Max | 290 + 1326 = 1616 | **$0.0090** |
-| Claude Opus 5 | 349 + 335 = 684 | **$0.0106** |
-| Kimi K3 | 314 + 1272 = 1586 | **$0.0210** |
-
-**§** GPT-5.6 uses OpenRouter's standard GPT-5.6 tier ($2/$10 per 1M); **‡** GLM-5.2 was delisted, so its price uses the closest live version GLM-5.3 ($1.40/$4.40 per 1M).
-
-**BioMate** and **Biomni** are on *different* tasks, so they get their own line — **not** placed in the table above:
-- **BioMate** — measured on **routing** via its own `llm_usage` meter: **$0.0019/item** (21 in / 125 out tok, GPT-5.6-luna, its own provider keys — no OpenRouter fee). This counts only the user turn, not the injected system prompt + retrieved catalog, so it is a **lower bound** and is *not* comparable to the pharmacology-task figures above.
-- **Biomni** — measured **$/item** on the agentic tasks it completed: PBPK **$0.41**, drug-discovery **$0.77** (mean $0.59) — an agent making many tool/LLM calls per item.
-
-#### The tokenizer effect, documented
-
-The **identical 15 PBPK prompts** — same text, byte-for-byte — tokenize to different input-token counts per model. This is why raw token counts are not directly comparable across models (cost is still correct: each model bills its *own* tokens × its *own* price):
-
-| Model | Input tokens (same 15 prompts) | Relative to GPT-5.6 |
-|---|---:|---:|
-| GPT-5.6 | 147 | 1.00× |
-| GPT-5.6-luna | 147 | 1.00× |
-| Gemini 3.1 Pro | 153 | 1.04× |
-| DeepSeek V4 | 154 | 1.05× |
-| GLM-5.2 | 156 | 1.06× |
-| Qwen3.8-Max | 200 | 1.36× |
-| Claude Opus 5 | 216 | 1.47× |
-| Kimi K3 | 228 | 1.55× |
-
-Same input, **1.55× spread** in token count — purely from each model family's tokenizer, with **no involvement from OpenRouter** (which reports each provider's native counts unchanged and only adds a ~5% price fee).
+> **Note.** The per-call token/cost analysis is temporarily withheld while we make it a clean, same-task comparison across all systems. It will be added back once corrected. Latency above is the one same-task efficiency metric we report in the interim.
 
 ## Participating systems
 
