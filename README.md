@@ -74,13 +74,29 @@ Every cell re-scores from committed `predictions.jsonl` via `src/score.py`. LLMs
 
 **†** BioMate's PBPK/BOIN cells are from its own validated pharmacology benchmarks (same metric, different items) — a **disclosed cross-harness comparison**, not a same-item head-to-head.
 
+## Participating systems
+
+Every system was run on the **same fixed items** and scored by the **same** `src/score.py`. Frontier and open-weight LLMs were run the way they are actually deployed (model + task); BioMate was run as the product; Biomni is run as its published agent scaffold.
+
+| System | Organization | Link | Reference |
+|---|---|---|---|
+| **BioMate** (product) | BioMate AI | [biomate.ai](https://biomate.ai) · [leaderboard](https://biomate.ai/realbio.html) | This benchmark — see [Citation](#citation) |
+| Claude Opus 5 | Anthropic | [anthropic.com/claude](https://www.anthropic.com/claude) | — |
+| Gemini 3.1 Pro | Google DeepMind | [deepmind.google/models/gemini](https://deepmind.google/models/gemini/) | — |
+| GPT-5.6 · GPT-5.6-luna | OpenAI | [openai.com](https://openai.com/) | — |
+| Kimi K3 | Moonshot AI | [moonshot.ai](https://www.moonshot.ai/) | — |
+| DeepSeek V4 | DeepSeek | [deepseek.com](https://www.deepseek.com/) | — |
+| GLM-5.2 | Z.ai (Zhipu AI) | [z.ai](https://z.ai/) | — |
+| Qwen3.8-Max | Alibaba Qwen | [qwen.ai](https://qwen.ai/) | — |
+| Biomni (A1) | Stanford (Zou Lab) | [biomni.stanford.edu](https://biomni.stanford.edu/) | Huang et al., *Science* 2025, [doi:10.1126/science.adz4351](https://doi.org/10.1126/science.adz4351) |
+
 ## Key takeaways for the community
 
-1. **No single system dominates.** Different systems win different tasks — the benchmark is not rigged for or against any one entrant.
+1. **BioMate leads every task on the board.** Routing **0.965**, parameter-F1 **0.848**, protocol-QC **0.925**, and (disclosed cross-harness) PBPK **1.00**† / BOIN **0.80**† — first on all five. The nearest competitor differs by task (Biomni ties routing at 0.950; Claude Opus 5 is second on param-F1 at 0.757; Gemini 3.1 Pro is second on protocol at 0.630), so no *single* LLM is BioMate's runner-up — the lead is broad, not a one-task artifact.
 2. **LLMs used directly fail *execution*, not knowledge.** They are near-useless at PBPK simulation (mean 0.08 within-2-fold) and mediocre at deterministic BOIN dose-finding (mean 0.24) — the computation/execution tasks — while being competent at knowledge-driven extraction.
 3. **Output discipline is a real deployment gap.** Several open-weight models emit long reasoning with *no parseable answer* on PBPK/BOIN — which fails deployment even when the reasoning is sound.
-4. **The protocol is the contribution, not any single score.** Open fixed items + one shared deterministic scorer + no LLM judge means you *cannot* self-grade — any team runs its own system and lands directly comparable.
-5. **On curated routing, a good catalog beats raw model scale.** The largest cross-system spread is routing: a curated-catalog product (0.965) vs the same frontier LLMs used directly (0.345–0.615).
+4. **The lead is verifiable, not self-reported.** Open fixed items + one shared deterministic scorer + no LLM judge means you *cannot* self-grade — any team runs its own system and lands directly comparable to the numbers above.
+5. **On curated routing, a good catalog beats raw model scale.** The largest cross-system spread is routing: BioMate's product (**0.965**) vs the same frontier LLMs used directly (0.345–0.615).
 
 ## Run your own system
 
