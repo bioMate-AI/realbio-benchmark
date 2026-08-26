@@ -76,22 +76,22 @@ Every cell is a same-item, same-scorer result that re-scores from the committed 
 
 ### Efficiency & engine (measured, same protocol)
 
-Accuracy is only half the deployment question — the harness also logs **latency** and **generation cost** for every item.
+Accuracy is only half the deployment question — the harness also logs **latency** and **generation cost** per item. The cost *unit* differs by harness (the direct-LLM runs logged output tokens; the Biomni agent logged dollar cost; BioMate's product-side token cost is not instrumented in this harness), so each cell states what was actually measured rather than forcing a false common unit.
 
-| System | Routing latency (median) | Output tokens / item | Engine |
+| System | Routing latency (median) | Generation cost / item (measured) | Engine |
 |---|---:|---:|---|
-| **BioMate** (product) | **2.3 s** | **≈0** (routing = retrieval) | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro. Routing is served by retrieval, with no per-query LLM generation |
-| Claude Opus 5 | 2.7 s | 335 | Anthropic Claude Opus 5 |
-| Gemini 3.1 Pro | 3.6 s | 1184 | Google Gemini 3.1 Pro |
-| GPT-5.6 | — | 483 | OpenAI GPT-5.6 |
-| GPT-5.6-luna | 1.6 s | 727 | OpenAI GPT-5.6-luna |
-| Kimi K3 | 3.2 s | 1272 | Moonshot Kimi K3 |
-| DeepSeek V4 | 3.8 s | 1190 | DeepSeek V4 |
-| GLM-5.2 | 0.8 s | 1147 | Z.ai GLM-5.2 |
-| Qwen3.8-Max | 4.0 s | 1326 | Alibaba Qwen3.8-Max |
-| Biomni (A1) | 3.9 s | — | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
+| **BioMate** (product) | **2.3 s** | not instrumented here | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro |
+| Claude Opus 5 | 2.7 s | 335 tok | Anthropic Claude Opus 5 |
+| Gemini 3.1 Pro | 3.6 s | 1184 tok | Google Gemini 3.1 Pro |
+| GPT-5.6 | — | 483 tok | OpenAI GPT-5.6 |
+| GPT-5.6-luna | 1.6 s | 727 tok | OpenAI GPT-5.6-luna |
+| Kimi K3 | 3.2 s | 1272 tok | Moonshot Kimi K3 |
+| DeepSeek V4 | 3.8 s | 1190 tok | DeepSeek V4 |
+| GLM-5.2 | 0.8 s | 1147 tok | Z.ai GLM-5.2 |
+| Qwen3.8-Max | 4.0 s | 1326 tok | Alibaba Qwen3.8-Max |
+| Biomni (A1) | 3.9 s | $0.41–0.77 (agent) | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
 
-**Cost** scales with output tokens: BioMate answers routing from its curated index with **no per-query LLM generation** (≈ $0/query), while direct-LLM systems pay per-token on every call. Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset).
+Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). LLM cost is mean output tokens/item — dollar cost is tokens × the model's price. Biomni's cost is its logged **$/item** on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77), reflecting an agent that makes many tool/LLM calls per item.
 
 ## Participating systems
 
