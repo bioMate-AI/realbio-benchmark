@@ -12,9 +12,17 @@ tags:
   - drug-discovery
 ---
 
-# RealBio — an open, objectively-scored benchmark for bioinformatics AI agents
+# RealBio — an open, objectively-scored benchmark for AI agents in drug development & genomics
 
-**Can it run science, not just discuss it?** RealBio tests **real-world execution** — whether an agent can actually route, parameterize, quality-control, and dose real bioinformatics pipelines. **505 items across 5 tasks**, each with **objective ground truth**, graded by **one shared open scorer** (`src/score.py`, no LLM judge). Same items, same metric, for every system — reproducible and comparable, not self-reported.
+### The one-sentence version
+Modern drug discovery and genomics run on multi-step **computational pipelines** — pick the right analysis, configure it, quality-control the data, model the drug, choose a safe dose. Teams increasingly want an **AI agent to drive those pipelines**. RealBio asks the blunt question: **can an AI agent actually *run* one correctly end-to-end, or does it only *talk about* biology fluently?**
+
+### Why this is hard — and why we can't just trust the vendors' own scores
+A large language model can write a confident paragraph about RNA-seq or pharmacokinetics. That is *not* the same as correctly routing a real request to the right pipeline, filling its parameters without inventing wrong ones, catching a bad sequencing sample, predicting a drug's blood concentration, or picking a safe first-in-human dose — where a mistake wastes real lab money or, in the clinical tasks, is a patient-safety error. Yet almost every agentic-bio benchmark is **scored by each system's own AI judge on its own private task set**, so the numbers are non-comparable and invite (often unintentional) self-grading.
+
+RealBio fixes that: **505 fixed public items across 5 real drug-development / genomics tasks**, each with **objective, published ground truth**, graded by **one shared open scorer** (`src/score.py` — a deterministic checker, **no AI judge**). Same items, same metric, for every system — so any team can run its own agent and land a **directly comparable** number.
+
+**The headline finding:** today's frontier LLMs are strong on biological *knowledge* but **fail at execution** — and they fail worst on the **clinical-pharmacology** tasks (predicting drug exposure, choosing a trial dose), exactly where errors matter most. A purpose-built platform (BioMate) leads every task.
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
@@ -22,9 +30,17 @@ tags:
 
 > **Growing benchmark.** Three further tasks (execution auto-repair, workflow generation, drug-discovery ligand ranking) are validated and re-added as every system — including BioMate — is measured on the same items with the same metric. We report a task only when the whole board is measured on it.
 
-## Why RealBio exists
+## Why RealBio exists — and what "running a pipeline" actually means
 
-Most agentic-bio benchmarks are scored by each system's **own judge on its own private task set** — you can't compare across systems, and it invites (often unintentional) self-grading. RealBio inverts that: **fixed public items, published ground truth, one open deterministic scorer** that anyone runs identically on any system.
+Taking a therapy from a molecule or a dataset toward the clinic is a **computational relay**. RealBio's five tasks are five real hand-offs in that relay, in order:
+
+1. **Route** — turn a plain-English goal ("call germline variants from whole-genome sequencing") into the correct analysis pipeline, out of hundreds.
+2. **Configure** — set that pipeline's parameters from what the user actually said, without inventing settings they didn't specify.
+3. **Quality-control** — decide whether the incoming sequencing data is usable, using the rule that fits its specific assay type (a single universal cutoff false-alarms).
+4. **Model the drug** — predict how much drug reaches the bloodstream (its pharmacokinetics) from the molecule's chemistry.
+5. **Dose the trial** — from emerging toxicity data, recommend the dose to give the next patients in a Phase I clinical trial.
+
+An AI agent that is fluent about biology but gets any of these wrong isn't just unhelpful — it burns real sample and compute budget, and in steps 4–5 it is making **drug-safety** calls. So the question isn't "does it sound knowledgeable," it's "did it get the objectively-checkable answer right." That is what RealBio measures, identically, for every system: **fixed public items, published ground truth, one open deterministic scorer** — no AI judge, no private test set, no self-grading.
 
 ## Repository layout
 
@@ -37,19 +53,60 @@ Most agentic-bio benchmarks are scored by each system's **own judge on its own p
 └── DATASHEET.md             # dataset documentation (motivation, construction, limitations)
 ```
 
-## The 5 tasks
+## The 5 tasks (in plain language)
 
-Each task belongs to one of three **capability bands** — the stages of actually running a pipeline: **Orchestration** (route & configure), **Quality control** (validate), and **Execution** (compute the scientific result). BioMate leads all three.
+Two lifecycle bands — **Orchestration** (set the analysis up) and **Execution** (run the science, including the clinical-pharmacology computations). **Quality control is not a separate band; it is embedded in every task** — route to avoid the wrong pipeline, don't over-fill parameters, gate bad data, monitor trial toxicity, sanity-check drug exposure. BioMate leads both bands.
 
-| Band | Task | Items | What it tests | Ground truth | Metric |
-|---|---|---:|---|---|---|
-| Orchestration | `cross_domain_routing` | 200 | route a natural-language request to the correct **workflow** | `correct_workflow` (+`acceptable_alts`) | exact-match |
-| Orchestration | `param_prefill` | 170 | extract parameters from context; don't over-fill | `expected_params` + `must_not_fill` | param-F1 |
-| Quality control | `protocol_thresholds` | 100 | is a sample valid; PASS/FAIL vs a naive universal threshold | `ground_truth` + `expected_correct_action` | action accuracy |
-| Execution | `boin_benchmark` | 20 | correct BOIN dose-escalation decision | `reference.true_MTD_mg` | exact-MTD |
-| Execution | `pbpk_benchmark` | 15 | predict PK from SMILES + dose + route | `reference` (Cmax) | within-2-fold |
+| Band | Task (code name) | In plain English | Why it matters — and why an error is costly |
+|---|---|---|---|
+| Orchestration | **Pipeline routing** (`cross_domain_routing`, n=200) | Given a plain-English research request, pick the single correct analysis pipeline from a large catalog (e.g. bulk RNA-seq vs. variant-calling vs. single-cell). | The first decision in any genomics/omics project; the wrong pipeline wastes days of compute and real sample money. |
+| Orchestration | **Parameter pre-fill** (`param_prefill`, n=170) | Fill the chosen pipeline's settings from the request — and *only* the settings actually specified, never invented ones. Scored by **F1** (a precision/recall balance). | Over-filling silently corrupts a run; under-filling stalls it. Both can look like success until the results are quietly wrong. |
+| Execution | **QC gating** (`protocol_thresholds`, n=100) | Decide PASS / FAIL on a real sequencing sample. One universal quality cutoff *false-alarms* on specialized assays (single-cell, small-RNA, cryo-EM); the agent must apply the assay-specific rule. Each item carries a public data accession (**GEO / PRIDE / EMDB** — the standard genomics / proteomics / cryo-EM repositories), expert-labeled. | Discarding good data — or keeping bad data — corrupts every downstream conclusion. |
+| Execution | **Trial dose-finding** (`boin_benchmark`, n=20) | **BOIN** = *Bayesian Optimal INterval* design, a standard **Phase I clinical-trial** method. From emerging toxicity data, recommend the **MTD** (Maximum Tolerated Dose) — the highest dose that isn't too toxic. | A first-in-human patient-safety decision: too high harms patients, too low fails the drug. |
+| Execution | **Drug-exposure prediction** (`pbpk_benchmark`, n=15) | **PBPK** = *Physiologically-Based PharmacoKinetic* modeling. From a molecule's chemistry, dose and route, predict how much reaches the blood — peak concentration (**Cmax**), total exposure (**AUC**), half-life. Scored as within **2-fold** of the published human value. | Sets the first-in-human dose and underpins regulatory (FDA) submissions; a wrong exposure estimate mis-doses a trial. |
 
-Items are **original tasks authored from public sources** (nf-core catalog, GEO/PRIDE/EMDB accessions, published PK, BOIN references) — not drawn from any system's training set. Full per-task **construction methodology** is in the [`DATASHEET.md`](DATASHEET.md).
+*Every abbreviation above (BOIN, PBPK, MTD, Cmax, AUC, GEO/PRIDE/EMDB, F1) is a standard drug-development or bioinformatics term, spelled out so the benchmark is readable without prior background.* Items are **original tasks authored from public sources** (the nf-core pipeline catalog, public data accessions, published human pharmacokinetics, and the published BOIN design tables) — **not** drawn from any system's training set. Full per-task construction methodology is in the [`DATASHEET.md`](DATASHEET.md).
+
+### Coverage at a glance (how wide each task reaches)
+
+The items are not five variations of one thing — each task deliberately spans many distinct pipelines, parameters, assays, trial designs, and drugs:
+
+| Task | Items | Distinct coverage inside the task |
+|---|---:|---|
+| **Pipeline routing** | 200 | **63 distinct target pipelines** spanning every major omics domain (transcriptomics, genomics/variant-calling, epigenomics, single-cell, proteomics, cryo-EM, metagenomics, immunogenomics, therapeutic design) |
+| **Parameter pre-fill** | 170 | **11 inference categories** (genome, strandedness, tool-flags, numeric, reference-file, multi-param, single-cell, virtual-cell, drug-discovery, name-disambiguation, negative cases) over **143 distinct parameter names** |
+| **QC gating** | 100 | **99 distinct assay / library protocols**; real datasets from **3 major repositories** — GEO (75), PRIDE (3), EMDB (3) + 19 other public sources |
+| **Trial dose-finding** | 20 | **20 distinct Phase I trial scenarios** (oncology, antibody-drug conjugates, pediatric, steep/shallow toxicity curves, exposure–response models) |
+| **Drug-exposure prediction** | 15 | **15 distinct marketed drugs** (14 oral, 1 IV) across therapeutic classes (analgesic, antidiabetic, statin, antifungal, stimulant, …) |
+
+### Examples & the domains each task covers
+
+Real items from the benchmark (not toy prompts), to show the breadth:
+
+**Pipeline routing** — spans essentially every omics domain:
+- *"Run standard RNA-seq analysis on my paired-end FASTQ files from a mouse study"* → `nf-core/rnaseq` *(transcriptomics)*
+- *"Whole-genome bisulfite sequencing to profile CpG methylation"* → `nf-core/methylseq` *(epigenomics)*
+- *"AIRR-compliant V(D)J gene-usage analysis for an immunology clinical study"* → `nf-core/airrflow` *(immune-repertoire / clinical immunology)*
+- *"Recommend 2′-OMe chemical modifications to reduce siRNA immunogenicity"* → `sirna_offtarget_analysis` *(therapeutic-oligonucleotide design)*
+- **Domains covered:** transcriptomics · epigenomics · variant calling · single-cell · proteomics · cryo-EM · metagenomics · immunogenomics · therapeutic design.
+
+**Parameter pre-fill** — extract the right settings, and *only* those:
+- *"RNA-seq differential expression on human lung adenocarcinoma"* → `{genome: GRCh38}` (nothing else — don't invent a read length or aligner)
+- *"WES human GATK best-practices germline variant calling"* → `{genome: GRCh38, wes: true, tools: haplotypecaller}`
+- *"Synergy analysis: trametinib (MEK inhibitor) + palbociclib (CDK4/6 inhibitor)"* → structured drug/target params
+- **Domains covered:** oncology genomics · gene regulation (ChIP-seq) · clinical genetics (WES/WGS) · combination pharmacology.
+
+**QC gating** — real public datasets on assays where one universal cutoff misfires:
+- `10x_genomics_flex_low_input` (GEO GSE132044) · `cite_seq_low_adt_counts` (GSE164378) · `smart_seq2_plate_based` (GSE118184) · ambient-RNA correction (GSE163530)
+- **Domains covered:** single-cell RNA-seq variants · CITE-seq (joint protein+RNA) · plate-based scRNA · plus proteomics (PRIDE) and cryo-EM (EMDB) library types.
+
+**Trial dose-finding** — Phase I scenarios across modalities:
+- "Standard oncology — myelosuppression-limited" · "Steep dose-limiting-toxicity curve — MTD at the starting dose" · "Linear exposure–response — antibody-drug conjugate" · "Pediatric oncology — weight-normalized"
+- **Domains covered:** oncology Phase I trials · antibody-drug conjugates (ADCs) · pediatric dosing.
+
+**Drug-exposure prediction** — marketed drugs across therapeutic classes, each with published human PK:
+- Aspirin (analgesic, 500 mg oral) · Metformin (antidiabetic, 500 mg) · Atorvastatin (statin, 80 mg) · Ketoconazole (antifungal, 200 mg) · Caffeine (stimulant, 200 mg)
+- **Domains covered:** clinical pharmacology across analgesics, antidiabetics, statins, antifungals — a deliberate spread of absorption/metabolism behaviors.
 
 ![Difficulty strata per task](figures/difficulty.png)
 *Figure 1. Deliberate difficulty design — routing spans direct/indirect/adversarial; others grade easy/medium/hard by inference depth.*
@@ -80,22 +137,22 @@ Every cell is a same-item, same-scorer result that re-scores from the committed 
 
 ### Efficiency & engine (measured, same protocol)
 
-Accuracy is only half the deployment question — the harness also logs **latency** and **generation cost** per item. The cost *unit* differs by harness (the direct-LLM runs logged output tokens; the Biomni agent logged dollar cost; BioMate's product-side token cost is not instrumented in this harness), so each cell states what was actually measured rather than forcing a false common unit.
+Accuracy is only half the deployment question — the harness also logs **latency** and **tokens** per item. **Tokens are measured for every LLM and for BioMate** (the transparent cost basis: $/item = (input×price_in + output×price_out)/10⁶). The **$/item** column is filled where the price is *verified* — from BioMate's own live meter, Biomni's OpenRouter meter, or our in-repo price table (`backend/config/llm_providers.yml`, which carries a verified price only for Gemini 3.1 Pro among the frontier set). For the six open/frontier slugs whose per-token price is **not** in our config, the $ is left blank rather than fabricated — multiply the token counts by that model's published price to fill it.
 
-| System | Routing latency (median) | Generation cost / item (measured) | Engine |
-|---|---:|---:|---|
-| **BioMate** (product) | **2.3 s** | 125 tok · **$0.0019** | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro, GPT-5.6-luna |
-| Claude Opus 5 | 2.7 s | 335 tok | Anthropic Claude Opus 5 |
-| Gemini 3.1 Pro | 3.6 s | 1184 tok | Google Gemini 3.1 Pro |
-| GPT-5.6 | — | 483 tok | OpenAI GPT-5.6 |
-| GPT-5.6-luna | 1.6 s | 727 tok | OpenAI GPT-5.6-luna |
-| Kimi K3 | 3.2 s | 1272 tok | Moonshot Kimi K3 |
-| DeepSeek V4 | 3.8 s | 1190 tok | DeepSeek V4 |
-| GLM-5.2 | 0.8 s | 1147 tok | Z.ai GLM-5.2 |
-| Qwen3.8-Max | 4.0 s | 1326 tok | Alibaba Qwen3.8-Max |
-| Biomni (A1) | 3.9 s | $0.41–0.77 (agent) | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
+| System | Routing latency (median) | Tokens / item (in + out) | $ / item | Engine |
+|---|---:|---:|---:|---|
+| **BioMate** (product) | **2.3 s** | 21 + 125 = **146** | **$0.0019** (measured) | Mixture of LLMs — **primary:** Claude Sonnet 4.5; **secondary:** Claude Haiku 4.5, Gemini 3.5 Flash, Gemini 3.1 Pro, GPT-5.6-luna |
+| Claude Opus 5 | 2.7 s | 349 + 335 = 684 | — | Anthropic Claude Opus 5 |
+| Gemini 3.1 Pro | 3.6 s | 250 + 1184 = 1434 | **$0.0065** (verified, incl. OpenRouter 5%) | Google Gemini 3.1 Pro |
+| GPT-5.6 | — | 232 + 483 = 715 | — | OpenAI GPT-5.6 |
+| GPT-5.6-luna | 1.6 s | 232 + 727 = 959 | — | OpenAI GPT-5.6-luna |
+| Kimi K3 | 3.2 s | 314 + 1272 = 1586 | — | Moonshot Kimi K3 |
+| DeepSeek V4 | 3.8 s | 239 + 1190 = 1429 | — | DeepSeek V4 |
+| GLM-5.2 | 0.8 s | 240 + 1147 = 1387 | — | Z.ai GLM-5.2 |
+| Qwen3.8-Max | 4.0 s | 290 + 1326 = 1616 | — | Alibaba Qwen3.8-Max |
+| Biomni (A1) | 3.9 s | not token-logged | **$0.59** (measured, agentic) | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
 
-Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). LLM cost is mean output tokens/item — dollar cost is tokens × the model's price. **BioMate's cost is measured directly** via its own `llm_usage` meter over 10 routing items (mean 21 input / 125 output tokens, **$0.0019/item**; the dev instance served the response via GPT-5.6-luna) — its retrieval/ranking step is not itemized as LLM input. Biomni's cost is its logged **$/item** on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77), reflecting an agent that makes many tool/LLM calls per item — these are *different tasks* than BioMate's routing figure, so the two dollar numbers are not a like-for-like comparison.
+Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). **The frontier/open LLMs were all run via OpenRouter, which adds a ~5% fee**, so any $ computed from a base provider price is shown × 1.05. **BioMate's $ is measured directly** via its own `llm_usage` meter over 10 routing items (mean 21 in / 125 out tok, $0.0019/item; dev served the response via GPT-5.6-luna, on BioMate's own provider keys — no OpenRouter fee). **Gemini 3.1 Pro's $** = its measured tokens × the verified `llm_providers.yml` price ($1.25/$5.00 per 1M) × 1.05 for the OpenRouter fee. **Biomni's $** is its logged OpenRouter spend on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77, mean $0.59) — already inclusive of the fee; an agent making many tool/LLM calls per item, not token-itemized. The three dollar figures are on *different tasks*, so they are not a like-for-like comparison.
 
 ## Participating systems
 
