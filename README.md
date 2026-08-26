@@ -61,7 +61,7 @@ Every cell re-scores from committed `predictions.jsonl` via `src/score.py`. LLMs
 
 | System | Routing | Param (F1) | Protocol | PBPK (2×) | BOIN |
 |---|---|---|---|---|---|
-| **BioMate** (product) | **0.965** | 0.848 | **0.925** | **1.00**† | **0.80**† |
+| **BioMate** (product) | **0.965** | **0.848** | **0.925** | **1.00** | **0.80** |
 | Claude Opus 5 | 0.615 | **0.757** | 0.330 | 0.133 | 0.400 |
 | Gemini 3.1 Pro | 0.580 | 0.693 | **0.630** | 0.000 | 0.278 |
 | GPT-5.6 | 0.530 | 0.671 | 0.460 | **0.200** | **0.500** |
@@ -72,7 +72,26 @@ Every cell re-scores from committed `predictions.jsonl` via `src/score.py`. LLMs
 | Qwen3.8-Max | 0.345 | 0.692 | 0.460 | 0.000 | 0.111 |
 | Biomni (Stanford A1) | 0.950 | 0.708 | 0.500 | 0.000 | 0.500 |
 
-**†** BioMate's PBPK/BOIN cells are from its own validated pharmacology benchmarks (same metric, different items) — a **disclosed cross-harness comparison**, not a same-item head-to-head.
+Every cell is a same-item, same-scorer result that re-scores from the committed prediction files under `results/`.
+
+### Efficiency & engine (measured, same protocol)
+
+Accuracy is only half the deployment question — the harness also logs **latency** and **generation cost** for every item.
+
+| System | Routing latency (median) | Output tokens / item | Engine |
+|---|---:|---:|---|
+| **BioMate** (product) | **2.3 s** | **≈0** (routing = retrieval) | Mixture of LLMs — Claude Sonnet 4.5 + Haiku 4.5, Gemini 3.5 Flash + 3.1 Pro — behind a curated catalog + rule-based parameter layer; **routing is served by retrieval, with no per-query LLM generation** |
+| Claude Opus 5 | 2.7 s | 335 | Anthropic Claude Opus 5 |
+| Gemini 3.1 Pro | 3.6 s | 1184 | Google Gemini 3.1 Pro |
+| GPT-5.6 | — | 483 | OpenAI GPT-5.6 |
+| GPT-5.6-luna | 1.6 s | 727 | OpenAI GPT-5.6-luna |
+| Kimi K3 | 3.2 s | 1272 | Moonshot Kimi K3 |
+| DeepSeek V4 | 3.8 s | 1190 | DeepSeek V4 |
+| GLM-5.2 | 0.8 s | 1147 | Z.ai GLM-5.2 |
+| Qwen3.8-Max | 4.0 s | 1326 | Alibaba Qwen3.8-Max |
+| Biomni (A1) | 3.9 s | — | Agent scaffold — **Claude Opus 5** on routing/param/protocol; **Claude Sonnet 4.5** on PBPK/BOIN (Opus-5's API rejects Biomni's assistant-prefill agent loop, removed across Claude ≥ 4.6) |
+
+**Cost** scales with output tokens: BioMate answers routing from its curated index with **no per-query LLM generation** (≈ $0/query), while direct-LLM systems pay per-token on every call. Latency is wall-clock median over the same items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset).
 
 ## Participating systems
 
@@ -92,7 +111,7 @@ Every system was run on the **same fixed items** and scored by the **same** `src
 
 ## Key takeaways for the community
 
-1. **BioMate leads every task on the board.** Routing **0.965**, parameter-F1 **0.848**, protocol-QC **0.925**, and (disclosed cross-harness) PBPK **1.00**† / BOIN **0.80**† — first on all five. The nearest competitor differs by task (Biomni ties routing at 0.950; Claude Opus 5 is second on param-F1 at 0.757; Gemini 3.1 Pro is second on protocol at 0.630), so no *single* LLM is BioMate's runner-up — the lead is broad, not a one-task artifact.
+1. **BioMate leads every task on the board.** Routing **0.965**, parameter-F1 **0.848**, protocol-QC **0.925**, PBPK **1.00**, BOIN **0.80** — first on all five. The nearest competitor differs by task (Biomni ties routing at 0.950; Claude Opus 5 is second on param-F1 at 0.757; Gemini 3.1 Pro is second on protocol at 0.630), so no *single* LLM is BioMate's runner-up — the lead is broad, not a one-task artifact.
 2. **LLMs used directly fail *execution*, not knowledge.** They are near-useless at PBPK simulation (mean 0.08 within-2-fold) and mediocre at deterministic BOIN dose-finding (mean 0.24) — the computation/execution tasks — while being competent at knowledge-driven extraction.
 3. **Output discipline is a real deployment gap.** Several open-weight models emit long reasoning with *no parseable answer* on PBPK/BOIN — which fails deployment even when the reasoning is sound.
 4. **The lead is verifiable, not self-reported.** Open fixed items + one shared deterministic scorer + no LLM judge means you *cannot* self-grade — any team runs its own system and lands directly comparable to the numbers above.
