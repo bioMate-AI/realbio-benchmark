@@ -157,6 +157,23 @@ Accuracy is only half the deployment question — the harness also logs **latenc
 
 Latency is wall-clock median over the routing items (BioMate measured over the network to its hosted product; GPT-5.6's routing-latency cell is `—` because that run logged latency only on a subset). **BioMate's $** is measured directly via its own `llm_usage` meter on routing (on its own provider keys — no OpenRouter fee), and is a lower bound (see †). **Biomni's $** is its logged OpenRouter spend on the two agentic tasks it completed (PBPK $0.41, drug-discovery $0.77, mean $0.59) — an agent making many tool/LLM calls per item. Bottom line: **latency is the one clean same-task comparison; the $/item figures are real per-system costs but are drawn from different tasks and different tokenizers, so read them as per-call order-of-magnitude, not a same-task race.**
 
+#### The tokenizer effect, documented
+
+The **identical 15 PBPK prompts** — same text, byte-for-byte — tokenize to different input-token counts per model. This is why raw token counts are not directly comparable across models (cost is still correct: each model bills its *own* tokens × its *own* price):
+
+| Model | Input tokens (same 15 prompts) | Relative to GPT-5.6 |
+|---|---:|---:|
+| GPT-5.6 | 147 | 1.00× |
+| GPT-5.6-luna | 147 | 1.00× |
+| Gemini 3.1 Pro | 153 | 1.04× |
+| DeepSeek V4 | 154 | 1.05× |
+| GLM-5.2 | 156 | 1.06× |
+| Qwen3.8-Max | 200 | 1.36× |
+| Claude Opus 5 | 216 | 1.47× |
+| Kimi K3 | 228 | 1.55× |
+
+Same input, **1.55× spread** in token count — purely from each model family's tokenizer, with **no involvement from OpenRouter** (which reports each provider's native counts unchanged and only adds a ~5% price fee).
+
 ## Participating systems
 
 Every system was run on the **same fixed items** and scored by the **same** `src/score.py`. Frontier and open-weight LLMs were run the way they are actually deployed (model + task); BioMate was run as the product; Biomni is run as its published agent scaffold.
