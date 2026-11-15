@@ -9,12 +9,8 @@ Usage:  python3 score.py <benchmark> <predictions.jsonl>
 
 Prediction formats expected per benchmark (see each README.md):
   cross_domain_routing  prediction = workflow name (matched to correct_workflow / acceptable_alts)
-  workflow_generation   prediction = category string (A) OR list of tools (B)
-  protocol_thresholds   prediction = "PASS" | "FAIL"
   param_prefill         prediction = {param: value, ...}
-  boin_benchmark        prediction = dose-decision string (matched to 'reference')
-  pbpk_benchmark        prediction = numeric PK value (matched within-2-fold to 'reference')
-  drug_discovery_e2e    prediction = predicted ligand id order (list)
+  workflow_generation   prediction = category string (A) OR list of tools (B)
   autofix_benchmark     prediction = fix category string (or {"category":.., "fix":..}); primary = category accuracy
 """
 import json, sys, os, re
@@ -61,28 +57,6 @@ def score_routing(gt, preds):
         if norm(preds[i]) in gold: hit += 1
     return {"scored": n, "correct": hit, "accuracy": round(hit / n, 4) if n else None, "ci95": wilson(hit, n),
             "note": "exact match on correct_workflow (acceptable_alts credited)"}
-def score_protocol(gt, preds):    return acc(gt, preds, "expected_correct_action")  # PASS/FAIL
-def score_boin(gt, preds):
-    import ast
-    n = hit = skipped = 0
-    for i, r in gt.items():
-        if i not in preds: continue
-        try:
-            ref = r["reference"]; ref = ast.literal_eval(ref) if isinstance(ref, str) else ref
-            gt_val = ref.get("true_MTD_mg")
-        except Exception:
-            gt_val = None
-        if gt_val is None:        # no ground truth -> item is unscorable, exclude from denominator
-            skipped += 1; continue
-        n += 1
-        try:
-            if abs(float(preds[i]) - float(gt_val)) < 1e-6: hit += 1
-        except Exception:
-            pass  # prediction unparseable/wrong but GT exists -> counts against n
-    return {"scored": n, "correct": hit, "accuracy": round(hit / n, 4) if n else None,
-            "ci95": wilson(hit, n), "skipped_no_gt": skipped,
-            "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"}
-
 def score_workflow_gen(gt, preds):
     n = hit = 0
     for i, r in gt.items():
@@ -117,22 +91,6 @@ def score_param_prefill(gt, preds):
     return {"scored": n, "param_precision": round(prec, 4), "param_recall": round(rec, 4),
             "param_f1": round(f1, 4), "must_not_fill_violations": viol,
             "note": "key+value exact match; must_not_fill is a hard penalty to report separately"}
-
-def score_pbpk(gt, preds):
-    n = ok = 0
-    for i, r in gt.items():
-        try:
-            ref = float(re.search(r"[-+]?\d*\.?\d+", str(r["reference"])).group())
-        except Exception:
-            continue  # no valid reference (null GT) — item is not scoreable, excluded from denominator
-        n += 1  # a scoreable item: a missing OR unparseable prediction below counts as a failure, not a drop
-        try:
-            p = float(preds[i])
-        except Exception:
-            continue  # non-answer -> failure (stays in denominator n, not credited to ok)
-        if ref > 0 and 0.5 <= p / ref <= 2.0: ok += 1
-    return {"scored": n, "within_2fold": round(ok / n, 4) if n else None, "ci95": wilson(ok, n),
-            "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"}
 
 def score_drug_disc(gt, preds):
     def spearman(a, b):
@@ -186,10 +144,11 @@ def _nearest_option(ans_n, options):
 
 
 SCORERS = {
-    "cross_domain_routing": score_routing, "protocol_thresholds": score_protocol,
-    "boin_benchmark": score_boin, "workflow_generation": score_workflow_gen,
-    "param_prefill": score_param_prefill, "pbpk_benchmark": score_pbpk,
-    "drug_discovery_e2e": score_drug_disc, "autofix_benchmark": score_autofix,
+    "cross_domain_routing": score_routing,
+    "param_prefill": score_param_prefill,
+    "workflow_generation": score_workflow_gen,
+    "autofix_benchmark": score_autofix,
+    "drug_discovery_e2e": score_drug_disc,
 }
 
 if __name__ == "__main__":

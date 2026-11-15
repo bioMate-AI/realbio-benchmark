@@ -10,16 +10,15 @@ Usage: python3 leaderboard.py [--md] [--json]
 import os, json, glob, sys, importlib.util
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# results/ and the task data live at the repo root (parent of src/); fall back to HERE.
+ROOT = os.path.dirname(HERE) if os.path.isdir(os.path.join(os.path.dirname(HERE), "results")) else HERE
 spec = importlib.util.spec_from_file_location("score", os.path.join(HERE, "score.py"))
 S = importlib.util.module_from_spec(spec); spec.loader.exec_module(S)
 
 # (result-file basename, benchmark-dir, scorer, headline-key, label)
 COLS = [
     ("cross_domain_routing_bare",    "cross_domain_routing", S.score_routing,       "accuracy",             "routing (direct use)"),
-    ("autofix_benchmark",            "autofix_benchmark",    S.score_autofix,        "fix_category_accuracy","autofix"),
     ("param_prefill",                "param_prefill",        S.score_param_prefill,  "param_f1",             "param_prefill (F1)"),
-    ("workflow_generation",          "workflow_generation",  S.score_workflow_gen,   "accuracy",             "workflow_gen"),
-    ("protocol_thresholds",          "protocol_thresholds",  S.score_protocol,       "accuracy",             "protocol_QC"),
 ]
 
 def fmt(v):
@@ -27,13 +26,13 @@ def fmt(v):
     return f"{v:.3f}"
 
 def main():
-    models = sorted(d for d in os.listdir(os.path.join(HERE, "results"))
-                    if os.path.isdir(os.path.join(HERE, "results", d)))
+    models = sorted(d for d in os.listdir(os.path.join(ROOT, "results"))
+                    if os.path.isdir(os.path.join(ROOT, "results", d)))
     board = {}
     for m in models:
         row = {}
         for fbase, bench, scorer, key, _label in COLS:
-            path = os.path.join(HERE, "results", m, f"{fbase}.jsonl")
+            path = os.path.join(ROOT, "results", m, f"{fbase}.jsonl")
             if not os.path.exists(path):
                 row[fbase] = None; continue
             try:
@@ -44,7 +43,7 @@ def main():
                 row[fbase] = {"error": str(e)[:80]}
         # median per-query latency (ms) across all this model's prediction files
         lats = []
-        for fp in glob.glob(os.path.join(HERE, "results", m, "*.jsonl")):
+        for fp in glob.glob(os.path.join(ROOT, "results", m, "*.jsonl")):
             for l in open(fp):
                 try:
                     v = json.loads(l).get("latency_ms")

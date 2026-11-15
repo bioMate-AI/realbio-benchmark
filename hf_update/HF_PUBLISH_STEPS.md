@@ -4,9 +4,9 @@
 (`hf auth whoami` → *Not logged in*), so nothing was pushed to HuggingFace. The updated
 dataset card is ready at `hf_update/README.md`.
 
-**No rename needed.** The benchmark name stays **RealBio** (the earlier "BioChore" rename was
-reversed). You are only **updating the dataset card** (latest results + the choreography
-framing + the PBPK correction). There is **no `hf repo move` step**.
+**No rename needed.** The benchmark name stays **RealBio**. You are **updating the dataset card**
+(now a clean 2-task routing + parameter benchmark) and should **delete the removed task folders**
+on HF so it matches the re-scoped GitHub repo. There is **no `hf repo move` step**.
 
 ---
 
@@ -28,37 +28,46 @@ The card is the dataset's `README.md` (YAML front-matter sets `pretty_name: Real
 ```bash
 # from the repo root:
 hf upload DATASET_ID hf_update/README.md README.md --repo-type dataset \
-  --commit-message "Update card: latest results (PBPK correction), choreography framing"
+  --commit-message "Re-scope to routing + param (370 items); update results + choreography framing"
 ```
 
 That single `upload` replaces the card in place. Verify at
 `https://huggingface.co/datasets/DATASET_ID`.
 
-## 2. (Optional) Sync the task data + scorer to match the GitHub release
+## 2. Sync the task data + scorer, and DELETE the removed tasks
 
-If the HF dataset also mirrors the task files, sync the 5 task folders, `src/score.py`,
-`leaderboard.csv`, and `paper/RealBio_benchmark.pdf` so HF and GitHub agree:
+RealBio is now a **2-task** benchmark. Sync the two task folders + scorer + leaderboard + paper:
 
 ```bash
 hf upload DATASET_ID leaderboard.csv leaderboard.csv --repo-type dataset
 hf upload DATASET_ID src/score.py src/score.py --repo-type dataset
 hf upload DATASET_ID paper/RealBio_benchmark.pdf paper/RealBio_benchmark.pdf --repo-type dataset
-# task data (repeat per task folder, or upload-large-folder for the whole repo):
 hf upload DATASET_ID cross_domain_routing cross_domain_routing --repo-type dataset
 hf upload DATASET_ID param_prefill param_prefill --repo-type dataset
-hf upload DATASET_ID protocol_thresholds protocol_thresholds --repo-type dataset
-hf upload DATASET_ID pbpk_benchmark pbpk_benchmark --repo-type dataset
-hf upload DATASET_ID boin_benchmark boin_benchmark --repo-type dataset
 ```
+
+Then remove the clinical/QC tasks that moved to DrugDev-Bench (they will otherwise linger on HF):
+
+```bash
+# delete the removed task folders + their result files on the HF dataset
+hf repo-files DATASET_ID delete pbpk_benchmark --repo-type dataset
+hf repo-files DATASET_ID delete boin_benchmark --repo-type dataset
+hf repo-files DATASET_ID delete protocol_thresholds --repo-type dataset
+# also delete each removed-task prediction file under results/<system>/ if the HF dataset mirrors results/
+```
+
+> `hf repo-files ... delete` accepts a path or glob; confirm the exact paths with
+> `hf repo-files DATASET_ID list --repo-type dataset` first.
 
 ## 3. What changed vs. the previous card
 
 - `pretty_name` stays **RealBio Benchmark** (no rename).
-- Results table updated to match the preprint's Supplementary Table S1:
-  - **BioMate PBPK 1.00 → 0.200** (same-item 3/15; the old 1.00 was a different, non-comparable task).
-  - **Claude Opus 5 BOIN 0.400 → 0.444** (fixes a stale value; GitHub leaderboard already had 0.444).
-- Added the choreography tagline (route → configure → QC → model → dose).
-- Added a pointer to the in-repo preprint `paper/RealBio_benchmark.pdf`.
+- **Re-scoped to 2 core tasks** — routing (200) + parameter pre-fill (170) = **370 items**.
+  The clinical-pharmacology tasks (PBPK, BOIN) and QC gating (protocol_thresholds) moved to
+  **DrugDev-Bench**; their folders/results/columns were removed.
+- Results table reduced to **Routing + Param (F1)**; headline reframed around execution
+  (routing/param), dropping the clinical-pharmacology narrative.
+- Choreography tagline retained (route → configure).
+- Points to the in-repo preprint `paper/RealBio_benchmark.pdf`.
 
-> Tip: if you want HF and GitHub to show identical numbers, this card already matches
-> the corrected GitHub `leaderboard.csv`.
+> Tip: this card already matches the re-scoped GitHub `leaderboard.csv`.
