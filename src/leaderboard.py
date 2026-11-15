@@ -17,8 +17,11 @@ S = importlib.util.module_from_spec(spec); spec.loader.exec_module(S)
 
 # (result-file basename, benchmark-dir, scorer, headline-key, label)
 COLS = [
-    ("cross_domain_routing_bare",    "cross_domain_routing", S.score_routing,       "accuracy",             "routing (direct use)"),
-    ("param_prefill",                "param_prefill",        S.score_param_prefill,  "param_f1",             "param_prefill (F1)"),
+    ("cross_domain_routing_bare",    "cross_domain_routing", S.score_routing,        "accuracy",              "routing (direct use)"),
+    ("param_prefill",                "param_prefill",        S.score_param_prefill,   "param_f1",              "param_prefill (F1)"),
+    ("bioc_method_selection",        "bioc_method_selection",S.score_bioc,            "accuracy",              "bioc_method (top-1)"),
+    ("autofix_benchmark",            "autofix_benchmark",    S.score_autofix,         "fix_category_accuracy", "autofix (category)"),
+    ("workflow_generation",          "workflow_generation",  S.score_workflow_gen,    "accuracy",              "workflow_gen"),
 ]
 
 def fmt(v):

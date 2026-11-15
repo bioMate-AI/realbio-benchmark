@@ -28,7 +28,7 @@ The card is the dataset's `README.md` (YAML front-matter sets `pretty_name: Real
 ```bash
 # from the repo root:
 hf upload DATASET_ID hf_update/README.md README.md --repo-type dataset \
-  --commit-message "Re-scope to routing + param (370 items); update results + choreography framing"
+  --commit-message "Update to 5-task board (550 items); refresh results + choreography framing"
 ```
 
 That single `upload` replaces the card in place. Verify at
@@ -44,6 +44,10 @@ hf upload DATASET_ID src/score.py src/score.py --repo-type dataset
 hf upload DATASET_ID paper/RealBio_benchmark.pdf paper/RealBio_benchmark.pdf --repo-type dataset
 hf upload DATASET_ID cross_domain_routing cross_domain_routing --repo-type dataset
 hf upload DATASET_ID param_prefill param_prefill --repo-type dataset
+hf upload DATASET_ID bioc_method_selection bioc_method_selection --repo-type dataset
+hf upload DATASET_ID autofix_benchmark autofix_benchmark --repo-type dataset
+hf upload DATASET_ID workflow_generation workflow_generation --repo-type dataset
+hf upload DATASET_ID results results --repo-type dataset   # refreshed per-system predictions
 ```
 
 Then remove the clinical/QC tasks that moved to DrugDev-Bench (they will otherwise linger on HF):
@@ -62,12 +66,13 @@ hf repo-files DATASET_ID delete protocol_thresholds --repo-type dataset
 ## 3. What changed vs. the previous card
 
 - `pretty_name` stays **RealBio Benchmark** (no rename).
-- **Re-scoped to 2 core tasks** — routing (200) + parameter pre-fill (170) = **370 items**.
-  The clinical-pharmacology tasks (PBPK, BOIN) and QC gating (protocol_thresholds) moved to
-  **DrugDev-Bench**; their folders/results/columns were removed.
-- Results table reduced to **Routing + Param (F1)**; headline reframed around execution
-  (routing/param), dropping the clinical-pharmacology narrative.
-- Choreography tagline retained (route → configure).
+- **Scoped to 5 core tasks** — routing (200) + parameter pre-fill (170) + method-selection
+  (40) + self-fix (100) + workflow-gen (40) = **550 items**. The clinical-pharmacology tasks
+  (PBPK, BOIN) and QC gating (protocol_thresholds) moved to **DrugDev-Bench**.
+- Results table is the **5-task board** (Routing, Param-F1, Method top-1, Self-fix,
+  Workflow-gen); `—` marks systems with no committed result on a task.
+- Headline reframed around the closed-choice-vs-open-ended finding; choreography tagline
+  extended (route → configure → select method → self-fix → generate).
 - Points to the in-repo preprint `paper/RealBio_benchmark.pdf`.
 
 > Tip: this card already matches the re-scoped GitHub `leaderboard.csv`.

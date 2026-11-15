@@ -8,10 +8,11 @@ Usage:  python3 score.py <benchmark> <predictions.jsonl>
         python3 score.py cross_domain_routing my_system_preds.jsonl
 
 Prediction formats expected per benchmark (see each README.md):
-  cross_domain_routing  prediction = workflow name (matched to correct_workflow / acceptable_alts)
-  param_prefill         prediction = {param: value, ...}
-  workflow_generation   prediction = category string (A) OR list of tools (B)
-  autofix_benchmark     prediction = fix category string (or {"category":.., "fix":..}); primary = category accuracy
+  cross_domain_routing   prediction = workflow name (matched to correct_workflow / acceptable_alts)
+  param_prefill          prediction = {param: value, ...}
+  autofix_benchmark      prediction = fix category string (or {"category":.., "fix":..}); primary = category accuracy
+  bioc_method_selection  prediction = method name (matched to correct_method / acceptable_alts; invalid_picks penalized)
+  workflow_generation    prediction = category string (A) OR list of tools (B)
 """
 import json, sys, os, re
 
@@ -130,6 +131,27 @@ def score_autofix(gt, preds):
         out["secondary_note"] = "indicative only: token overlap on the free-text fix"
     return out
 
+def score_bioc(gt, preds):
+    """Bioconductor method selection: top-1 accuracy against correct_method (+ acceptable_alts),
+    with invalid_picks (correctness-failure methods) tracked separately. Objective, no judge.
+    prediction = a single method name chosen from the item's candidate list."""
+    n = correct = invalid = wrong_real = hallu = 0
+    for i, r in gt.items():
+        if i not in preds: continue
+        n += 1; p = norm(preds[i])
+        gold = {norm(r["correct_method"])} | {norm(a) for a in (r.get("acceptable_alts") or [])}
+        cands = {norm(c) for c in r.get("candidates", [])}
+        inv = {norm(x) for x in (r.get("invalid_picks") or [])}
+        if p in gold: correct += 1
+        elif p in inv: invalid += 1
+        elif p in cands: wrong_real += 1
+        else: hallu += 1
+    return {"scored": n, "accuracy": round(correct / n, 4) if n else None, "ci95": wilson(correct, n),
+            "invalid_regime_failure_rate": round(invalid / n, 4) if n else None,
+            "wrong_but_real_rate": round(wrong_real / n, 4) if n else None,
+            "hallucination_rate": round(hallu / n, 4) if n else None,
+            "note": "top-1 exact match on correct_method (acceptable_alts credited); invalid_picks = correctness-failure methods, reported separately"}
+
 def _nearest_option(ans_n, options):
     """Map a free-text / near-verbatim answer to the option it best matches (token overlap),
     so a bare LLM that writes prose still scores against the option set."""
@@ -146,9 +168,9 @@ def _nearest_option(ans_n, options):
 SCORERS = {
     "cross_domain_routing": score_routing,
     "param_prefill": score_param_prefill,
-    "workflow_generation": score_workflow_gen,
     "autofix_benchmark": score_autofix,
-    "drug_discovery_e2e": score_drug_disc,
+    "bioc_method_selection": score_bioc,
+    "workflow_generation": score_workflow_gen,
 }
 
 if __name__ == "__main__":
