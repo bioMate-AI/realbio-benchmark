@@ -14,6 +14,8 @@ tags:
 
 # RealBio — an open, objectively-scored benchmark for AI agents in drug development & genomics
 
+> **Can your AI agent actually *choreograph* a multi-step pipeline — route → configure → QC → model → dose — or does it only *talk about* biology?** That is the whole question RealBio scores.
+
 ### The one-sentence version
 Modern drug discovery and genomics run on multi-step **computational pipelines** — pick the right analysis, configure it, quality-control the data, model the drug, choose a safe dose. Teams increasingly want an **AI agent to drive those pipelines**. RealBio asks the blunt question: **can an AI agent actually *run* one correctly end-to-end, or does it only *talk about* biology fluently?**
 
@@ -22,11 +24,11 @@ A large language model can write a confident paragraph about RNA-seq or pharmaco
 
 RealBio fixes that: **505 fixed public items across 5 real drug-development / genomics tasks**, each with **objective, published ground truth**, graded by **one shared open scorer** (`src/score.py` — a deterministic checker, **no AI judge**). Same items, same metric, for every system — so any team can run its own agent and land a **directly comparable** number.
 
-**The headline finding:** today's frontier LLMs are strong on biological *knowledge* but **fail at execution** — and they fail worst on the **clinical-pharmacology** tasks (predicting drug exposure, choosing a trial dose), exactly where errors matter most. A purpose-built platform (BioMate) leads every task.
+**The headline finding:** today's frontier LLMs are strong on biological *knowledge* but **fail at execution** — and they fail worst on the **clinical-pharmacology** tasks (predicting drug exposure, choosing a trial dose), exactly where errors matter most. A purpose-built platform (BioMate) leads the orchestration and QC tasks and ties for the top score on drug-exposure prediction.
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-**🌐 Project:** [biomate.ai](https://biomate.ai) · **🏆 Leaderboard:** [on GitHub](https://github.com/bioMate-AI/realbio-benchmark#results) · **📄 Datasheet:** [`DATASHEET.md`](DATASHEET.md)
+**🌐 Project:** [biomate.ai](https://biomate.ai) · **🏆 Leaderboard:** [on GitHub](https://github.com/bioMate-AI/realbio-benchmark#results) · **📄 Datasheet:** [`DATASHEET.md`](DATASHEET.md) · **📝 Paper:** [`paper/RealBio_benchmark.pdf`](paper/RealBio_benchmark.pdf)
 
 > **Growing benchmark.** Three further tasks (execution auto-repair, workflow generation, drug-discovery ligand ranking) are validated and re-added as every system — including BioMate — is measured on the same items with the same metric. We report a task only when the whole board is measured on it.
 
@@ -116,14 +118,14 @@ Real items from the benchmark (not toy prompts), to show the breadth:
 Every cell re-scores from committed `predictions.jsonl` via `src/score.py`. LLMs are evaluated **the way they are actually used** — model + task, no candidate list injected.
 
 ![RealBio leaderboard](figures/leaderboard.png)
-*Figure 2. BioMate (product) vs frontier LLMs used directly.*
+*Figure 2. BioMate (product) vs frontier LLMs used directly. Note: this rendered figure predates the PBPK correction (†, below); where it disagrees, the committed table and `leaderboard.csv` are authoritative.*
 
 Columns are grouped by capability band: **Orchestration** (Routing, Param) · **Quality control** (Protocol) · **Execution** (PBPK, BOIN).
 
 | System | Routing | Param (F1) | Protocol | PBPK (2×) | BOIN |
 |---|---|---|---|---|---|
-| **BioMate** (product) | **0.965** | **0.848** | **0.925** | **1.00** | **0.80** |
-| Claude Opus 5 | 0.615 | **0.757** | 0.330 | 0.133 | 0.400 |
+| **BioMate** (product) | **0.965** | **0.848** | **0.925** | **0.200** † | **0.80** |
+| Claude Opus 5 | 0.615 | **0.757** | 0.330 | 0.133 | 0.444 |
 | Gemini 3.1 Pro | 0.580 | 0.693 | **0.630** | 0.000 | 0.278 |
 | GPT-5.6 | 0.530 | 0.671 | 0.460 | **0.200** | **0.500** |
 | Kimi K3 | 0.450 | 0.628 | 0.360 | 0.000 | 0.167 |
@@ -134,6 +136,8 @@ Columns are grouped by capability band: **Orchestration** (Routing, Param) · **
 | Biomni (Stanford A1) | 0.950 | 0.708 | 0.500 | 0.000 | 0.500 |
 
 Every cell is a same-item, same-scorer result that re-scores from the committed prediction files under `results/`.
+
+> † **PBPK correction.** BioMate's drug-exposure score is **0.200 (3/15, within-2-fold)** on the *same 15 PBPK items* as every other system — it ties GPT-5.6 and GPT-5.6-luna for the best PBPK result on the board. An earlier BioMate "1.00" circulated from a *different, non-comparable* disease-state-ratio task and has been removed. On this task no system is strong: PBPK remains the hardest, least-solved task for everyone.
 
 ### Efficiency & engine (measured)
 
@@ -174,7 +178,7 @@ Every system was run on the **same fixed items** and scored by the **same** `src
 
 ## Key takeaways for the community
 
-1. **BioMate leads every task on the board.** Routing **0.965**, parameter-F1 **0.848**, protocol-QC **0.925**, PBPK **1.00**, BOIN **0.80** — first on all five. The nearest competitor differs by task (Biomni ties routing at 0.950; Claude Opus 5 is second on param-F1 at 0.757; Gemini 3.1 Pro is second on protocol at 0.630), so no *single* LLM is BioMate's runner-up — the lead is broad, not a one-task artifact.
+1. **BioMate leads or ties for the top on every task on the board.** Routing **0.965**, parameter-F1 **0.848**, protocol-QC **0.925**, BOIN **0.80** — first on all four orchestration/QC/dose tasks — and **PBPK 0.200**, tied for first on the hardest task (no system exceeds 0.200). The nearest competitor differs by task (Biomni ties routing at 0.950; Claude Opus 5 is second on param-F1 at 0.757; Gemini 3.1 Pro is second on protocol at 0.630), so no *single* LLM is BioMate's runner-up — the lead is broad, not a one-task artifact.
 2. **LLMs used directly fail *execution*, not knowledge.** They are near-useless at PBPK simulation (mean 0.08 within-2-fold) and mediocre at deterministic BOIN dose-finding (mean 0.24) — the computation/execution tasks — while being competent at knowledge-driven extraction.
 3. **Output discipline is a real deployment gap.** Several open-weight models emit long reasoning with *no parseable answer* on PBPK/BOIN — which fails deployment even when the reasoning is sound.
 4. **The lead is verifiable, not self-reported.** Open fixed items + one shared deterministic scorer + no LLM judge means you *cannot* self-grade — any team runs its own system and lands directly comparable to the numbers above.
@@ -190,12 +194,14 @@ python3 src/score.py cross_domain_routing my_system/cross_domain_routing.jsonl
 
 ## Citation
 
+The full preprint is included in this repo: [`paper/RealBio_benchmark.pdf`](paper/RealBio_benchmark.pdf) — *RealBio evaluates the decisions underlying bioinformatics workflow automation* (Zhang & Dike, 2026).
+
 ```bibtex
 @misc{realbio2026,
-  title  = {RealBio: an open, objectively-scored benchmark for bioinformatics AI agents},
+  title  = {RealBio: evaluating the decisions underlying bioinformatics workflow automation},
   author = {Zhang, Yaoyun and Dike, Andrew},
   year   = {2026},
-  note   = {BioMate AI},
+  note   = {BioMate AI. Preprint},
   url    = {https://github.com/bioMate-AI/realbio-benchmark}
 }
 ```

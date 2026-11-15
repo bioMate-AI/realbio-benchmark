@@ -1,6 +1,6 @@
 # RealBio — Dataset datasheet
 
-Documentation for the RealBio benchmark dataset (following the *Datasheets for Datasets* spirit). The full paper is forthcoming; cite via [biomate.ai/realbio.html](https://biomate.ai/realbio.html).
+Documentation for the RealBio benchmark dataset (following the *Datasheets for Datasets* spirit). RealBio asks whether an AI agent can **choreograph a multi-step bioinformatics pipeline** — route → configure → QC → model → dose — not just describe the biology. The full preprint ships with this repo: [`paper/RealBio_benchmark.pdf`](paper/RealBio_benchmark.pdf).
 
 ## Motivation
 
