@@ -110,11 +110,11 @@ python3 -I verify_generated_references.py --output references-recomputed.json
 
 These commands make **no model calls** and require only Python's standard library. The first verifies SHA-256 hashes and exact item-ID coverage before scoring. The historical credential-acquisition helper is replaced with an explicit failing stub in the archival harness; scientific prompts and cards are retained. The transformation is documented in `provenance-transformations.json`. Historical provider/database snapshots remain incomplete: offline reproduction of saved scores is not exact replay of original API calls.
 
-The top-level `leaderboard.md` / `.csv` now show condition comparisons, not a product ranking. Previous public leaderboards and figures are preserved under `archive/pre-20261122/` for provenance and are **superseded**. Older papers in `paper/` are likewise historical; see `paper/README.md`. The revised preprint's final author metadata is pending; no final preprint release is claimed here.
+The top-level `leaderboard.md` / `.csv` now show condition comparisons, not a product ranking. Previous public leaderboards and figures are preserved under `archive/pre-20261122/` for provenance and are **superseded**. Older papers in `paper/` are likewise historical; see `paper/README.md`. The revised preprint (v8, 22 November 2026) is [`paper/RealBio-preprint-v8.pdf`](https://github.com/bioMate-AI/realbio-benchmark/blob/v2026.11.22/paper/RealBio-preprint-v8.pdf); this release is tagged `v2026.11.22`.
 
 ## Attribution and citation
 
-Yaoyun Zhang and Andrew Dike. RealBio. Benchmark data/code revision, 22 November 2026. BioMate AI; Andrew Dike is also affiliated with BizBildr. The authors develop BioMate and declare that affiliation. Cite the repository commit used for a result; the revised paper's final citation will be added after author finalization.
+Yaoyun Zhang and Andrew Dike. RealBio. Benchmark data/code revision, 22 November 2026. BioMate AI; Andrew Dike is also affiliated with BizBildr. The authors develop BioMate and declare that affiliation. Cite release `v2026.11.22` (or the exact repository commit used) and the revised preprint in `paper/`.
 
 ```bibtex
 @misc{realbio2026,

@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "Please cite the exact repository commit used; revised preprint metadata is pending."
+message: "Please cite release v2026.11.22 or the exact repository commit used, and the revised preprint in paper/."
+version: "v2026.11.22"
 title: "RealBio: Evaluating language-model decisions in bioinformatics"
 type: dataset
 authors:

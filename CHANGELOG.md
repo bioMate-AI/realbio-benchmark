@@ -7,4 +7,4 @@
 - Added the shared offline reproduction snapshot, complete ID/hash checks, supplementary parameter and alternative-QC-label analyses, and reference-generator verification.
 - Historical results and reference labels are retained; older root leaderboards, diagrams and prose are superseded. The current comparison tables do not crown a BioMate product winner.
 - Corrected the Hugging Face owner to `YaoyunHug`. Prepared English/Chinese launch drafts and revised video scripts; no social posting is implied.
-- Revised preprint author metadata remains pending; legacy paper files are historical versions.
+- Revised preprint added to `paper/`; release tagged `v2026.11.22`. Legacy paper files are historical versions.
