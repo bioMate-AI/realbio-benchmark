@@ -1,3 +1,5 @@
+> **22 November 2026 scope correction:** This is retained historical component documentation. The current root README and DATASHEET define the evaluated task version and its limits. Historical labels such as self-fix, PBPK or BOIN do not establish successful repair, physiological simulation or sequential trial execution.
+
 ---
 license: cc-by-4.0
 ---

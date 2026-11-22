@@ -1,108 +1,57 @@
-# Can your AI agent actually choreograph a bioinformatics pipeline? Introducing RealBio
+# RealBio: measuring how context changes bioinformatics decisions
 
-Ask a frontier language model about RNA-seq or variant calling and you'll get a fluent,
-confident paragraph. That is not the same thing as correctly *running* the analysis. Real
-genomics and bioinformatics aren't essays — they are **multi-step pipelines**, and a handful of
-agentic decisions decide whether the whole run is even valid: route the request to the right
-analysis, configure it from what the user actually said, select the method that's statistically
-correct for the data, diagnose why a run failed, and generate the workflow. Get any of these
-wrong and you burn real sample and compute budget — and the failure is usually *silent* until
-the results are quietly wrong.
+Draft article; not posted to a social account. Updated 22 November 2026.
 
-So we built **RealBio**, an open benchmark that asks the blunt question most agentic-bio
-leaderboards dodge: **can an AI agent actually choreograph the pipeline, or does it only talk
-about biology?**
 
-## Why another benchmark — and why this one is different
+**Evaluating language-model decisions in bioinformatics**
 
-Almost every agentic-bio benchmark is scored by *each system's own AI judge on its own private
-task set*. The numbers aren't comparable across systems, and they quietly invite self-grading.
-RealBio is built the opposite way, to be anti-self-grading by construction:
+RealBio examines decisions that support bioinformatics workflows: choosing a workflow, extracting requested parameters, selecting a statistical method, classifying a failure and interpreting protocol-specific QC signals. The current study compares saved model predictions with fixed references. **It does not execute workflows or test successful automatic repair.**
 
-- **550 fixed public items** across **5 core agentic-execution tasks**.
-- **Objective, published ground truth** for every item.
-- **One shared, open, deterministic scorer** (`src/score.py`) — **no AI judge**, no private
-  test set.
+The central question is how supplied context changes the same model's answers, including errors that an aggregate score can hide. This is a condition comparison, not a product-versus-model ranking.
+**Code and analyses:** [GitHub](https://github.com/bioMate-AI/realbio-benchmark) · **Dataset:** [Hugging Face](https://huggingface.co/datasets/YaoyunHug/realbio_benchmark) · **[Datasheet](DATASHEET.md)** · **[Version changes](CHANGELOG.md)**
 
-Same items, same metric, for every system. Any team can run its own agent on the exact items
-and land a number that is *directly comparable* to the leaderboard. You cannot self-grade your
-way up it.
+## Tasks and evidence
 
-## The five tasks are five decisions in one pipeline
+| Component | Items | Current evidence |
+|---|---:|---|
+| Workflow routing | 200 | Paired bare-versus-described-vocabulary comparisons across 14 model endpoints |
+| Parameter extraction | 170 | Four paired endpoints; three are Qwen-family models; F1, forbidden fills and joint success reported separately |
+| Method selection | 40 | Eight paired endpoints; candidate names versus names plus descriptions |
+| Failure classification | 100 | Historical descriptive task; category prediction, not a demonstrated repair |
+| Protocol QC: design set | 100 | Five-model card-revision study; a distinct serving-matched comparison is retained separately |
+| Protocol QC: out-of-family set | 60 | Same five-model panel, with bare, original-card and revised-card conditions |
 
-1. **Route** (`cross_domain_routing`, n=200) — turn "call germline variants from whole-genome
-   sequencing" into the correct pipeline out of a large catalog (63 distinct targets across
-   transcriptomics, variant calling, epigenomics, single-cell, proteomics, cryo-EM,
-   metagenomics and immunogenomics).
-2. **Configure** (`param_prefill`, n=170) — fill that pipeline's parameters from what the user
-   said, and *only* those: no invented read lengths, no hallucinated aligners (scored by F1).
-3. **Select method** (`bioc_method_selection`, n=40) — given an analysis need and a candidate
-   list, pick the method that's actually *correct* — over-representation for a discrete gene
-   list, not rank-based GSEA — not a plausible-sounding wrong one.
-4. **Self-fix** (`autofix_benchmark`, n=100) — read a failed run's error log and classify the
-   real root cause (genome mismatch, missing input, resource failure, …) into one of 10
-   objective categories.
-5. **Generate workflow** (`workflow_generation`, n=40) — turn an intent into the right analysis
-   category or the key tools a from-scratch pipeline needs.
+The rows have different endpoints and evidence histories. They are not pooled into one overall score. The historical 40-item workflow-generation task is retained as a diagnostic resource, outside the primary capability claims: its two-branch scorer saturates near 0.50 for many systems.
 
-Every item is authored from a documented public source — the nf-core catalog and its parameter
-schemas, the Bioconductor method catalog, real nf-core failure modes — not pulled from any
-model's training set.
+## Main paired comparisons
 
-## The headline finding: the harder the search space, the worse LLMs do
+| Endpoint | Models | Bare | Guided | Difference [95% interval] |
+|---|---:|---:|---:|---|
+| Routing accuracy | 14 | 0.382 | 0.913 | +0.530 [0.484, 0.578] |
+| Parameter F1 | 4 | 0.079 | 0.701 | +0.622 [0.580, 0.660] |
+| Parameter joint success | 4 | 0.179 | 0.371 | +0.191 [0.122, 0.260] |
+| Method-selection accuracy | 8 | 0.925 | 0.988 | +0.0625 [0.022, 0.116] |
 
-Here's the pattern that jumps out of the board. Frontier LLMs are already strong when the answer
-space is **closed**:
+Joint parameter success requires every required value to match and no listed forbidden key to be emitted. It is not exact-object correctness: other extra keys can escape that joint criterion. Mean exact-object success under the historical value-equivalence rule is 0.078 bare and 0.371 guided. Of the 170 items, 26 require no keys; historical empty-object coercion can earn vacuous success on that subset. These scoring effects are disclosed and stratified in the supplementary analysis.
 
-- **Self-fix** (classify the failure into 10 categories): **0.77–0.88**.
-- **Select method** (pick from a provided candidate list): **0.82–1.00** — near-ceiling.
+Context increases parameter completeness but also increases forbidden fills. For method selection, six of eight per-model intervals include zero; the positive aggregate difference is not a universal improvement for every endpoint.
 
-But they fall off hard on the **open-ended** decisions:
+### Protocol-QC result
 
-- **Route** (choose among hundreds of pipelines): **0.35–0.62**. They'll describe RNA-seq
-  beautifully and still send the job to the wrong pipeline.
-- **Configure** (precision parameter-filling): **F1 0.62–0.76**, dragged down by *over-filling*
-  parameters the user never specified — silently corrupting a run that still looks like it
-  worked.
+The original card raises overall accuracy while suppressing WARN recall. On the 60 out-of-family items, the revised card raises pooled balanced accuracy from 0.732 to 0.834: **+0.102 [0.050, 0.154]**. WARN recall changes from 0.314 to 0.552: +0.238 [0.100, 0.377]. The models and items are paired within this comparison; repeated predictions are not independent new cases.
 
-The gap isn't biological knowledge. It's that the moment the agent has to search a large space
-and commit — rather than classify within a fixed menu — accuracy collapses. That is exactly the
-part of "running a pipeline" that matters, and exactly what a candidate-based benchmark that
-hands the model its options would hide.
+![Protocol-QC comparison](figures/RealBio-QC.png)
 
-## Where BioMate lands
+Both QC sets use the authors' PASS/WARN/FAIL framework. Disjoint IDs and exact protocol strings reduce direct overlap, but do not establish independent label validity or eliminate semantic similarity. Card revision changes the WARN criterion, examples and a design-informed class-prior cue together. The observed difference cannot be attributed to one rule alone.
 
-BioMate — our purpose-built platform — **leads the two open-ended tasks**, the ones that
-separate systems the most: routing **0.965** and parameter-F1 **0.848**, first on each. On
-routing, a curated catalog (0.965) decisively beats the same frontier models used directly
-(0.345–0.615): on the first decision in any genomics project, a good catalog beats raw model
-scale. (BioMate's results on the three newly-added tasks are being run on the same items and
-will be posted when complete; we show `—` rather than a number we haven't measured.)
+A sensitivity analysis reuses 180 existing annotations from three LLMs on the **same 60 items**. Majority labels agree with 54/60 author labels (90%; Cohen's κ=0.837). The revised-minus-original balanced-accuracy difference remains positive: +0.114 [0.052, 0.177]. This is alternative model-generated labeling, not independent expert validation; three annotation endpoints also occur in the evaluation panel. The two non-annotating endpoints are reported separately, descriptively.
+## What each condition supplies
 
-And because no single LLM is the all-round runner-up — Claude Opus 5 and GPT-5.6 top
-method-selection at 1.0, Gemini tops self-fix among the bare models, Biomni tops self-fix
-overall — strength on one execution decision clearly doesn't transfer to the others.
+- **Routing:** a fixed vocabulary of 63 workflow labels derived from the benchmark's reference labels, with database descriptions truncated to 120 characters. It is not the full production catalog or independently retrieved candidates. Bare outputs use the same label-aware parser.
+- **Parameters:** each item's candidate-key list is the union of its required-key annotations and forbidden-key distractors. Values and the required/forbidden partition remain hidden. This is annotation-informed extraction, not a full independently retrieved schema.
+- **Methods:** descriptions and input types are looked up for candidates already supplied in the item. The historical `_kb` identifier does not denote query-based top-k retrieval.
+- **QC:** a task-level method card, with original and revised versions archived separately. No downstream scientific run or automated repair is scored.
 
-## Run it yourself
+The parameter scorer's alias and containment rules are **score-time equivalence**, not demonstrated generation-time production normalization. The historical scorer remains unchanged, including its permissive substring rule. Additional exact-value and exact-object analyses expose sensitivity to those rules.
 
-That's the part we're proudest of. The items are fixed and public, the scorer is open and
-deterministic, and non-answers count as failures — nothing is silently dropped. Clone the repo,
-produce `predictions.jsonl` per task, and score:
-
-```bash
-python3 src/score.py cross_domain_routing   my_system/cross_domain_routing.jsonl
-python3 src/score.py bioc_method_selection  my_system/bioc_method_selection.jsonl
-python3 src/leaderboard.py                  # or regenerate the whole board from results/
-# → objective metric + 95% CI, no LLM judge. Directly comparable to the leaderboard.
-```
-
-RealBio is a **growing** benchmark: we keep it to the non-clinical, objectively-scorable
-execution decisions, and we add tasks only once every system is measured on the same items with
-the same ruler. (The drug-development evaluation — drug-exposure modeling, Phase-I dose-finding —
-lives in our companion DrugDev-Bench.)
-
-The full preprint, the datasheet, every system's committed predictions, and the scorer are in
-the repo under CC-BY-4.0: **github.com/bioMate-AI/realbio-benchmark**.
-
-Biology deserves benchmarks you can audit. If your agent can choreograph the pipeline, come
-show it — on the same items, with the same ruler.
+Intervals describe item-resampling uncertainty conditional on the retained model snapshots. Models are not independent population replicates. Historical provider revisions, raw prompts and database snapshots are incomplete; pairing older routing/parameter/method runs by endpoint label and item does not establish fully matched serving. Annotation provenance, possible training contamination and scientific label validity require further independent audit. No superiority over other benchmark suites or universal BioMate product score is claimed.

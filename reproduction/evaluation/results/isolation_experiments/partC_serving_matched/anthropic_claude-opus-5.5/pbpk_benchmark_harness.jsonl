@@ -1,0 +1,15 @@
+{"id": "PK-G01", "prediction": "0.112", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 207, "usd": 0.005696, "latency_ms": 4785}
+{"id": "PK-G02", "prediction": "1.87", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 335, "usd": 0.008256, "latency_ms": 4770}
+{"id": "PK-G03", "prediction": "0.0378", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 174, "usd": 0.005036, "latency_ms": 4241}
+{"id": "PK-G04", "prediction": "1.065", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 254, "usd": 0.006636, "latency_ms": 5033}
+{"id": "PK-G05", "prediction": "4.378", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 205, "usd": 0.005656, "latency_ms": 4635}
+{"id": "PK-G06", "prediction": "12.12", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 114, "usd": 0.003836, "latency_ms": 3507}
+{"id": "PK-G07", "prediction": "0.750", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 157, "usd": 0.004696, "latency_ms": 3668}
+{"id": "PK-G08", "prediction": "10.34", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 155, "usd": 0.004656, "latency_ms": 3769}
+{"id": "PK-G09", "prediction": "1.380", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 150, "usd": 0.004556, "latency_ms": 3805}
+{"id": "PK-G10", "prediction": "4.354", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 156, "usd": 0.004676, "latency_ms": 3715}
+{"id": "PK-G11", "prediction": "1.248", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 112, "usd": 0.003796, "latency_ms": 3589}
+{"id": "PK-G12", "prediction": "10.09", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 183, "usd": 0.005216, "latency_ms": 4490}
+{"id": "PK-G13", "prediction": "2.95", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 149, "usd": 0.004536, "latency_ms": 3997}
+{"id": "PK-G14", "prediction": "3.786", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 144, "usd": 0.004436, "latency_ms": 3663}
+{"id": "PK-G15", "prediction": "0.2154", "finish_reason": "stop", "prompt_tokens": 389, "completion_tokens": 171, "usd": 0.004976, "latency_ms": 4149}

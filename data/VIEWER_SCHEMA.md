@@ -1,0 +1,3 @@
+# Failure-classification viewer representation
+
+The historical `params.tools` field mixes strings and lists. Arrow therefore cannot load the original JSONL directly as one typed table. `failure_classification_viewer.jsonl` losslessly serializes the entire `params` object into the string column `params_json`. Decode it with `json.loads(row["params_json"])`. All other fields and every ID/reference label are unchanged. The original scientific reference remains `failure_classification.jsonl` and `autofix_benchmark/data.jsonl`. This viewer conversion changes neither the benchmark nor any score. Other configurations point to their original typed references.

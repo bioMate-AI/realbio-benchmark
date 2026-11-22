@@ -1,26 +1,16 @@
-# RealBio leaderboard
+# RealBio: condition comparisons
 
-Five agentic-execution tasks, in pipeline order — **Route** (pick the pipeline, n=200), **Configure**
-(parameter pre-fill, F1, n=170), **Select method** (Bioconductor method top-1, n=40), **Self-fix**
-(failure-category accuracy, n=100), **Generate workflow** (category/key-tool, n=40). Same fixed
-items, one open deterministic scorer (`src/score.py`), no AI judge. `—` = no committed result on
-that task yet.
+This file supersedes the historical product-ranking board. Values summarize fixed endpoint panels; item counts and model counts differ across rows. No overall rank or composite score is calculated. Values are displayed at manuscript precision. Full-precision per-file outputs and reference sets are in `reproduction/`.
 
-| System | Routing | Param (F1) | Method (top-1) | Self-fix | Workflow-gen |
-|---|---|---|---|---|---|
-| **BioMate** | 0.965 | 0.848 | — | — | — |
-| Biomni (A1) | 0.95 | 0.708 | — | 0.95 | 0.5 |
-| Claude Opus 5 | 0.615 | 0.757 | 1.0 | 0.87 | 0.5 |
-| Gemini 3.1 Pro | 0.58 | 0.693 | 0.975 | 0.88 | 0.5 |
-| GPT-5.6 | 0.53 | 0.671 | 1.0 | 0.86 | 0.5 |
-| Kimi K3 | 0.45 | 0.628 | 0.975 | 0.77 | 0.45 |
-| DeepSeek V4 | 0.415 | 0.621 | 0.825 | 0.8 | 0.5 |
-| GLM-5.2 | 0.4 | 0.641 | — | 0.83 | 0.5 |
-| GPT-5.6-luna | 0.355 | 0.624 | — | 0.83 | 0.5 |
-| Qwen3.8-Max | 0.345 | 0.692 | — | 0.86 | 0.5 |
+## Main paired comparisons
 
-**Notes.** BioMate's committed results cover routing + parameter pre-fill (it tops both); its
-numbers on the three newly-added tasks are pending (not yet run on the same items). `bioc`
-(method-selection) results are the `bare` condition and currently cover five systems; the rest are
-`—`. `workflow_gen` saturates near 0.50 for most systems (weak discrimination) and is reported for
-breadth. Every non-`—` cell re-scores from the committed prediction files under `results/`.
+| Endpoint | Models | Bare | Guided | Difference [95% interval] |
+|---|---:|---:|---:|---|
+| Routing accuracy | 14 | 0.382 | 0.913 | +0.530 [0.484, 0.578] |
+| Parameter F1 | 4 | 0.079 | 0.701 | +0.622 [0.580, 0.660] |
+| Parameter joint success | 4 | 0.179 | 0.371 | +0.191 [0.122, 0.260] |
+| Method-selection accuracy | 8 | 0.925 | 0.988 | +0.0625 [0.022, 0.116] |
+
+Joint parameter success requires every required value to match and no listed forbidden key to be emitted. It is not exact-object correctness: other extra keys can escape that joint criterion. Mean exact-object success under the historical value-equivalence rule is 0.078 bare and 0.371 guided. Of the 170 items, 26 require no keys; historical empty-object coercion can earn vacuous success on that subset. These scoring effects are disclosed and stratified in the supplementary analysis.
+
+Context increases parameter completeness but also increases forbidden fills. For method selection, six of eight per-model intervals include zero; the positive aggregate difference is not a universal improvement for every endpoint.

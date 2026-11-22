@@ -1,0 +1,201 @@
+#!/usr/bin/env python3
+"""RealPharma bare-vs-harness runner (drug-development tasks).
+
+Mirrors RealBio's run_baseline.py bare/catalog pattern for the drug-dev benchmarks so the
+RealPharma manuscript can report a per-LLM harness lift (Delta) with a DETERMINISTIC scorer
+(no LLM judge). ONE fixed harness definition per task, identical across every model and item.
+
+Conditions
+  bare    = raw LLM: the task question only, answer from the model's own knowledge. No method/KB.
+  harness = raw LLM + the SAME standardized method/KB card prepended in-context (retrieval/KB tooling).
+            The card is a FIXED general method (the production rule/method knowledge), never a per-item
+            answer -- the exact analog of RealBio routing's `_bare` vs `_catalog` (candidate list) split.
+
+Tasks (clean item file + deterministic scorer in ../../datasets/public_export/score.py):
+  protocol_thresholds  canonical 100-item set; scorer: exact match on expected_correct_action (PASS/FAIL/WARN)
+  boin_benchmark       v2 modeled-reference set (20); scorer: exact match true_MTD_mg
+  pbpk_benchmark       v2 modeled-reference set (15); scorer: within-2-fold of reference Cmax
+  (boin/pbpk use the v2 MODELED items because the generating method provably maps to the given
+   inputs; the hand-authored canonical sets have documented input/gold mismatches that make a
+   fixed method-harness ill-posed -- see results.md.)
+
+Usage:
+  python3 run_harness.py <task> --condition bare|harness --model <openrouter_id> [--limit N]
+Writes: <model_sanitized>/<task>_<condition>.jsonl  + .usage.json  (same dir as this script)
+"""
+import json, os, sys, argparse, re, time, urllib.request, urllib.error
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PUB = os.path.normpath(os.path.join(HERE, "..", "..", "datasets", "public_export"))
+
+def _read_key():
+    raise RuntimeError("Historical credential acquisition omitted from archival copy; offline reproduction never calls providers.")
+
+# ---- FIXED harness KB cards (method knowledge, NOT per-item answers) -------------------------
+KB = {
+"pbpk_benchmark":
+"""HARNESS KB -- standardized one-compartment oral exposure method.
+Peak plasma concentration for an orally dosed compound:
+    Cmax (uM) = F * (dose_mg / MW / Vd_L) * 1000
+  where  dose_mg / MW = dose in mmol (MW in g/mol);  / Vd_L = concentration in mM;
+         * 1000 converts mM -> uM;  F = oral bioavailability (fraction, 0-1).
+Use F, MW, Vd_L and dose_mg from the provided inputs. Perform the unit conversions exactly.""",
+
+"boin_benchmark":
+"""HARNESS KB -- standardized exposure-response (Emax) dose-selection method for a BOIN trial.
+For each dose level d (mg) in the dose grid:
+  1. Steady exposure:  C_nM = F * (d / MW / Vd_L) * 1e6
+     (d/MW = mmol; / Vd_L = mM; * 1e6 = nM).
+  2. Predicted DLT probability (Emax model):  DLT(d) = ER_E0 + ER_Emax * C_nM / (ER_EC50_nM + C_nM).
+  3. Admissible doses = those with DLT(d) <= DLT_rate_target + 0.10.
+     If even the lowest dose exceeds target + 0.10 -> no safe dose (no MTD).
+     Otherwise the MTD = the admissible dose whose DLT(d) is CLOSEST to the target
+     (on a tie, choose the HIGHER dose).
+Use ER_E0, ER_Emax, ER_EC50_nM, F, MW, Vd_L and the dose grid from the inputs.""",
+
+"protocol_thresholds":
+"""HARNESS KB -- protocol-aware QC interpretation (BioMate rule knowledge).
+Universal/default QC thresholds (UMIs or genes per cell, duplication rate, %mito, insert size,
+mapping rate, coverage uniformity) are calibrated for STANDARD bulk / standard-input protocols.
+Many specialized protocols legitimately violate them BY DESIGN:
+  - Low-input / single-cell / 10x Flex / Smart-seq: low UMIs or genes per cell are EXPECTED.
+  - Degraded / FFPE / ancient / cfDNA: short insert sizes and lower mapping rate are EXPECTED.
+  - Amplicon / 16S / targeted panels: extreme duplication and uneven coverage are EXPECTED.
+  - Single-nucleus / snRNA: higher intronic fraction (and sometimes %mito) can be EXPECTED.
+  - PCR-free vs PCR-amplified libraries differ in expected duplication.
+Decision rule: judge BIOLOGICAL VALIDITY by whether the flagged metric is EXPECTED for THIS protocol.
+If the deviation is an expected consequence of the protocol design (not a true quality failure),
+the sample is VALID -> PASS. Use WARN when the metric is borderline/advisory. FAIL only when the
+deviation indicates a genuine library/sample failure beyond protocol expectation.""",
+}
+
+def _num(t):
+    m = re.search(r"[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?", t or "")
+    return m.group() if m else ""
+
+def _passfail(t):
+    # take the LAST explicit decision token (models often restate then conclude)
+    toks = re.findall(r"\b(PASS|FAIL|WARN)\b", (t or "").upper())
+    return toks[-1] if toks else ""
+
+TASKS = {
+ "protocol_thresholds": dict(
+   data=os.path.join(PUB, "protocol_thresholds", "data.jsonl"),
+   inp=lambda r: f"Protocol: {r['protocol']}\nQC situation: {r['universal_threshold_problem']}",
+   instr=("Given the sequencing protocol and the QC situation, decide the correct action for the sample: "
+          "PASS, FAIL, or WARN. Respond with ONLY one word: PASS, FAIL, or WARN."),
+   parse=_passfail),
+ "boin_benchmark": dict(
+   data=os.path.join(PUB, "boin_benchmark", "data_v2_generated.jsonl"),
+   inp=lambda r: f"Scenario: {r.get('scenario')}. BOIN phase-I dose-finding inputs: {json.dumps(r.get('inputs'))}",
+   instr=("You are running a BOIN phase-I dose-finding trial. Determine the recommended maximum tolerated "
+          "dose (MTD). Respond with a SINGLE number: the MTD dose in mg -- it must be exactly one of the "
+          "listed dose levels. Number only, no units."),
+   parse=_num),
+ "pbpk_benchmark": dict(
+   data=os.path.join(PUB, "pbpk_benchmark", "data_v2_generated.jsonl"),
+   inp=lambda r: (f"Compound {r.get('name')} (SMILES {r.get('smiles') or 'n/a'}), dose {r.get('dose_mg')} mg "
+                  f"{r.get('route')}. PK inputs: {json.dumps(r.get('inputs'))}. "
+                  f"Predict {r.get('target_endpoint','Cmax_uM')} (peak plasma concentration) in {r.get('target_units','uM')}."),
+   instr=("Predict the peak plasma concentration Cmax in uM for the compound and dose given, using the "
+          "provided PK inputs. Respond with a single number only (no units)."),
+   parse=_num),
+}
+
+def build_prompt(task, cond, r):
+    s = TASKS[task]
+    body = f"{s['instr']}\n\nINPUT:\n{s['inp'](r)}"
+    if cond == "harness":
+        return f"{KB[task]}\n\n{body}"
+    return body
+
+def call_openrouter(key, model, prompt, max_tokens):
+    req = urllib.request.Request(
+        "https://openrouter.ai/api/v1/chat/completions",
+        data=json.dumps({
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+            "temperature": 0,
+        }).encode(),
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+        method="POST")
+    with urllib.request.urlopen(req, timeout=180) as resp:
+        return json.loads(resp.read().decode())
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("task", choices=list(TASKS))
+    ap.add_argument("--condition", required=True, choices=["bare", "harness"])
+    ap.add_argument("--model", required=True)
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--max-tokens", type=int, default=2500)
+    ap.add_argument("--price-in", type=float, default=None)   # USD / 1M input tok
+    ap.add_argument("--price-out", type=float, default=None)  # USD / 1M output tok
+    args = ap.parse_args()
+
+    key = _read_key()
+    spec = TASKS[args.task]
+    rows = [json.loads(l) for l in open(spec["data"])]
+    if args.limit: rows = rows[:args.limit]
+
+    outdir = os.path.join(HERE, args.model.replace("/", "_"))
+    os.makedirs(outdir, exist_ok=True)
+    outpath = os.path.join(outdir, f"{args.task}_{args.condition}.jsonl")
+
+    tot_in = tot_out = n = n_usage = n_empty = 0
+    tot_usd = 0.0
+    lat = []
+    with open(outpath, "w") as f:
+        for r in rows:
+            prompt = build_prompt(args.task, args.condition, r)
+            pred, in_tok, out_tok, dt, fr, usd = "", None, None, None, None, None
+            for attempt in range(4):
+                try:
+                    t0 = time.time()
+                    resp = call_openrouter(key, args.model, prompt, args.max_tokens)
+                    dt = int((time.time() - t0) * 1000)
+                    ch = (resp.get("choices") or [{}])[0]
+                    txt = (ch.get("message") or {}).get("content") or ""
+                    fr = ch.get("finish_reason")
+                    pred = spec["parse"](txt)
+                    u = resp.get("usage") or {}
+                    in_tok = u.get("prompt_tokens"); out_tok = u.get("completion_tokens")
+                    usd = u.get("cost")  # OpenRouter returns exact $ per call
+                    break
+                except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+                    msg = getattr(e, "read", lambda: b"")()
+                    if attempt == 3:
+                        sys.stderr.write(f"[{r['id']}] ERR {e} {msg[:200] if msg else ''}\n")
+                    else:
+                        time.sleep(3 * (attempt + 1))
+                except Exception as e:
+                    if attempt == 3: sys.stderr.write(f"[{r['id']}] ERR {e}\n")
+                    else: time.sleep(3 * (attempt + 1))
+            rec = {"id": r["id"], "prediction": pred}
+            if fr is not None: rec["finish_reason"] = fr
+            if in_tok is not None:
+                rec["prompt_tokens"] = in_tok; rec["completion_tokens"] = out_tok
+                tot_in += in_tok or 0; tot_out += out_tok or 0; n_usage += 1
+            if usd is not None:
+                rec["usd"] = usd; tot_usd += usd
+            if dt is not None: rec["latency_ms"] = dt; lat.append(dt)
+            if pred in ("", None): n_empty += 1
+            f.write(json.dumps(rec) + "\n"); n += 1
+            if n % 25 == 0: sys.stderr.write(f"  {n}/{len(rows)}\n")
+    summary = {
+        "task": args.task, "condition": args.condition, "model": args.model,
+        "n": n, "n_with_usage": n_usage, "n_empty_pred": n_empty,
+        "input_tokens_total": tot_in or None, "output_tokens_total": tot_out or None,
+        "latency_ms_mean": round(sum(lat)/len(lat)) if lat else None,
+        "usd_total": round(tot_usd, 6) if tot_usd else None,
+    }
+    if args.price_in is not None and args.price_out is not None and n_usage and not tot_usd:
+        summary["usd_total"] = round(tot_in/1e6*args.price_in + tot_out/1e6*args.price_out, 6)
+    with open(os.path.join(outdir, f"{args.task}_{args.condition}.usage.json"), "w") as f:
+        json.dump(summary, f, indent=2)
+    print(f"wrote {n} -> {outpath}  (in={tot_in} out={tot_out} tok; empty={n_empty}; "
+          f"${summary.get('usd_total','?')})")
+
+if __name__ == "__main__":
+    main()

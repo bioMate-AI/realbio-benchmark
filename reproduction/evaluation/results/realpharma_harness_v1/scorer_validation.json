@@ -1,0 +1,24 @@
+{
+  "validation": "deterministic scorer + harness-KB faithfulness, no LLM",
+  "pbpk_benchmark": {
+    "items": 15,
+    "KB_method_oracle_within_2fold": 1.0,
+    "x5_error_floor": 0.0
+  },
+  "boin_benchmark": {
+    "items": 20,
+    "KB_method_oracle_MTD_acc": 1.0,
+    "lowest_dose_floor": 0.25
+  },
+  "protocol_thresholds": {
+    "items": 100,
+    "gold_base_rate": {
+      "PASS": 0.7,
+      "WARN": 0.25,
+      "FAIL": 0.05
+    },
+    "always_PASS_floor": 0.7,
+    "always_FAIL_naive": 0.05,
+    "note": "judgment task; no closed-form oracle; scorer = exact-match accuracy (same acc() path used by routing)"
+  }
+}
