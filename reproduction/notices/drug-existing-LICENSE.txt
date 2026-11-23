@@ -1,0 +1,11 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+You are free to share and adapt this material for any purpose, provided you give
+appropriate credit. Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Benchmark items, scorers, adapters, and documentation authored by the DrugDev-Bench
+authors (BioMate AI · BizBildr) from public sources. Experimental relative binding
+free-energy data are attributed to the Merck/Schindler FEP benchmark collection
+(Schindler et al., J. Chem. Inf. Model. 2020; https://github.com/MCompChem/fep-benchmark)
+and retain their original license and attribution. Other components retain their own
+reference and licensing records as noted in each component README and DATASHEET.md.

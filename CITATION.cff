@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite release v2026.11.22 or the exact repository commit used, and the revised preprint in paper/."
+version: "v2026.11.22"
+title: "RealBio: Evaluating language-model decisions in bioinformatics"
+type: dataset
+authors:
+  - family-names: Zhang
+    given-names: Yaoyun
+  - family-names: Dike
+    given-names: Andrew
+date-released: 2026-11-22
+repository-code: "https://github.com/bioMate-AI/realbio-benchmark"
+url: "https://huggingface.co/datasets/YaoyunHug/realbio_benchmark"
+license: CC-BY-4.0

@@ -1,0 +1,1337 @@
+{
+  "status": "pass",
+  "new_inference_calls": 0,
+  "paired_non_QC_prediction_cells": 70,
+  "coverage": [
+    {
+      "task": "routing",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5.5",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 14,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5.5",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 18,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-6.1-sol-pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-6.1-sol-pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Gemini 3.1 Pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Gemini 3.1 Pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Kimi K3",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Kimi K3",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "DeepSeek V4-pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "DeepSeek V4-pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.2",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.2",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.3-prime",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.3-prime",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-5.6-luna",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-5.6-luna",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-72B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-72B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-27B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-27B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.8-27B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.8-27B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-7B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-7B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-9B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_bare.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-9B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_catalog_described.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 11,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 21,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-27B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 17,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-27B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 18,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.8-27B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 25,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.8-27B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 27,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-9B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 31,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-9B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 30,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GPT-5.6",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GPT-5.6",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Gemini 3.1 Pro",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Gemini 3.1 Pro",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Kimi K3",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Kimi K3",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Qwen3.8 (2.4T)",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 3,
+      "file": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Qwen3.8 (2.4T)",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GLM-5.3",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 3,
+      "file": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GLM-5.3",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4-pro",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 5,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4-pro",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 2,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_kb.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4.1-flash",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 8,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_bare.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4.1-flash",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 1,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_kb.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_bare.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_harness.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_bare.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_harness.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_bare.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_harness.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_bare.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_harness.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_bare.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_harness.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_bare.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_harness.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_bare.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_harness.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_bare.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_harness.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 5,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_bare.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_harness.jsonl"
+    }
+  ],
+  "routing_candidate_vocabulary_count": 63,
+  "parameter_expected_key_distribution": {
+    "1": 71,
+    "0": 26,
+    "2": 25,
+    "3": 21,
+    "4": 20,
+    "6": 2,
+    "7": 2,
+    "5": 3
+  },
+  "parameter_scoring": {
+    "Claude Opus 5": {
+      "bare": {
+        "f1": 0.14084507042253522,
+        "joint": 0.21764705882352942,
+        "exact_object": 0.08235294117647059,
+        "forbidden_keys": 7,
+        "forbidden_items": 6,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.8846153846153846,
+            "exact_object": 0.38461538461538464
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.18309859154929578,
+            "exact_object": 0.04225352112676056
+          },
+          "2": {
+            "n": 25,
+            "joint": 0.04,
+            "exact_object": 0.04
+          },
+          "3": {
+            "n": 21,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "4": {
+            "n": 20,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "5": {
+            "n": 3,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "6": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.13275299238302501,
+        "empty_guard_f1": 0.14084507042253522
+      },
+      "harness": {
+        "f1": 0.804920913884007,
+        "joint": 0.5352941176470588,
+        "exact_object": 0.5352941176470588,
+        "forbidden_keys": 35,
+        "forbidden_items": 31,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.5384615384615384,
+            "exact_object": 0.5384615384615384
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.6619718309859155,
+            "exact_object": 0.6619718309859155
+          },
+          "2": {
+            "n": 25,
+            "joint": 0.48,
+            "exact_object": 0.48
+          },
+          "3": {
+            "n": 21,
+            "joint": 0.38095238095238093,
+            "exact_object": 0.38095238095238093
+          },
+          "4": {
+            "n": 20,
+            "joint": 0.25,
+            "exact_object": 0.25
+          },
+          "5": {
+            "n": 3,
+            "joint": 0.6666666666666666,
+            "exact_object": 0.6666666666666666
+          },
+          "6": {
+            "n": 2,
+            "joint": 1,
+            "exact_object": 1
+          },
+          "7": {
+            "n": 2,
+            "joint": 0.5,
+            "exact_object": 0.5
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.7568555758683729,
+        "empty_guard_f1": 0.804920913884007
+      }
+    },
+    "Qwen3.5-27B": {
+      "bare": {
+        "f1": 0.06370875995449374,
+        "joint": 0.17058823529411765,
+        "exact_object": 0.06470588235294118,
+        "forbidden_keys": 4,
+        "forbidden_items": 4,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.9615384615384616,
+            "exact_object": 0.4230769230769231
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.056338028169014086,
+            "exact_object": 0
+          },
+          "2": {
+            "n": 25,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "3": {
+            "n": 21,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "4": {
+            "n": 20,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "5": {
+            "n": 3,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "6": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.059293044469783354,
+        "empty_guard_f1": 0.06370875995449374
+      },
+      "harness": {
+        "f1": 0.7190226876090751,
+        "joint": 0.35294117647058826,
+        "exact_object": 0.35294117647058826,
+        "forbidden_keys": 62,
+        "forbidden_items": 58,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.46153846153846156,
+            "exact_object": 0.46153846153846156
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.38028169014084506,
+            "exact_object": 0.38028169014084506
+          },
+          "2": {
+            "n": 25,
+            "joint": 0.32,
+            "exact_object": 0.32
+          },
+          "3": {
+            "n": 21,
+            "joint": 0.2857142857142857,
+            "exact_object": 0.2857142857142857
+          },
+          "4": {
+            "n": 20,
+            "joint": 0.2,
+            "exact_object": 0.2
+          },
+          "5": {
+            "n": 3,
+            "joint": 0.6666666666666666,
+            "exact_object": 0.6666666666666666
+          },
+          "6": {
+            "n": 2,
+            "joint": 0.5,
+            "exact_object": 0.5
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.6750902527075813,
+        "empty_guard_f1": 0.7190226876090751
+      }
+    },
+    "Qwen3.8-27B": {
+      "bare": {
+        "f1": 0.06295399515738499,
+        "joint": 0.1588235294117647,
+        "exact_object": 0.08235294117647059,
+        "forbidden_keys": 4,
+        "forbidden_items": 4,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.8846153846153846,
+            "exact_object": 0.5
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.056338028169014086,
+            "exact_object": 0.014084507042253521
+          },
+          "2": {
+            "n": 25,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "3": {
+            "n": 21,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "4": {
+            "n": 20,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "5": {
+            "n": 3,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "6": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.05825242718446602,
+        "empty_guard_f1": 0.06295399515738499
+      },
+      "harness": {
+        "f1": 0.6815642458100558,
+        "joint": 0.3352941176470588,
+        "exact_object": 0.3352941176470588,
+        "forbidden_keys": 49,
+        "forbidden_items": 45,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.5769230769230769,
+            "exact_object": 0.5769230769230769
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.29577464788732394,
+            "exact_object": 0.29577464788732394
+          },
+          "2": {
+            "n": 25,
+            "joint": 0.24,
+            "exact_object": 0.24
+          },
+          "3": {
+            "n": 21,
+            "joint": 0.3333333333333333,
+            "exact_object": 0.3333333333333333
+          },
+          "4": {
+            "n": 20,
+            "joint": 0.3,
+            "exact_object": 0.3
+          },
+          "5": {
+            "n": 3,
+            "joint": 0.3333333333333333,
+            "exact_object": 0.3333333333333333
+          },
+          "6": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "7": {
+            "n": 2,
+            "joint": 0.5,
+            "exact_object": 0.5
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.625242718446602,
+        "empty_guard_f1": 0.6815642458100558
+      }
+    },
+    "Qwen3.5-9B": {
+      "bare": {
+        "f1": 0.04806408544726302,
+        "joint": 0.17058823529411765,
+        "exact_object": 0.08235294117647059,
+        "forbidden_keys": 2,
+        "forbidden_items": 2,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.9615384615384616,
+            "exact_object": 0.5
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.056338028169014086,
+            "exact_object": 0.014084507042253521
+          },
+          "2": {
+            "n": 25,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "3": {
+            "n": 21,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "4": {
+            "n": 20,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "5": {
+            "n": 3,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "6": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.0428380187416332,
+        "empty_guard_f1": 0.04806408544726302
+      },
+      "harness": {
+        "f1": 0.6,
+        "joint": 0.25882352941176473,
+        "exact_object": 0.25882352941176473,
+        "forbidden_keys": 60,
+        "forbidden_items": 55,
+        "joint_by_expected_key_count": {
+          "0": {
+            "n": 26,
+            "joint": 0.34615384615384615,
+            "exact_object": 0.34615384615384615
+          },
+          "1": {
+            "n": 71,
+            "joint": 0.30985915492957744,
+            "exact_object": 0.30985915492957744
+          },
+          "2": {
+            "n": 25,
+            "joint": 0.24,
+            "exact_object": 0.24
+          },
+          "3": {
+            "n": 21,
+            "joint": 0.047619047619047616,
+            "exact_object": 0.047619047619047616
+          },
+          "4": {
+            "n": 20,
+            "joint": 0.2,
+            "exact_object": 0.2
+          },
+          "5": {
+            "n": 3,
+            "joint": 0.3333333333333333,
+            "exact_object": 0.3333333333333333
+          },
+          "6": {
+            "n": 2,
+            "joint": 0.5,
+            "exact_object": 0.5
+          },
+          "7": {
+            "n": 2,
+            "joint": 0,
+            "exact_object": 0
+          }
+        },
+        "empty_string_false_matches": [],
+        "strict_f1": 0.556420233463035,
+        "empty_guard_f1": 0.6
+      }
+    }
+  },
+  "joint_bootstrap": {
+    "seed": 20261122,
+    "iterations": 5000,
+    "method": "Paired item percentile bootstrap; same item sample shared by all models; new explicitly versioned audit, not the original F1 bootstrap.",
+    "Claude Opus 5": {
+      "bare": 0.21764705882352942,
+      "harness": 0.5352941176470588,
+      "delta": 0.3176470588235294,
+      "delta_ci95": [
+        0.22941176470588234,
+        0.40588235294117647
+      ]
+    },
+    "Qwen3.5-27B": {
+      "bare": 0.17058823529411765,
+      "harness": 0.35294117647058826,
+      "delta": 0.1823529411764706,
+      "delta_ci95": [
+        0.09411764705882353,
+        0.27058823529411763
+      ]
+    },
+    "Qwen3.8-27B": {
+      "bare": 0.1588235294117647,
+      "harness": 0.3352941176470588,
+      "delta": 0.1764705882352941,
+      "delta_ci95": [
+        0.1,
+        0.2529411764705882
+      ]
+    },
+    "Qwen3.5-9B": {
+      "bare": 0.17058823529411765,
+      "harness": 0.25882352941176473,
+      "delta": 0.08823529411764708,
+      "delta_ci95": [
+        0.01161764705882358,
+        0.17058823529411765
+      ]
+    },
+    "mean": {
+      "bare": 0.17941176470588235,
+      "harness": 0.37058823529411766,
+      "delta": 0.19117647058823528,
+      "delta_ci95": [
+        0.12205882352941178,
+        0.26029411764705884
+      ]
+    }
+  },
+  "drug_full_coverage_scores": {
+    "pbpk_benchmark": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "scored": 15,
+          "within_2fold": 0.7333,
+          "ci95": [
+            0.4805,
+            0.891
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        },
+        "card": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        }
+      },
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        },
+        "card": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        },
+        "card": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        }
+      },
+      "z-ai_glm-5.3-prime": {
+        "bare": {
+          "scored": 15,
+          "within_2fold": 0.7333,
+          "ci95": [
+            0.4805,
+            0.891
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        },
+        "card": {
+          "scored": 15,
+          "within_2fold": 1.0,
+          "ci95": [
+            0.7961,
+            1
+          ],
+          "note": "fraction of PK predictions within 2-fold of published reference; missing/unparseable predictions count as failures (denominator = all scoreable items)"
+        }
+      }
+    },
+    "boin_benchmark": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        },
+        "card": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        }
+      },
+      "deepseek_deepseek-v4-pro": {
+        "bare": {
+          "scored": 20,
+          "correct": 19,
+          "accuracy": 0.95,
+          "ci95": [
+            0.7639,
+            0.9911
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        },
+        "card": {
+          "scored": 20,
+          "correct": 19,
+          "accuracy": 0.95,
+          "ci95": [
+            0.7639,
+            0.9911
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        }
+      },
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        },
+        "card": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        },
+        "card": {
+          "scored": 20,
+          "correct": 20,
+          "accuracy": 1.0,
+          "ci95": [
+            0.8389,
+            1
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        }
+      },
+      "z-ai_glm-5.3-prime": {
+        "bare": {
+          "scored": 20,
+          "correct": 15,
+          "accuracy": 0.75,
+          "ci95": [
+            0.5313,
+            0.8881
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        },
+        "card": {
+          "scored": 20,
+          "correct": 19,
+          "accuracy": 0.95,
+          "ci95": [
+            0.7639,
+            0.9911
+          ],
+          "skipped_no_gt": 0,
+          "note": "exact match on true_MTD_mg; items with null true_MTD_mg excluded (unscorable)"
+        }
+      }
+    }
+  },
+  "sha256": {
+    "evaluation/datasets/public_export/cross_domain_routing/data.jsonl": "1ab56769121384aae0f390647ee6243650687acd184074555938c960c3f9eaf0",
+    "evaluation/datasets/public_export/param_prefill/data.jsonl": "c093da8b5711d8a6b6082c493d0d864186131a7209801a2b80694e036b88fd2b",
+    "evaluation/datasets/bioc_method_selection/data.jsonl": "29dd61a0cc8755b78e346adbe7fe3bba0aa650e6d1ec466aa91b4e2e1208af82",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_bare.jsonl": "14a36b6dcacd32214e581a08bcbc1038f304f48441328d3bc955d28502480787",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog_described.jsonl": "c3334a8bfdece3d9e33d496237c0d0f44097295cc63fd0f5c166d59c054e7489",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_bare.jsonl": "5e4b11f86f4041b49b007734f7c898dbfdc40e5e44c9c9d55191e86a628ffaff",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog_described.jsonl": "5e31f41b117b6e3d205be44879c0adae5545f6f14bce1da77d383ab1a31e0f39",
+    "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_bare.jsonl": "0f53687c0011f4737e95f74b68dfb74f03c1a881cedc6ec4d67073319ad14c9c",
+    "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog_described.jsonl": "c04c2e1e3a6c8b5e59d0555bf2eadaf41cfd9b88accb38bb6ec023d817f3620d",
+    "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_bare.jsonl": "32cdda62b331e828dea60a2828b2d09a59ddcc4c2499f9352fb691ac600aa966",
+    "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog_described.jsonl": "08ffa0c672b01b3bef76b8cc72e9f0d07eb2d7e66882738704b86bef9ceb74e1",
+    "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_bare.jsonl": "ae62144cb879b59f7b8bed7b445b27960037075472cf4a8a13778dffc06c716c",
+    "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog_described.jsonl": "b231c1658844d6212dcc2a29f9bdc51e4ca28441a981f5009a9c26ffe672d544",
+    "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_bare.jsonl": "2c16193ebebe23792ae7762da88d3e5bca44bea778df633c6e9ebbb225f4cb3f",
+    "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog_described.jsonl": "552c3950d03a7277b36833794c062cb4dadad55513e202c8f13d9065160a6c08",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_bare.jsonl": "03cb739f9609e4d9d9142249081c9bca8dab6c300c6778cea935fed97c6c3775",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog_described.jsonl": "dc07ac4c9983bd68769e2d088b61a936783b5c49291d9984968a37d43534ab46",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_bare.jsonl": "7cc5d93266dcc28d590b19fa20bc1f10734a87ff09323366a3d8d23249df9a17",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog_described.jsonl": "bcc13e75d42f016ca45132b30fda3e4078e028187dedb46a4536adc6e6e4461e",
+    "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_bare.jsonl": "7810bf93d4dbb541f61eaf2d6d947f83cc26ca2655343e30c02c3eeb303d4bf4",
+    "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog_described.jsonl": "ffb272dabcf4840f2c78e201f974554cfa47f5ae1722533e73fc6cf9caf2238c",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_bare.jsonl": "3240e7bdb695430411f712b8f89bd3e7b99cbc7ec29e3d21dd2f7b3656139197",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_catalog_described.jsonl": "6c1144e829f02fa298a71b51112e33ebcb2c283d0304cbdfd4faf740f5223bb9",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_bare.jsonl": "87385fd56e5870547d7adf9d0aae3a01fd0b0db31241743aeaf6b7cf2cc7ba96",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_catalog_described.jsonl": "8c493a889b99295b9b54248f53a31ce1a64a5e4dbb58369257955ed46aff1535",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_bare.jsonl": "50ddf2c885690d83817b3ccd6c138f4b67f581c3eef1472ba0c1275dcc66f38f",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog_described.jsonl": "58c061fc651b7be1e731ccdd118eed3c6e65de63cb3e57f0bc28e920cff5914e",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_bare.jsonl": "7f4d50b1b04fcf6b3eb147983e1f82f1951cefc8ddca023ae57100fc1f3013e5",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_catalog_described.jsonl": "a49f6c75ed9faed9a1a514ad94f25cc7f83250a584cb7ef02c113a599b4e2f11",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_bare.jsonl": "62fe5ee376da419d88e6ebfb9f5d654e0443999b3196a9042415f879f94727c2",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_catalog_described.jsonl": "3cc7c53a9fb46d2b1a4fbddc9c6e93da8837be55fb7abca76468320901851370",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl": "191938559f23248e6e8f1e01b6a213e91a4e70df9e545ca4cd3ff429495d1fb9",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl": "6ea383ca46617d3be8da453c0e380c2301af93eb0a42f756e4e39bee6bc4c097",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl": "d38e97540a21931813f1493bf45ec034610b6a96fa068b19395d0386dd900e09",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl": "e9e98bdacc4828301293bb7441341dbd9cfd9f1adda213caac0ef522e95f4a30",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl": "7488d1b584e407379da0b742aa8601f9d954b25da39ff8190845283df508bcdb",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl": "b2ffd852f3c64a66e19fe07da49bf16dfa3b98cfb1e1005d9c6326a70c573696",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl": "8ebeb324b64c40812c078dfb98f4bbe5cce787174c99798f284030eae443e7df",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl": "e0875fa5fd6e2ed7e4a46478bd89d8d3f4bf2c37642d19541a09d3de7140a96b",
+    "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_bare.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_kb.jsonl": "6eafba192fa7d238196c70d54cc0b1eaabd59f5978308b7a4d40c8f7f865f02d",
+    "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_bare.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_bare.jsonl": "f5d82a222f65eed3e8261c45d3411a7adfb8cfd7ff5e58bea63f38ab8a09646c",
+    "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_bare.jsonl": "f5d82a222f65eed3e8261c45d3411a7adfb8cfd7ff5e58bea63f38ab8a09646c",
+    "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_bare.jsonl": "a51241ca65544de3cfe5bb326ddef600ffe7b466dd1c761231606a6ed6dfd4e7",
+    "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_bare.jsonl": "bb68de47b686e0bc21c1b12aed40b418be986b771a1d5fff42cd6d89cd30c283",
+    "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_bare.jsonl": "5b47c97490e3325ec5341a59571cd820b0450992d6c4da7a7319286aad80e5fa",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_kb.jsonl": "f5c17e48579ac806b959e68c48004e505b22218ff1e1ff2219fb3995af21a9f4",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_bare.jsonl": "a2053f48257a96dc77f3cd146e4a2107ad4e4ffab9d4503c4da26e9ca73b8cca",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_kb.jsonl": "7ae443537b94868ee1f963370aeb40deb724e36d5e93582b723ea2f6e09f5b45",
+    "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl": "1422bc945d5fc909930afef852a0f662b9cbb20a671b418ba20a67efd7cc5fcf",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_bare.jsonl": "c5f31a80f585adbac808a8a330ca3470b1229523854032cb1078448827989cb9",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_harness.jsonl": "1d180b4a1fe47db628893c6a89e6ccad6faffd8e5cb45cc608a9c5e0b6f5e497",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_bare.jsonl": "f75ac496e297c93bf0d13e2215f834f4667e941b3560fe4283b39a567769d35b",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_harness.jsonl": "3865d59064a889e4561ea1fe38f1195b95afff8c40df75db000623456089364e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_bare.jsonl": "e8671dcb894e08b2c18060a1ea32ae0c71419c35768481642d7303aff4d92a7b",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_harness.jsonl": "a9eadf267637a30b28190867101f5b7a1b513201bcfd77a7cf1a2dea03009b6c",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_bare.jsonl": "1373b05e32aee7200125a85b8e1dcd801d94192a3b3faab0be2219db97951ffb",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_harness.jsonl": "cbbe8537d1aa864c4da9f26e6fc25b3e96c5b0f73ba37d2dc8c5aeca4e855135",
+    "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl": "798d5f422e1a068bbb81139fd2db9e36a2ea30b019006d15454763f6fb6474db",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_bare.jsonl": "e7b0958f1a124aa362ec14b1efc3cede7e3676d353f63c6b7419c6d60251d411",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_harness.jsonl": "e2587daef6da04c2f71798fa883f5248305a863342e3c9cdcca10b4f0952048e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_bare.jsonl": "d99145c6580c248f25cf43c33f7cb81f13b6bfb38234350309395ca9ce1e3596",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_harness.jsonl": "95ddd4bb1f4ec026a4d463dd8b7bb2e13f91bc3c71a6b9ae8c5dc07b12301554",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_bare.jsonl": "3733bdd30cf6db00694cf7959f5774ba40cc2bf921b3c61e6d801c75c44afbc5",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_harness.jsonl": "7d7e87357a08011c59f17d213c2f3186508e851c48336277f3677044a37cacdf",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_bare.jsonl": "4d7effced7d81be26779e2670e7c948a0f50324186b9c33565626df86c021ab6",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_harness.jsonl": "908b280df72989da04c3956eeb41e49fafc041229aabda5e8a859914d0051f79",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_bare.jsonl": "9873cb9db9f8beb32623c0834b2f2d1324f9eb6bcddf3188dda61d08734edc30",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_harness.jsonl": "2bd0aa9554bb17dcca39a94e97a4556bcfd3a762e110e1bc2523d8fe022d051c"
+  }
+}

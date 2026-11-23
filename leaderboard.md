@@ -1,16 +1,16 @@
-# RealBio leaderboard
+# RealBio: condition comparisons
 
+This file supersedes the historical product-ranking board. Values summarize fixed endpoint panels; item counts and model counts differ across rows. No overall rank or composite score is calculated. Values are displayed at manuscript precision. Full-precision per-file outputs and reference sets are in `reproduction/`.
 
+## Main paired comparisons
 
-| System | Routing | Param (F1) | Protocol | PBPK (2×) | BOIN |
-|---|---|---|---|---|---|
-| Claude Opus 5 | 0.615 | 0.757 | 0.33 | 0.133 | 0.444 |
-| Gemini 3.1 Pro | 0.58 | 0.693 | 0.63 | 0.0 | 0.278 |
-| GPT-5.6 | 0.53 | 0.671 | 0.46 | 0.2 | 0.5 |
-| Qwen3.8-Max | 0.345 | 0.692 | 0.46 | 0.0 | 0.111 |
-| GLM-5.2 | 0.4 | 0.641 | 0.44 | 0.0 | 0.111 |
-| GPT-5.6-luna | 0.355 | 0.624 | 0.34 | 0.2 | 0.389 |
-| Kimi K3 | 0.45 | 0.628 | 0.36 | 0.0 | 0.167 |
-| DeepSeek V4 | 0.415 | 0.621 | 0.42 | 0.067 | 0.167 |
-| **BioMate** | 0.965 | 0.848 | 0.925 | 1.0 | 0.80 |
-| Biomni (A1) | 0.95 | 0.708 | 0.5 | 0.0 | 0.5 |
+| Endpoint | Models | Bare | Guided | Difference [95% interval] |
+|---|---:|---:|---:|---|
+| Routing accuracy | 14 | 0.382 | 0.913 | +0.530 [0.484, 0.578] |
+| Parameter F1 | 4 | 0.079 | 0.701 | +0.622 [0.580, 0.660] |
+| Parameter joint success | 4 | 0.179 | 0.371 | +0.191 [0.122, 0.260] |
+| Method-selection accuracy | 8 | 0.925 | 0.988 | +0.0625 [0.022, 0.116] |
+
+Joint parameter success requires every required value to match and no listed forbidden key to be emitted. It is not exact-object correctness: other extra keys can escape that joint criterion. Mean exact-object success under the historical value-equivalence rule is 0.078 bare and 0.371 guided. Of the 170 items, 26 require no keys; historical empty-object coercion can earn vacuous success on that subset. These scoring effects are disclosed and stratified in the supplementary analysis.
+
+Context increases parameter completeness but also increases forbidden fills. For method selection, six of eight per-model intervals include zero; the positive aggregate difference is not a universal improvement for every endpoint.

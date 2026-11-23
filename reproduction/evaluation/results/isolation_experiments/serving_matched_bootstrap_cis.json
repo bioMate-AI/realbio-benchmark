@@ -1,0 +1,38 @@
+{
+  "protocol_thresholds": {
+    "n_items": 100,
+    "n_models": 5,
+    "bare": 0.564,
+    "card": 0.758,
+    "delta": 0.194,
+    "ci95": [
+      0.08,
+      0.304
+    ],
+    "frac_boot_delta_gt0": 0.9996
+  },
+  "pbpk_benchmark": {
+    "n_items": 15,
+    "n_models": 4,
+    "bare": 0.867,
+    "card": 1.0,
+    "delta": 0.133,
+    "ci95": [
+      0.067,
+      0.217
+    ],
+    "frac_boot_delta_gt0": 1.0
+  },
+  "boin_benchmark": {
+    "n_items": 20,
+    "n_models": 5,
+    "bare": 0.94,
+    "card": 0.98,
+    "delta": 0.04,
+    "ci95": [
+      -0.02,
+      0.1
+    ],
+    "frac_boot_delta_gt0": 0.8767
+  }
+}

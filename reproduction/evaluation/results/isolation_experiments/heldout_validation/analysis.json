@@ -1,0 +1,712 @@
+{
+  "dataset": {
+    "n": 60,
+    "distribution": {
+      "PASS": 30,
+      "WARN": 21,
+      "FAIL": 9
+    },
+    "always_PASS_baseline_overall_acc": 0.5,
+    "always_PASS_balanced_acc": 0.3333
+  },
+  "per_model": {
+    "anthropic/claude-opus-5.5": {
+      "bare": {
+        "scored": 60,
+        "correct": 50,
+        "overall_accuracy": 0.8333,
+        "ci95": [
+          0.7197,
+          0.9069
+        ],
+        "balanced_accuracy": 0.8603,
+        "recall": {
+          "PASS": 0.8667,
+          "WARN": 0.7143,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 26,
+            "WARN": 4
+          },
+          "WARN": {
+            "WARN": 15,
+            "FAIL": 6
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v1": {
+        "scored": 60,
+        "correct": 46,
+        "overall_accuracy": 0.7667,
+        "ci95": [
+          0.6456,
+          0.8556
+        ],
+        "balanced_accuracy": 0.7778,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.3333,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "PASS": 9,
+            "WARN": 7,
+            "FAIL": 5
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v2": {
+        "scored": 60,
+        "correct": 51,
+        "overall_accuracy": 0.85,
+        "ci95": [
+          0.7389,
+          0.919
+        ],
+        "balanced_accuracy": 0.8619,
+        "recall": {
+          "PASS": 0.9667,
+          "WARN": 0.619,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 29,
+            "WARN": 1
+          },
+          "WARN": {
+            "WARN": 13,
+            "FAIL": 5,
+            "PASS": 3
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      }
+    },
+    "openai/gpt-6.1-sol-pro": {
+      "bare": {
+        "scored": 60,
+        "correct": 26,
+        "overall_accuracy": 0.4333,
+        "ci95": [
+          0.3157,
+          0.559
+        ],
+        "balanced_accuracy": 0.5603,
+        "recall": {
+          "PASS": 0.3,
+          "WARN": 0.381,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "WARN": 18,
+            "PASS": 9,
+            "FAIL": 3
+          },
+          "WARN": {
+            "FAIL": 13,
+            "WARN": 8
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v1": {
+        "scored": 60,
+        "correct": 43,
+        "overall_accuracy": 0.7167,
+        "ci95": [
+          0.5923,
+          0.8149
+        ],
+        "balanced_accuracy": 0.7302,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.1905,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "FAIL": 11,
+            "PASS": 6,
+            "WARN": 4
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v2": {
+        "scored": 60,
+        "correct": 52,
+        "overall_accuracy": 0.8667,
+        "ci95": [
+          0.7583,
+          0.9309
+        ],
+        "balanced_accuracy": 0.873,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.619,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "WARN": 13,
+            "FAIL": 7,
+            "PASS": 1
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      }
+    },
+    "google/gemini-3.8-flash": {
+      "bare": {
+        "scored": 60,
+        "correct": 37,
+        "overall_accuracy": 0.6167,
+        "ci95": [
+          0.4902,
+          0.7291
+        ],
+        "balanced_accuracy": 0.6778,
+        "recall": {
+          "PASS": 0.7,
+          "WARN": 0.3333,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 21,
+            "WARN": 7,
+            "FAIL": 2
+          },
+          "WARN": {
+            "FAIL": 13,
+            "WARN": 7,
+            "PASS": 1
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v1": {
+        "scored": 60,
+        "correct": 48,
+        "overall_accuracy": 0.8,
+        "ci95": [
+          0.6822,
+          0.8817
+        ],
+        "balanced_accuracy": 0.8095,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.4286,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "WARN": 9,
+            "PASS": 7,
+            "FAIL": 5
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v2": {
+        "scored": 60,
+        "correct": 55,
+        "overall_accuracy": 0.9167,
+        "ci95": [
+          0.8193,
+          0.9639
+        ],
+        "balanced_accuracy": 0.9206,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.7619,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "WARN": 16,
+            "FAIL": 4,
+            "PASS": 1
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      }
+    },
+    "deepseek/deepseek-v4-pro": {
+      "bare": {
+        "scored": 60,
+        "correct": 28,
+        "overall_accuracy": 0.4667,
+        "ci95": [
+          0.3463,
+          0.5911
+        ],
+        "balanced_accuracy": 0.5825,
+        "recall": {
+          "PASS": 0.3667,
+          "WARN": 0.381,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "FAIL": 14,
+            "PASS": 11,
+            "WARN": 5
+          },
+          "WARN": {
+            "WARN": 8,
+            "PASS": 4,
+            "FAIL": 9
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v1": {
+        "scored": 60,
+        "correct": 38,
+        "overall_accuracy": 0.6333,
+        "ci95": [
+          0.5068,
+          0.7438
+        ],
+        "balanced_accuracy": 0.5661,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.1429,
+          "FAIL": 0.5556
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "WARN": 3,
+            "PASS": 17,
+            "FAIL": 1
+          },
+          "FAIL": {
+            "PASS": 4,
+            "FAIL": 5
+          }
+        }
+      },
+      "card_v2": {
+        "scored": 60,
+        "correct": 44,
+        "overall_accuracy": 0.7333,
+        "ci95": [
+          0.6099,
+          0.8287
+        ],
+        "balanced_accuracy": 0.746,
+        "recall": {
+          "PASS": 1.0,
+          "WARN": 0.2381,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 30
+          },
+          "WARN": {
+            "WARN": 5,
+            "PASS": 13,
+            "FAIL": 3
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      }
+    },
+    "z-ai/glm-5.3-prime": {
+      "bare": {
+        "scored": 60,
+        "correct": 30,
+        "overall_accuracy": 0.5,
+        "ci95": [
+          0.3773,
+          0.6227
+        ],
+        "balanced_accuracy": 0.6286,
+        "recall": {
+          "PASS": 0.2667,
+          "WARN": 0.619,
+          "FAIL": 1.0
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "WARN": 19,
+            "EMPTY": 1,
+            "PASS": 8,
+            "FAIL": 2
+          },
+          "WARN": {
+            "WARN": 13,
+            "FAIL": 7,
+            "PASS": 1
+          },
+          "FAIL": {
+            "FAIL": 9
+          }
+        }
+      },
+      "card_v1": {
+        "scored": 60,
+        "correct": 47,
+        "overall_accuracy": 0.7833,
+        "ci95": [
+          0.6638,
+          0.8688
+        ],
+        "balanced_accuracy": 0.7772,
+        "recall": {
+          "PASS": 0.9667,
+          "WARN": 0.4762,
+          "FAIL": 0.8889
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 29,
+            "WARN": 1
+          },
+          "WARN": {
+            "WARN": 10,
+            "PASS": 9,
+            "FAIL": 2
+          },
+          "FAIL": {
+            "FAIL": 8,
+            "PASS": 1
+          }
+        }
+      },
+      "card_v2": {
+        "scored": 60,
+        "correct": 46,
+        "overall_accuracy": 0.7667,
+        "ci95": [
+          0.6456,
+          0.8556
+        ],
+        "balanced_accuracy": 0.7709,
+        "recall": {
+          "PASS": 0.9,
+          "WARN": 0.5238,
+          "FAIL": 0.8889
+        },
+        "support": {
+          "PASS": 30,
+          "WARN": 21,
+          "FAIL": 9
+        },
+        "confusion": {
+          "PASS": {
+            "PASS": 27,
+            "WARN": 2,
+            "EMPTY": 1
+          },
+          "WARN": {
+            "WARN": 11,
+            "PASS": 6,
+            "FAIL": 3,
+            "EMPTY": 1
+          },
+          "FAIL": {
+            "FAIL": 8,
+            "EMPTY": 1
+          }
+        }
+      }
+    }
+  },
+  "pooled": {
+    "bare": {
+      "scored": 300,
+      "correct": 171,
+      "overall_accuracy": 0.57,
+      "ci95": [
+        0.5134,
+        0.6248
+      ],
+      "balanced_accuracy": 0.6619,
+      "recall": {
+        "PASS": 0.5,
+        "WARN": 0.4857,
+        "FAIL": 1.0
+      },
+      "support": {
+        "PASS": 150,
+        "WARN": 105,
+        "FAIL": 45
+      },
+      "confusion": {
+        "PASS": {
+          "PASS": 75,
+          "WARN": 53,
+          "FAIL": 21,
+          "EMPTY": 1
+        },
+        "WARN": {
+          "WARN": 51,
+          "FAIL": 48,
+          "PASS": 6
+        },
+        "FAIL": {
+          "FAIL": 45
+        }
+      }
+    },
+    "card_v1": {
+      "scored": 300,
+      "correct": 222,
+      "overall_accuracy": 0.74,
+      "ci95": [
+        0.6876,
+        0.7864
+      ],
+      "balanced_accuracy": 0.7322,
+      "recall": {
+        "PASS": 0.9933,
+        "WARN": 0.3143,
+        "FAIL": 0.8889
+      },
+      "support": {
+        "PASS": 150,
+        "WARN": 105,
+        "FAIL": 45
+      },
+      "confusion": {
+        "PASS": {
+          "PASS": 149,
+          "WARN": 1
+        },
+        "WARN": {
+          "PASS": 48,
+          "WARN": 33,
+          "FAIL": 24
+        },
+        "FAIL": {
+          "FAIL": 40,
+          "PASS": 5
+        }
+      }
+    },
+    "card_v2": {
+      "scored": 300,
+      "correct": 248,
+      "overall_accuracy": 0.8267,
+      "ci95": [
+        0.7798,
+        0.8653
+      ],
+      "balanced_accuracy": 0.8345,
+      "recall": {
+        "PASS": 0.9733,
+        "WARN": 0.5524,
+        "FAIL": 0.9778
+      },
+      "support": {
+        "PASS": 150,
+        "WARN": 105,
+        "FAIL": 45
+      },
+      "confusion": {
+        "PASS": {
+          "PASS": 146,
+          "WARN": 3,
+          "EMPTY": 1
+        },
+        "WARN": {
+          "WARN": 58,
+          "FAIL": 22,
+          "PASS": 24,
+          "EMPTY": 1
+        },
+        "FAIL": {
+          "FAIL": 44,
+          "EMPTY": 1
+        }
+      }
+    }
+  },
+  "cost": {
+    "per_condition": {
+      "anthropic/claude-opus-5.5/bare": {
+        "usd": 0.205908,
+        "n_empty": 0
+      },
+      "anthropic/claude-opus-5.5/card_v1": {
+        "usd": 0.289508,
+        "n_empty": 0
+      },
+      "anthropic/claude-opus-5.5/card_v2": {
+        "usd": 0.378248,
+        "n_empty": 0
+      },
+      "openai/gpt-6.1-sol-pro/bare": {
+        "usd": 0.303016,
+        "n_empty": 0
+      },
+      "openai/gpt-6.1-sol-pro/card_v1": {
+        "usd": 0.347006,
+        "n_empty": 0
+      },
+      "openai/gpt-6.1-sol-pro/card_v2": {
+        "usd": 0.441408,
+        "n_empty": 0
+      },
+      "google/gemini-3.8-flash/bare": {
+        "usd": 0.12592,
+        "n_empty": 0
+      },
+      "google/gemini-3.8-flash/card_v1": {
+        "usd": 0.097376,
+        "n_empty": 0
+      },
+      "google/gemini-3.8-flash/card_v2": {
+        "usd": 0.115796,
+        "n_empty": 0
+      },
+      "deepseek/deepseek-v4-pro/bare": {
+        "usd": 0.043116,
+        "n_empty": 0
+      },
+      "deepseek/deepseek-v4-pro/card_v1": {
+        "usd": 0.04209,
+        "n_empty": 0
+      },
+      "deepseek/deepseek-v4-pro/card_v2": {
+        "usd": 0.074992,
+        "n_empty": 0
+      },
+      "z-ai/glm-5.3-prime/bare": {
+        "usd": 0.784559,
+        "n_empty": 1
+      },
+      "z-ai/glm-5.3-prime/card_v1": {
+        "usd": 0.201417,
+        "n_empty": 0
+      },
+      "z-ai/glm-5.3-prime/card_v2": {
+        "usd": 0.584982,
+        "n_empty": 3
+      }
+    },
+    "runs_total_usd": 4.0353,
+    "probe_usd": 0.0218,
+    "grand_total_usd": 4.0571
+  }
+}

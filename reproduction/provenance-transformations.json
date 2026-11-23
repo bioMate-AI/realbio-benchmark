@@ -1,0 +1,8 @@
+[
+  {
+    "source": "evaluation/results/realpharma_harness_v1/run_harness.py.v1card-backup",
+    "source_sha256": "5dda678695c5be6e65e1720b855f6daaea3df606602222cbe23eb3fa4dbeca0d",
+    "packaged_sha256": "fa9dc59dc58ca767146c833c77c2acb4bbe3f1312f3f9a430be81610d7958fc9",
+    "change": "Credential-acquisition function replaced by an explicit non-network stub; method cards and scoring/prompt definitions unchanged."
+  }
+]

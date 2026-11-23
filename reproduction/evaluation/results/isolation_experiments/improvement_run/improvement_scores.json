@@ -1,0 +1,1003 @@
+{
+  "models": [
+    "anthropic_claude-opus-5.5",
+    "deepseek_deepseek-v4-pro",
+    "google_gemini-3.8-flash",
+    "openai_gpt-6.1-sol-pro",
+    "z-ai_glm-5.3-prime"
+  ],
+  "protocol_thresholds": {
+    "per_model": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "balanced_accuracy": 0.7838,
+          "per_class_recall": {
+            "PASS": 0.6714,
+            "WARN": 0.68,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.69,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 47,
+              "WARN": 23,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 5,
+              "WARN": 17,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.69,
+          "xcheck_match": true
+        },
+        "card_v1": {
+          "balanced_accuracy": 0.6933,
+          "per_class_recall": {
+            "PASS": 1.0,
+            "WARN": 0.08,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.77,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 70,
+              "WARN": 0,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 22,
+              "WARN": 2,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.77,
+          "xcheck_match": true
+        },
+        "card_v2": {
+          "balanced_accuracy": 0.759,
+          "per_class_recall": {
+            "PASS": 0.9571,
+            "WARN": 0.32,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.8,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 67,
+              "WARN": 3,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 16,
+              "WARN": 8,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.8,
+          "xcheck_match": true
+        }
+      },
+      "deepseek_deepseek-v4-pro": {
+        "bare": {
+          "balanced_accuracy": 0.6857,
+          "per_class_recall": {
+            "PASS": 0.4571,
+            "WARN": 0.6,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.52,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 32,
+              "WARN": 31,
+              "FAIL": 6,
+              "OTHER": 1
+            },
+            "WARN": {
+              "PASS": 8,
+              "WARN": 15,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.52,
+          "xcheck_match": true
+        },
+        "card_v1": {
+          "balanced_accuracy": 0.6619,
+          "per_class_recall": {
+            "PASS": 0.9857,
+            "WARN": 0.0,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.74,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 69,
+              "WARN": 1,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 25,
+              "WARN": 0,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.74,
+          "xcheck_match": true
+        },
+        "card_v2": {
+          "balanced_accuracy": 0.6581,
+          "per_class_recall": {
+            "PASS": 0.8143,
+            "WARN": 0.16,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.66,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 57,
+              "WARN": 11,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 21,
+              "WARN": 4,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.66,
+          "xcheck_match": true
+        }
+      },
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "balanced_accuracy": 0.6705,
+          "per_class_recall": {
+            "PASS": 0.3714,
+            "WARN": 0.64,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.47,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 26,
+              "WARN": 39,
+              "FAIL": 5,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 3,
+              "WARN": 16,
+              "FAIL": 6,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.47,
+          "xcheck_match": true
+        },
+        "card_v1": {
+          "balanced_accuracy": 0.6924,
+          "per_class_recall": {
+            "PASS": 0.9571,
+            "WARN": 0.12,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.75,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 67,
+              "WARN": 3,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 21,
+              "WARN": 3,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.75,
+          "xcheck_match": true
+        },
+        "card_v2": {
+          "balanced_accuracy": 0.7752,
+          "per_class_recall": {
+            "PASS": 0.8857,
+            "WARN": 0.44,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.78,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 62,
+              "WARN": 8,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 14,
+              "WARN": 11,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.78,
+          "xcheck_match": true
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "balanced_accuracy": 0.6962,
+          "per_class_recall": {
+            "PASS": 0.3286,
+            "WARN": 0.76,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.47,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 23,
+              "WARN": 44,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 1,
+              "WARN": 19,
+              "FAIL": 5,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.47,
+          "xcheck_match": true
+        },
+        "card_v1": {
+          "balanced_accuracy": 0.6752,
+          "per_class_recall": {
+            "PASS": 0.9857,
+            "WARN": 0.04,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.75,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 69,
+              "WARN": 0,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 22,
+              "WARN": 1,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.75,
+          "xcheck_match": true
+        },
+        "card_v2": {
+          "balanced_accuracy": 0.7448,
+          "per_class_recall": {
+            "PASS": 0.9143,
+            "WARN": 0.32,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.77,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 64,
+              "WARN": 3,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 16,
+              "WARN": 8,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.77,
+          "xcheck_match": true
+        }
+      },
+      "z-ai_glm-5.3-prime": {
+        "bare": {
+          "balanced_accuracy": 0.7076,
+          "per_class_recall": {
+            "PASS": 0.4429,
+            "WARN": 0.68,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.53,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 31,
+              "WARN": 36,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 7,
+              "WARN": 17,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.53,
+          "xcheck_match": true
+        },
+        "card_v1": {
+          "balanced_accuracy": 0.6886,
+          "per_class_recall": {
+            "PASS": 0.9857,
+            "WARN": 0.08,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.76,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 69,
+              "WARN": 1,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 22,
+              "WARN": 2,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.76,
+          "xcheck_match": true
+        },
+        "card_v2": {
+          "balanced_accuracy": 0.74,
+          "per_class_recall": {
+            "PASS": 0.9,
+            "WARN": 0.32,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.76,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 63,
+              "WARN": 7,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 17,
+              "WARN": 8,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          },
+          "committed_overall_accuracy": 0.76,
+          "xcheck_match": true
+        }
+      }
+    },
+    "aggregate": {
+      "bare": {
+        "balanced_accuracy": 0.7088,
+        "per_class_recall": {
+          "PASS": 0.4543,
+          "WARN": 0.672,
+          "FAIL": 1.0
+        },
+        "overall_accuracy": 0.536,
+        "confusion_matrix": {
+          "PASS": {
+            "PASS": 159,
+            "WARN": 173,
+            "FAIL": 17,
+            "OTHER": 1
+          },
+          "WARN": {
+            "PASS": 24,
+            "WARN": 84,
+            "FAIL": 17,
+            "OTHER": 0
+          },
+          "FAIL": {
+            "PASS": 0,
+            "WARN": 0,
+            "FAIL": 25,
+            "OTHER": 0
+          }
+        }
+      },
+      "card_v1": {
+        "balanced_accuracy": 0.6823,
+        "per_class_recall": {
+          "PASS": 0.9829,
+          "WARN": 0.064,
+          "FAIL": 1.0
+        },
+        "overall_accuracy": 0.754,
+        "confusion_matrix": {
+          "PASS": {
+            "PASS": 344,
+            "WARN": 5,
+            "FAIL": 1,
+            "OTHER": 0
+          },
+          "WARN": {
+            "PASS": 112,
+            "WARN": 8,
+            "FAIL": 5,
+            "OTHER": 0
+          },
+          "FAIL": {
+            "PASS": 0,
+            "WARN": 0,
+            "FAIL": 25,
+            "OTHER": 0
+          }
+        }
+      },
+      "card_v2": {
+        "balanced_accuracy": 0.7354,
+        "per_class_recall": {
+          "PASS": 0.8943,
+          "WARN": 0.312,
+          "FAIL": 1.0
+        },
+        "overall_accuracy": 0.754,
+        "confusion_matrix": {
+          "PASS": {
+            "PASS": 313,
+            "WARN": 32,
+            "FAIL": 5,
+            "OTHER": 0
+          },
+          "WARN": {
+            "PASS": 84,
+            "WARN": 39,
+            "FAIL": 2,
+            "OTHER": 0
+          },
+          "FAIL": {
+            "PASS": 0,
+            "WARN": 0,
+            "FAIL": 25,
+            "OTHER": 0
+          }
+        }
+      }
+    },
+    "xcheck_committed_scorer": {}
+  },
+  "pbpk_benchmark": {
+    "per_model": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "within_2fold_fullGT": 0.6167,
+          "within_2fold_answered": 0.6167,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "deepseek_deepseek-v4-pro": {},
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "within_2fold_fullGT": 0.95,
+          "within_2fold_answered": 0.95,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v2": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v2": {
+          "within_2fold_fullGT": 1.0,
+          "within_2fold_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "z-ai_glm-5.3-prime": {}
+    },
+    "mean": {
+      "bare": 0.8556,
+      "card_v1": 1.0,
+      "card_v2": 1.0
+    },
+    "mean_complete_only": {
+      "bare": 0.8556,
+      "card_v1": 1.0,
+      "card_v2": 1.0
+    },
+    "note": {
+      "within_2fold_fullGT": "committed S.score_pbpk over all 60 GT items (missing/unparseable = failure)",
+      "within_2fold_answered": "committed S.score_pbpk over the answered subset only (fair for partial cells)",
+      "n_expected": 60
+    },
+    "n_models_complete": {
+      "bare": 3,
+      "card_v1": 3,
+      "card_v2": 2
+    },
+    "n_models": {
+      "bare": 3,
+      "card_v1": 3,
+      "card_v2": 2
+    }
+  },
+  "boin_benchmark": {
+    "per_model": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "accuracy_fullGT": 0.9833,
+          "accuracy_answered": 0.9833,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v2": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "deepseek_deepseek-v4-pro": {
+        "bare": {
+          "accuracy_fullGT": 0.8,
+          "accuracy_answered": 0.9057,
+          "n_answered": 53,
+          "complete": false
+        }
+      },
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "accuracy_fullGT": 0.9833,
+          "accuracy_answered": 0.9833,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v2": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "accuracy_fullGT": 0.9833,
+          "accuracy_answered": 0.9833,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v1": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        },
+        "card_v2": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      },
+      "z-ai_glm-5.3-prime": {
+        "bare": {
+          "accuracy_fullGT": 0.8167,
+          "accuracy_answered": 1.0,
+          "n_answered": 49,
+          "complete": false
+        },
+        "card_v1": {
+          "accuracy_fullGT": 1.0,
+          "accuracy_answered": 1.0,
+          "n_answered": 60,
+          "complete": true
+        }
+      }
+    },
+    "mean": {
+      "bare": 0.9711,
+      "card_v1": 1.0,
+      "card_v2": 1.0
+    },
+    "mean_complete_only": {
+      "bare": 0.9833,
+      "card_v1": 1.0,
+      "card_v2": 1.0
+    },
+    "note": {
+      "accuracy_fullGT": "committed S.score_boin over all 60 GT items (missing/unparseable = failure)",
+      "accuracy_answered": "committed S.score_boin over the answered subset only (fair for partial cells)",
+      "n_expected": 60
+    },
+    "n_models_complete": {
+      "bare": 3,
+      "card_v1": 4,
+      "card_v2": 3
+    },
+    "n_models": {
+      "bare": 5,
+      "card_v1": 4,
+      "card_v2": 3
+    }
+  },
+  "empties": {
+    "anthropic_claude-opus-5.5": {
+      "protocol_thresholds/bare": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.377196,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v1": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.423416,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v2": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.615796,
+        "aborted": false
+      },
+      "pbpk_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 1.24552,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.3486,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v2": {
+        "n": 47,
+        "empty": 0,
+        "usd": 0.38266,
+        "aborted": true
+      },
+      "boin_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 1.270432,
+        "aborted": false
+      },
+      "boin_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.941152,
+        "aborted": false
+      },
+      "boin_benchmark/card_v2": {
+        "n": 60,
+        "empty": 0,
+        "usd": 1.103992,
+        "aborted": false
+      }
+    },
+    "deepseek_deepseek-v4-pro": {
+      "protocol_thresholds/bare": {
+        "n": 100,
+        "empty": 1,
+        "usd": 0.092705,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v1": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.055531,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v2": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.130278,
+        "aborted": false
+      },
+      "boin_benchmark/bare": {
+        "n": 60,
+        "empty": 7,
+        "usd": 0.372458,
+        "aborted": false
+      }
+    },
+    "google_gemini-3.8-flash": {
+      "protocol_thresholds/bare": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.185282,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v1": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.125435,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v2": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.202363,
+        "aborted": false
+      },
+      "pbpk_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.545652,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.099553,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v2": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.156767,
+        "aborted": false
+      },
+      "boin_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.369418,
+        "aborted": false
+      },
+      "boin_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.285883,
+        "aborted": false
+      },
+      "boin_benchmark/card_v2": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.301309,
+        "aborted": false
+      }
+    },
+    "openai_gpt-6.1-sol-pro": {
+      "protocol_thresholds/bare": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.494256,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v1": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.559468,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v2": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.73396,
+        "aborted": false
+      },
+      "pbpk_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.321874,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.41657,
+        "aborted": false
+      },
+      "pbpk_benchmark/card_v2": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.439186,
+        "aborted": false
+      },
+      "boin_benchmark/bare": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.408652,
+        "aborted": false
+      },
+      "boin_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.444138,
+        "aborted": false
+      },
+      "boin_benchmark/card_v2": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.503562,
+        "aborted": false
+      }
+    },
+    "z-ai_glm-5.3-prime": {
+      "protocol_thresholds/bare": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.623001,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v1": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.418495,
+        "aborted": false
+      },
+      "protocol_thresholds/card_v2": {
+        "n": 100,
+        "empty": 0,
+        "usd": 0.696707,
+        "aborted": false
+      },
+      "boin_benchmark/bare": {
+        "n": 60,
+        "empty": 11,
+        "usd": 1.847713,
+        "aborted": false
+      },
+      "boin_benchmark/card_v1": {
+        "n": 60,
+        "empty": 0,
+        "usd": 0.366195,
+        "aborted": false
+      }
+    }
+  },
+  "total_usd": 17.9052
+}
