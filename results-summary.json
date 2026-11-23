@@ -1,0 +1,68 @@
+{
+  "revision": "2026-11-22",
+  "kind": "condition comparisons, not product ranking",
+  "columns": [
+    "endpoint",
+    "items",
+    "models",
+    "bare_or_original",
+    "guided_or_revised",
+    "difference",
+    "ci95_low",
+    "ci95_high"
+  ],
+  "rows": [
+    [
+      "routing_accuracy",
+      200,
+      14,
+      0.382,
+      0.913,
+      0.53,
+      0.484,
+      0.578
+    ],
+    [
+      "parameter_f1",
+      170,
+      4,
+      0.079,
+      0.701,
+      0.622,
+      0.58,
+      0.66
+    ],
+    [
+      "parameter_joint_success",
+      170,
+      4,
+      0.179,
+      0.371,
+      0.191,
+      0.122,
+      0.26
+    ],
+    [
+      "method_selection_accuracy",
+      40,
+      8,
+      0.925,
+      0.9875,
+      0.0625,
+      0.022,
+      0.116
+    ],
+    [
+      "QC_out_of_family_balanced_accuracy_original_vs_revised",
+      60,
+      5,
+      0.732,
+      0.834,
+      0.102,
+      0.05,
+      0.154
+    ]
+  ],
+  "precision": "Displayed point estimates and intervals; reproduce full precision from saved predictions.",
+  "new_model_calls": 0
+}
