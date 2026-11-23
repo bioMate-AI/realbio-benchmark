@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """Deterministically measure RealBio prompt (input) + prediction (output-floor) sizes.
-NO API calls. Reconstructs the EXACT prompt each item sent, using run_baseline.py's TASKS/GEN
-spec, and measures chars -> est tokens (chars/4). Output floor = saved prediction length.
+NO API calls. Estimates the current archived template lengths using TASKS/GEN
+and chars/4. This is not recovery of historical raw prompts or billed tokens. Output floor = saved prediction length.
 Key fact this exposes: the INPUT prompt is identical across models for a given task+mode
 (prompt doesn't depend on the model), so token counts are model-independent; cost differences
 are driven by per-token PRICE, not token count."""
 import os, json, re, sys
-BASE = "/Users/kky/biomate/evaluation/datasets/public_export"
+from pathlib import Path
+BASE = str(Path(__file__).resolve().parents[1])
 sys.path.insert(0, BASE)
 
 # import the exact specs (module import triggers only argparse in main(), guarded by __main__)
 import importlib.util
-spec = importlib.util.spec_from_file_location("rb", os.path.join(BASE, "run_baseline.py"))
+spec = importlib.util.spec_from_file_location("rb", os.path.join(BASE, "src", "run_baseline.py"))
 rb = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(rb)
 TASKS, GEN = rb.TASKS, rb.GEN

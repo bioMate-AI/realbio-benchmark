@@ -1,0 +1,9 @@
+{
+  "source": "failure_classification.jsonl",
+  "source_sha256": "0b8f208af70bac05f22df2e2d2ae4d6b6017f71eccdbc6c6a2412bdba81d4fa4",
+  "viewer": "failure_classification_viewer.jsonl",
+  "viewer_sha256": "49dc74be1100e56b9b3f9139beea968a375c9363d9d2519a425e3f881135a18b",
+  "items": 100,
+  "transformation": "params object losslessly serialized to params_json; reference labels/IDs unchanged",
+  "roundtrip_verified": true
+}

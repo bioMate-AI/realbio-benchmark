@@ -1,0 +1,1178 @@
+{
+  "status": "offline reproduction snapshot; 2026-11-22",
+  "cells": [
+    {
+      "task": "routing",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5.5",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 14,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5.5",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 18,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-6.1-sol-pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-6.1-sol-pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Gemini 3.1 Pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Gemini 3.1 Pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Kimi K3",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Kimi K3",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "DeepSeek V4-pro",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "DeepSeek V4-pro",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.2",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.2",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.3-prime",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.3-prime",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-5.6-luna",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-5.6-luna",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-72B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-72B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-27B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-27B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.8-27B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.8-27B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-7B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen2.5-7B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-9B",
+      "condition": "bare",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.5-9B",
+      "condition": "harness",
+      "n": 200,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_catalog_described.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 11,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 21,
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-27B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 17,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-27B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 18,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.8-27B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 25,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.8-27B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 27,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-9B",
+      "condition": "bare",
+      "n": 170,
+      "empty_prediction": 31,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "param",
+      "model": "Qwen3.5-9B",
+      "condition": "harness",
+      "n": 170,
+      "empty_prediction": 30,
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl",
+      "gold": "evaluation/datasets/public_export/param_prefill/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Claude Opus 5",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Claude Opus 5",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GPT-5.6",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GPT-5.6",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Gemini 3.1 Pro",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Gemini 3.1 Pro",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Kimi K3",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Kimi K3",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Qwen3.8 (2.4T)",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 3,
+      "file": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "Qwen3.8 (2.4T)",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GLM-5.3",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 3,
+      "file": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "GLM-5.3",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 0,
+      "file": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4-pro",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 5,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4-pro",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 2,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4.1-flash",
+      "condition": "bare",
+      "n": 40,
+      "empty_prediction": 8,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_bare.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "method",
+      "model": "DeepSeek V4.1-flash",
+      "condition": "harness",
+      "n": 40,
+      "empty_prediction": 1,
+      "file": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_kb.jsonl",
+      "gold": "evaluation/datasets/bioc_method_selection/data.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "bare",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "pbpk_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "card",
+      "n": 15,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "google_gemini-3.8-flash",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "bare",
+      "n": 20,
+      "empty_prediction": 5,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "boin_benchmark",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "card",
+      "n": 20,
+      "empty_prediction": 0,
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/bare.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/bare.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/bare.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/bare.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/bare.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_card_v1.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_card_v1.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_card_v1.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_card_v1.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_card_v1.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v1.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v1.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v1.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v1.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v1.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_card_v2.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_card_v2.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_card_v2.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_card_v2.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_card_v2.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v2.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v2.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v2.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v2.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    },
+    {
+      "task": "QC",
+      "file": "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v2.jsonl",
+      "gold": "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl"
+    }
+  ],
+  "auxiliary_cells": [
+    {
+      "task": "routing",
+      "model": "Claude Opus 5",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Claude Opus 5.5",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-6.1-sol-pro",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Gemini 3.1 Pro",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Kimi K3",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "DeepSeek V4-pro",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.2",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GLM-5.3-prime",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "GPT-5.6-luna",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "routing",
+      "model": "Qwen3.8-27B",
+      "condition": "names_only",
+      "file": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog.jsonl",
+      "gold": "evaluation/datasets/public_export/cross_domain_routing/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "anthropic_claude-opus-5.5",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/anthropic_claude-opus-5.5/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "deepseek_deepseek-v4-pro",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/deepseek_deepseek-v4-pro/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "google_gemini-3.8-flash",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "google_gemini-3.8-flash",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/google_gemini-3.8-flash/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "openai_gpt-6.1-sol-pro",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/openai_gpt-6.1-sol-pro/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "qwen_qwen3.5-9b",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/qwen_qwen3.5-9b/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "qwen_qwen3.5-9b",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/qwen_qwen3.5-9b/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "protocol_thresholds_bare",
+      "file": "evaluation/results/realpharma_harness_v1/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    },
+    {
+      "task": "QC",
+      "model": "z-ai_glm-5.3-prime",
+      "condition": "protocol_thresholds_harness",
+      "file": "evaluation/results/realpharma_harness_v1/z-ai_glm-5.3-prime/protocol_thresholds_harness.jsonl",
+      "gold": "evaluation/datasets/public_export/protocol_thresholds/data.jsonl"
+    }
+  ],
+  "sha256": {
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_bare.jsonl": "14a36b6dcacd32214e581a08bcbc1038f304f48441328d3bc955d28502480787",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog_described.jsonl": "c3334a8bfdece3d9e33d496237c0d0f44097295cc63fd0f5c166d59c054e7489",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_bare.jsonl": "5e4b11f86f4041b49b007734f7c898dbfdc40e5e44c9c9d55191e86a628ffaff",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog_described.jsonl": "5e31f41b117b6e3d205be44879c0adae5545f6f14bce1da77d383ab1a31e0f39",
+    "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_bare.jsonl": "0f53687c0011f4737e95f74b68dfb74f03c1a881cedc6ec4d67073319ad14c9c",
+    "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog_described.jsonl": "c04c2e1e3a6c8b5e59d0555bf2eadaf41cfd9b88accb38bb6ec023d817f3620d",
+    "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_bare.jsonl": "32cdda62b331e828dea60a2828b2d09a59ddcc4c2499f9352fb691ac600aa966",
+    "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog_described.jsonl": "08ffa0c672b01b3bef76b8cc72e9f0d07eb2d7e66882738704b86bef9ceb74e1",
+    "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_bare.jsonl": "ae62144cb879b59f7b8bed7b445b27960037075472cf4a8a13778dffc06c716c",
+    "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog_described.jsonl": "b231c1658844d6212dcc2a29f9bdc51e4ca28441a981f5009a9c26ffe672d544",
+    "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_bare.jsonl": "2c16193ebebe23792ae7762da88d3e5bca44bea778df633c6e9ebbb225f4cb3f",
+    "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog_described.jsonl": "552c3950d03a7277b36833794c062cb4dadad55513e202c8f13d9065160a6c08",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_bare.jsonl": "03cb739f9609e4d9d9142249081c9bca8dab6c300c6778cea935fed97c6c3775",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog_described.jsonl": "dc07ac4c9983bd68769e2d088b61a936783b5c49291d9984968a37d43534ab46",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_bare.jsonl": "7cc5d93266dcc28d590b19fa20bc1f10734a87ff09323366a3d8d23249df9a17",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog_described.jsonl": "bcc13e75d42f016ca45132b30fda3e4078e028187dedb46a4536adc6e6e4461e",
+    "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_bare.jsonl": "7810bf93d4dbb541f61eaf2d6d947f83cc26ca2655343e30c02c3eeb303d4bf4",
+    "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog_described.jsonl": "ffb272dabcf4840f2c78e201f974554cfa47f5ae1722533e73fc6cf9caf2238c",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_bare.jsonl": "3240e7bdb695430411f712b8f89bd3e7b99cbc7ec29e3d21dd2f7b3656139197",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_catalog_described.jsonl": "6c1144e829f02fa298a71b51112e33ebcb2c283d0304cbdfd4faf740f5223bb9",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_bare.jsonl": "87385fd56e5870547d7adf9d0aae3a01fd0b0db31241743aeaf6b7cf2cc7ba96",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_catalog_described.jsonl": "8c493a889b99295b9b54248f53a31ce1a64a5e4dbb58369257955ed46aff1535",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_bare.jsonl": "50ddf2c885690d83817b3ccd6c138f4b67f581c3eef1472ba0c1275dcc66f38f",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog_described.jsonl": "58c061fc651b7be1e731ccdd118eed3c6e65de63cb3e57f0bc28e920cff5914e",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_bare.jsonl": "7f4d50b1b04fcf6b3eb147983e1f82f1951cefc8ddca023ae57100fc1f3013e5",
+    "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_catalog_described.jsonl": "a49f6c75ed9faed9a1a514ad94f25cc7f83250a584cb7ef02c113a599b4e2f11",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_bare.jsonl": "62fe5ee376da419d88e6ebfb9f5d654e0443999b3196a9042415f879f94727c2",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_catalog_described.jsonl": "3cc7c53a9fb46d2b1a4fbddc9c6e93da8837be55fb7abca76468320901851370",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl": "191938559f23248e6e8f1e01b6a213e91a4e70df9e545ca4cd3ff429495d1fb9",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl": "6ea383ca46617d3be8da453c0e380c2301af93eb0a42f756e4e39bee6bc4c097",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl": "d38e97540a21931813f1493bf45ec034610b6a96fa068b19395d0386dd900e09",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl": "e9e98bdacc4828301293bb7441341dbd9cfd9f1adda213caac0ef522e95f4a30",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl": "7488d1b584e407379da0b742aa8601f9d954b25da39ff8190845283df508bcdb",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl": "b2ffd852f3c64a66e19fe07da49bf16dfa3b98cfb1e1005d9c6326a70c573696",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl": "8ebeb324b64c40812c078dfb98f4bbe5cce787174c99798f284030eae443e7df",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl": "e0875fa5fd6e2ed7e4a46478bd89d8d3f4bf2c37642d19541a09d3de7140a96b",
+    "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_bare.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_kb.jsonl": "6eafba192fa7d238196c70d54cc0b1eaabd59f5978308b7a4d40c8f7f865f02d",
+    "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_bare.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_bare.jsonl": "f5d82a222f65eed3e8261c45d3411a7adfb8cfd7ff5e58bea63f38ab8a09646c",
+    "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_bare.jsonl": "f5d82a222f65eed3e8261c45d3411a7adfb8cfd7ff5e58bea63f38ab8a09646c",
+    "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_bare.jsonl": "a51241ca65544de3cfe5bb326ddef600ffe7b466dd1c761231606a6ed6dfd4e7",
+    "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_bare.jsonl": "bb68de47b686e0bc21c1b12aed40b418be986b771a1d5fff42cd6d89cd30c283",
+    "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_kb.jsonl": "51864adf8ca945c713aeceeba00ea43650b5cca2a76948b79c5300115cfcb282",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_bare.jsonl": "5b47c97490e3325ec5341a59571cd820b0450992d6c4da7a7319286aad80e5fa",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_kb.jsonl": "f5c17e48579ac806b959e68c48004e505b22218ff1e1ff2219fb3995af21a9f4",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_bare.jsonl": "a2053f48257a96dc77f3cd146e4a2107ad4e4ffab9d4503c4da26e9ca73b8cca",
+    "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_kb.jsonl": "7ae443537b94868ee1f963370aeb40deb724e36d5e93582b723ea2f6e09f5b45",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_bare.jsonl": "c5f31a80f585adbac808a8a330ca3470b1229523854032cb1078448827989cb9",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/pbpk_benchmark_harness.jsonl": "1d180b4a1fe47db628893c6a89e6ccad6faffd8e5cb45cc608a9c5e0b6f5e497",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_bare.jsonl": "f75ac496e297c93bf0d13e2215f834f4667e941b3560fe4283b39a567769d35b",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/pbpk_benchmark_harness.jsonl": "3865d59064a889e4561ea1fe38f1195b95afff8c40df75db000623456089364e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_bare.jsonl": "e8671dcb894e08b2c18060a1ea32ae0c71419c35768481642d7303aff4d92a7b",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/pbpk_benchmark_harness.jsonl": "a9eadf267637a30b28190867101f5b7a1b513201bcfd77a7cf1a2dea03009b6c",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_bare.jsonl": "1373b05e32aee7200125a85b8e1dcd801d94192a3b3faab0be2219db97951ffb",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/pbpk_benchmark_harness.jsonl": "cbbe8537d1aa864c4da9f26e6fc25b3e96c5b0f73ba37d2dc8c5aeca4e855135",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_bare.jsonl": "e7b0958f1a124aa362ec14b1efc3cede7e3676d353f63c6b7419c6d60251d411",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/boin_benchmark_harness.jsonl": "e2587daef6da04c2f71798fa883f5248305a863342e3c9cdcca10b4f0952048e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_bare.jsonl": "d99145c6580c248f25cf43c33f7cb81f13b6bfb38234350309395ca9ce1e3596",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/boin_benchmark_harness.jsonl": "95ddd4bb1f4ec026a4d463dd8b7bb2e13f91bc3c71a6b9ae8c5dc07b12301554",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_bare.jsonl": "3733bdd30cf6db00694cf7959f5774ba40cc2bf921b3c61e6d801c75c44afbc5",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/boin_benchmark_harness.jsonl": "7d7e87357a08011c59f17d213c2f3186508e851c48336277f3677044a37cacdf",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_bare.jsonl": "4d7effced7d81be26779e2670e7c948a0f50324186b9c33565626df86c021ab6",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/boin_benchmark_harness.jsonl": "908b280df72989da04c3956eeb41e49fafc041229aabda5e8a859914d0051f79",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_bare.jsonl": "9873cb9db9f8beb32623c0834b2f2d1324f9eb6bcddf3188dda61d08734edc30",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/boin_benchmark_harness.jsonl": "2bd0aa9554bb17dcca39a94e97a4556bcfd3a762e110e1bc2523d8fe022d051c",
+    "evaluation/datasets/public_export/protocol_thresholds/data.jsonl": "0092da5251f5def2462af63bce4f9a5d82f5f7a71a8dc4b7f5c8782b888e8bf2",
+    "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl": "21bddfeeb81893539ae56dcea3a47dd69bb125c4be6eb4a81a9da8a23b2e0843",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl": "4d8d04b66901f90b1f0b7ea5df3e6a8944383e5760fa3122ef037f048395f190",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl": "941c29bdf5489a3d6c37a67560429b1fde443f05aef21e5ba92888064bd0a140",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl": "da207a6eaf0831d5432dbadabf4bea6a6ab405b8b3654c1ae36602e2d8edae9e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl": "da0df1795e15c0777ee60055d8a1a36515f800830fb4880f3f3dc7c86444947e",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl": "35d7c8e7056ad4720f2e8bb61670e41b4d7777ca9acad649e2562d264425d6c3",
+    "evaluation/results/isolation_experiments/partC_serving_matched/anthropic_claude-opus-5.5/protocol_thresholds_harness.jsonl": "8809448aefdb8a12cb9bd7a3ed51d522975840a8440a506e93b1bdefc587e1ed",
+    "evaluation/results/isolation_experiments/partC_serving_matched/deepseek_deepseek-v4-pro/protocol_thresholds_harness.jsonl": "f694b6e4702a1c78ca7ab9f0a3ba936fc520a57c92fe7b5f0ec173212240d64c",
+    "evaluation/results/isolation_experiments/partC_serving_matched/google_gemini-3.8-flash/protocol_thresholds_harness.jsonl": "2d872e6d3b4dab991ae1b6cd6fb8dc09207cd0397cf0161bf8cc8acd80473c62",
+    "evaluation/results/isolation_experiments/partC_serving_matched/openai_gpt-6.1-sol-pro/protocol_thresholds_harness.jsonl": "f896b3875069b9522a483a61a980dbd6817a3a61f2c15d84d5c74c895e51ff2d",
+    "evaluation/results/isolation_experiments/partC_serving_matched/z-ai_glm-5.3-prime/protocol_thresholds_harness.jsonl": "c39b042d9c9c2a07b71a0da5dcf10aeeeefcb1bb6ea903de9bd320c660c230fb",
+    "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl": "9c8287a0899da5bafb4b091bdc9fc2a9cae3dbd5afdda88c357660945cc648ce",
+    "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl": "48c87de5786ebfceb14b0047ddc75378170ba3bb493e4c06833429c41adde7b8",
+    "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl": "ba00b4f79ddea43db63f404621e6225b6743aa114292b3f9e07ef743d349073c",
+    "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl": "f67044520d660863c133defb90f8a6c85b6ea3e97b4ee47ab40ed82cd76617b0",
+    "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl": "40aff8daccaa1f35610c79ff3adff2447a8010b97bd1d54e287584698da6c65b",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/bare.jsonl": "cf0447349dd8e89f1afc56e905bedac54460d2a8712cd1a4f6638d09b79bc6aa",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/bare.jsonl": "a6476b992778f75cbbba64277942e09909837e17c80ff8b4faad91e6a74bcafa",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/bare.jsonl": "d77794db85a0034dcb42a1daf34d9ce51a6fd2488e4f5b5525a35495051f51fe",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/bare.jsonl": "e351eef4a548acf8f2af382ec407f5ab0592fe510393429bb835c2a33193852c",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/bare.jsonl": "459c9c076b89d5ce53a5de212592bed10662f3d8ed07411c104c28faec54fe4e",
+    "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_card_v1.jsonl": "347c24e7ec24561ce29624039f85ff2cddfb22d351ffb8b8e20c1f05f918a261",
+    "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_card_v1.jsonl": "2550ece367b3501c97d02eaf81814ebb00bc1cf461e889d11e8c00e424e1f512",
+    "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_card_v1.jsonl": "01913679947427258206571116f647a17d609eac968cb6a7ab625e76d1d418d4",
+    "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_card_v1.jsonl": "0ba3cea2ef8974f07b7a67a8f113c1072acac50ef29573bb8630722ca9026120",
+    "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_card_v1.jsonl": "69ab40c613ced8d9d66797c9327cddc747047503b1279bc80740de539e2b7109",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v1.jsonl": "2723a733b06f9a31b630e290d6a1b2e19edbc11a800f2a3ff7d7ba7d2ca99881",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v1.jsonl": "fba574361eb44e5dfb029d9ea5dd11764643e3148d94d56e15cfbdac5dbb20c6",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v1.jsonl": "7fed8e1a998424b8cc641959b70568092ca75e25590af338664d036bb686efd9",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v1.jsonl": "80ff3b5577fd719e786f45d70b9bf80ad8e6f4aff4ee8d1fe048c0b530761cf9",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v1.jsonl": "d3dc323d057cd17f560b36d2cb5c3c561c21c599d48d7681e1af234b2639df5a",
+    "evaluation/results/isolation_experiments/improvement_run/runs/anthropic_claude-opus-5.5/protocol_thresholds_card_v2.jsonl": "033ddda52b4a6772a4c85960005ae369c603a16172fe5bda218041369aedad77",
+    "evaluation/results/isolation_experiments/improvement_run/runs/deepseek_deepseek-v4-pro/protocol_thresholds_card_v2.jsonl": "36d7a78d3120ad8c01f92805f815f15e2130ed1b4c4b1bc9ace8ed0cf0c7865d",
+    "evaluation/results/isolation_experiments/improvement_run/runs/google_gemini-3.8-flash/protocol_thresholds_card_v2.jsonl": "b563b140b6a99813bf03b02ac5f757395e4447f1df2690130ee62fde86401d9b",
+    "evaluation/results/isolation_experiments/improvement_run/runs/openai_gpt-6.1-sol-pro/protocol_thresholds_card_v2.jsonl": "2566ef2f502709142a209f62bc1e19627f4143c673f0ab6bca2ffd8715a4d0f5",
+    "evaluation/results/isolation_experiments/improvement_run/runs/z-ai_glm-5.3-prime/protocol_thresholds_card_v2.jsonl": "185afca77a1b12f44ca58e4fb74b8418ef00e964c7e71d5b78dd7df90296f05b",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v2.jsonl": "5670a0c323d369bcdf755c45a70079d799fa3204b5cbde2e7ef47adf56c1fdf0",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v2.jsonl": "79ea14ec31c506c0d6d231feb32b5b2c5e1d2364e6094851cb714fa96085f44e",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v2.jsonl": "7e4ec9c892b197772dbaa55eb64ab3b271b60c4d97bb89aaa92fe1c377167dad",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v2.jsonl": "3ef2e3f80311b4c011c9d34e6e64e001f10907d0f067cd58df3b58f2f9b4d849",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v2.jsonl": "3e24f0301f96361a7974d137a36006b2ebcc1df5b887dd686a729d53ffccc49f",
+    "evaluation/datasets/public_export/cross_domain_routing/data.jsonl": "1ab56769121384aae0f390647ee6243650687acd184074555938c960c3f9eaf0",
+    "evaluation/datasets/public_export/param_prefill/data.jsonl": "c093da8b5711d8a6b6082c493d0d864186131a7209801a2b80694e036b88fd2b",
+    "evaluation/datasets/public_export/pbpk_benchmark/data_v2_generated.jsonl": "1422bc945d5fc909930afef852a0f662b9cbb20a671b418ba20a67efd7cc5fcf",
+    "evaluation/datasets/public_export/boin_benchmark/data_v2_generated.jsonl": "798d5f422e1a068bbb81139fd2db9e36a2ea30b019006d15454763f6fb6474db",
+    "evaluation/datasets/public_export/score.py": "1d2bd8153c51e11e6d710ec4fcc96149f2985db1e49eb6171ab1aaaf8a98c44f",
+    "evaluation/datasets/public_export/run_baseline.py": "a9a52ac399bf8f0d142974dd8df1934f3493c8fea0c51b62eab701af8ceaf43f",
+    "evaluation/datasets/bioc_method_selection/data.jsonl": "29dd61a0cc8755b78e346adbe7fe3bba0aa650e6d1ec466aa91b4e2e1208af82",
+    "evaluation/datasets/bioc_method_selection/score.py": "c04e053da04a4688ae569b1b34e671b22acea501244c710422aaa9c0464d0c1c",
+    "evaluation/datasets/bioc_method_selection/run_bioc_matrix.py": "22b2b8e058854376b8f42d2435da0e303079c872c3bfcc91969de4b4cec2b43e",
+    "evaluation/results/isolation_experiments/partA_partB_results.json": "d6d67309eace778de88d6a76215c995d7492c274662d1def8724dddae04e9525",
+    "evaluation/results/isolation_experiments/partC_serving_matched_scores.json": "e7a52ea0b4e91500f6b229274f715a305e5a0e40600661699c7a8fce7ceac1a4",
+    "evaluation/results/isolation_experiments/serving_matched_bootstrap_cis.json": "cee20116482dbfdc26ec5175d9e32dd1069dd1eb4bafbf656194500e779481dd",
+    "evaluation/results/isolation_experiments/serving_matched_bootstrap.py": "ac9dd6bc4e65c5a2fdb33a0c7f78a7f15366d05ae189eceda97fbb4ae475b315",
+    "evaluation/results/isolation_experiments/improvement_run/improvement_scores.json": "cc05c3113f0440aa9f9f2c57929cb2befc5ba5e5b1a1d8789c82fc9ae86fcaad",
+    "evaluation/results/isolation_experiments/improved_cards.py": "459c54d0109497e2394c2cced22f94795922c0213df04f51b198297eabb92f7f",
+    "evaluation/results/isolation_experiments/heldout_validation/analysis.json": "bb9748021798ce6d5514789a83c940484348df51186a51a1267beaee0bad0f99",
+    "evaluation/results/isolation_experiments/heldout_validation/bootstrap_cis.json": "0d02820fb4a6e3e45a4ba38705c755578c473cb0b086bd54bb5e5c6989a798a4",
+    "evaluation/results/isolation_experiments/heldout_validation/heldout_bootstrap.py": "55877985c2003d7cbec9dbc18e371341e412586091faaca9075a2b414bca1923",
+    "evaluation/results/realpharma_harness_v1/run_harness.py.v1card-backup": "fa9dc59dc58ca767146c833c77c2acb4bbe3f1312f3f9a430be81610d7958fc9",
+    "evaluation/results/realpharma_harness_v1/scorer_validation.json": "d2522a65c1d484f04d7bccf981ff2d369d35536e284b483edbf34d7fd3126688",
+    "evaluation/results/realpharma_harness_v1/summary.csv": "e3592c4f3a391f91cf5b69fa23a1bfe67c306fe5fd24d6e6844e51d9cd8d7b63",
+    "analysis/release-evidence-audit.json": "25846fdafd817bddc4137298aa14d4390ae9559f0ee3af92c9e5b4f12fbd0e37",
+    "analysis/revision-checks.json": "134446effc67bd06fb8f6ec9f5e0c75eeaf23bb4f97b27524f75f0038f598375",
+    "analysis/recomputed-original-bootstrap.json": "d73665becf31583934ecc256110a70620134bc981abbeb46a177b846dbb57efb",
+    "analysis/supplementary-analysis.json": "5a6371089f5b250b65cdfa326a60d2e8dde2e23942ea1cf6d29c70a9195e4e05",
+    "supplementary_analysis.py": "03b6896bf11d2595051792fb0664f25df61dea31dfb2f9e966a8172c31b18da9",
+    "verify_generated_references.py": "d671937154e61a3cb1a99ef5f765be7a6011434275c065a6824c0526035df6ea",
+    "reproduce.py": "892cdf5a3b04a73292508d9681f335af337ab25c7b6fdd6ba15173bba22d79ab",
+    "notices/realbio-existing-LICENSE.txt": "e8ff3148b13d429d9eca628abf97196c699897c9ccc12c318c5d02c106b95b5b",
+    "notices/drug-existing-LICENSE.txt": "50c9cd95d7b2d736e9368437644b0186506e2989684601dff1f52524d46c4551",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/anthropic_claude-opus-5.5.jsonl": "328c1f3c73e69254626a898fe086381901c34bb8526ea2c0c02ebef27fc21a07",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/google_gemini-3.8-flash.jsonl": "8e15d3b2d729af5ef4e8a7afe4123a986d8834aed7d16d5d3432c9566f5c2338",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/openai_gpt-6.1-sol-pro.jsonl": "1066553e987dd1002db85867fa0fa81d2d0abe12e8ebed70a49fa996ce50ce4c",
+    "evaluation/results/isolation_experiments/independent_labels/indep_bootstrap_cis.json": "1dc32c108d7ae5fdb8d559b92091a8dda52f5cbf15cdd134d9520b8371f5f81d",
+    "evaluation/results/isolation_experiments/independent_labels/annotate.py": "da98ef340dea08628f6c872b426978ef3ad3ac8a7c598a8b94f92e9af2b9416f",
+    "evaluation/datasets/public_export/pbpk_benchmark/generate_pk_v2.py": "0851e617e81ab6d17fde2e5a600296894353bb8885a507ad1110fca55889d31b",
+    "evaluation/datasets/public_export/boin_benchmark/generate_dose_v2.py": "6334355d95814ba23549c9a5d80538348424361cc5f7d12d1d8975846ec8ef59",
+    "bootstrap_primary.py": "64a6333514bbcc124875c34cb840d0314fc04a332443b790181afd132981e6ab",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog.jsonl": "eda9ee36348edb0b5e7e4a606205cadc1ad23411121bc757747fc28f8ec48e97",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog.jsonl": "ccd7b38889dbe4a95188d2597cf8633d5071c4d9658e4ab63878e612fa228787",
+    "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog.jsonl": "4c89c212f7b2d069699175b19f1274bb1d7af05e170d5181017f0e1bc9c50e8e",
+    "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog.jsonl": "472d4b65f2434595ad23b77eee09b4a398a7dd468c6517fc1e2830963cb5ac09",
+    "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog.jsonl": "2738c050426077e246823cbb20ef136ebd60734f44d1b60c2b8846840b3c3bcc",
+    "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog.jsonl": "9e3adb47bed7fafe7f8c681f8c5aa13ecde0b19fe319c2ee0f6b5d468ca949af",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog.jsonl": "4a8546b0aac8cf6d8ba32db5da0289e8218d383311be6806fe77e2b1d5f2e043",
+    "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog.jsonl": "e6d47ab31e3530522a8b38e7618fda66d6bdcf065093cdd890fe80792eb04141",
+    "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog.jsonl": "47aef7aa0b68d145e6c3b529484160e2d0feaecc1ca7b65c4ff5ff2e5b9f772e",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog.jsonl": "35d15720836d08135a94cdb1420b0822a644596c3809b2b9d4fa5eb04c91007c",
+    "evaluation/results/realpharma_harness_v1/anthropic_claude-opus-5.5/protocol_thresholds_bare.jsonl": "36c97da0ee9d7fc6a902962f79fedd62255a0fe2111da9cddacb5363c0c45d11",
+    "evaluation/results/realpharma_harness_v1/anthropic_claude-opus-5.5/protocol_thresholds_harness.jsonl": "28e10b3c7bdefab1eaa58ff376233804d9650c84f4048431526a2f53e214d1b7",
+    "evaluation/results/realpharma_harness_v1/deepseek_deepseek-v4-pro/protocol_thresholds_bare.jsonl": "11f48bf000490422c46ee411d0e08149c05f493ae340dcae74bdf00e3159d402",
+    "evaluation/results/realpharma_harness_v1/deepseek_deepseek-v4-pro/protocol_thresholds_harness.jsonl": "c13682c407a4ed1518476b5a686b394db10e55c1fdf4fee30da52e84887a6820",
+    "evaluation/results/realpharma_harness_v1/google_gemini-3.8-flash/protocol_thresholds_bare.jsonl": "3586647539d998ab0be183a0239548a71946808c10276ca4ee05ff5159f05713",
+    "evaluation/results/realpharma_harness_v1/google_gemini-3.8-flash/protocol_thresholds_harness.jsonl": "c2c953403231c4aa72161cd34c03c03a754e0d38969e0286172c1d83acfd10e0",
+    "evaluation/results/realpharma_harness_v1/openai_gpt-6.1-sol-pro/protocol_thresholds_bare.jsonl": "0baa0ea58a4490e50facc06d29891919e3e99e55ca09cb4a1d8a6f65a921dcb1",
+    "evaluation/results/realpharma_harness_v1/openai_gpt-6.1-sol-pro/protocol_thresholds_harness.jsonl": "5e27e0b4d64a9ac26776b20193066c48cb26d88ec0c299bad05d81a4e080f97d",
+    "evaluation/results/realpharma_harness_v1/qwen_qwen3.5-9b/protocol_thresholds_bare.jsonl": "400f68d8b267f720d77fc395cc7b7b41deefa4c62c5952432acc4215a8c8ffcf",
+    "evaluation/results/realpharma_harness_v1/qwen_qwen3.5-9b/protocol_thresholds_harness.jsonl": "8bb93802f29d7ddcc1568d78f26ea21dca6b951d7a309de723505117ad09a7ff",
+    "evaluation/results/realpharma_harness_v1/z-ai_glm-5.3-prime/protocol_thresholds_bare.jsonl": "22228a7f17bfc79d0ce5dccc3b1d4c4a9fc724ebadbffe6feeef238ba0429e41",
+    "evaluation/results/realpharma_harness_v1/z-ai_glm-5.3-prime/protocol_thresholds_harness.jsonl": "753e9673f4b9feccd4eb1e2302412389e410014497f4ab75fe507ce1b9c00f5d",
+    "README.txt": "e1127c95624b314f38b2f3db365604ef2da347451dd0018704c39343a31d24a1",
+    "provenance-transformations.json": "e23989fad7dd19a8df55d8934d5a300d1c5af11832859f005715e8e25b91923d"
+  },
+  "limitations": [
+    "Historical full prompts and database metadata snapshots incomplete",
+    "Provider immutable model revisions incomplete",
+    "Core paired cells included; not every historical or unpaired catalog result is packaged",
+    "Historical scorer preserved, including disclosed permissive parameter equivalence",
+    "Existing project license notices preserved; third-party terms remain applicable"
+  ],
+  "benchmarks": [
+    "RealBio",
+    "RealDrug"
+  ]
+}

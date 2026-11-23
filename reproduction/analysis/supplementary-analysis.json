@@ -1,0 +1,754 @@
+{
+  "status": "pass",
+  "new_inference_calls": 0,
+  "parameter": {
+    "summary": {
+      "Claude Opus 5": {
+        "bare": {
+          "joint": 0.21764705882352942,
+          "exact_object": 0.08235294117647059,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.1052,
+            "param_recall": 0.2131,
+            "param_f1": 0.1408,
+            "must_not_fill_violations": 7,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.8846153846153846,
+              "exact_object": 0.38461538461538464
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.18309859154929578,
+              "exact_object": 0.04225352112676056
+            },
+            "2": {
+              "n": 25,
+              "joint": 0.04,
+              "exact_object": 0.04
+            },
+            "3": {
+              "n": 21,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "4": {
+              "n": 20,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "5": {
+              "n": 3,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "6": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        },
+        "harness": {
+          "joint": 0.5352941176470588,
+          "exact_object": 0.5352941176470588,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.8674,
+            "param_recall": 0.7508,
+            "param_f1": 0.8049,
+            "must_not_fill_violations": 35,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.5384615384615384,
+              "exact_object": 0.5384615384615384
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.6619718309859155,
+              "exact_object": 0.6619718309859155
+            },
+            "2": {
+              "n": 25,
+              "joint": 0.48,
+              "exact_object": 0.48
+            },
+            "3": {
+              "n": 21,
+              "joint": 0.38095238095238093,
+              "exact_object": 0.38095238095238093
+            },
+            "4": {
+              "n": 20,
+              "joint": 0.25,
+              "exact_object": 0.25
+            },
+            "5": {
+              "n": 3,
+              "joint": 0.6666666666666666,
+              "exact_object": 0.6666666666666666
+            },
+            "6": {
+              "n": 2,
+              "joint": 1,
+              "exact_object": 1
+            },
+            "7": {
+              "n": 2,
+              "joint": 0.5,
+              "exact_object": 0.5
+            }
+          }
+        }
+      },
+      "Qwen3.5-27B": {
+        "bare": {
+          "joint": 0.17058823529411765,
+          "exact_object": 0.06470588235294118,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.0488,
+            "param_recall": 0.0918,
+            "param_f1": 0.0637,
+            "must_not_fill_violations": 4,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.9615384615384616,
+              "exact_object": 0.4230769230769231
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.056338028169014086,
+              "exact_object": 0
+            },
+            "2": {
+              "n": 25,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "3": {
+              "n": 21,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "4": {
+              "n": 20,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "5": {
+              "n": 3,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "6": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        },
+        "harness": {
+          "joint": 0.35294117647058826,
+          "exact_object": 0.35294117647058826,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.7687,
+            "param_recall": 0.6754,
+            "param_f1": 0.719,
+            "must_not_fill_violations": 62,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.46153846153846156,
+              "exact_object": 0.46153846153846156
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.38028169014084506,
+              "exact_object": 0.38028169014084506
+            },
+            "2": {
+              "n": 25,
+              "joint": 0.32,
+              "exact_object": 0.32
+            },
+            "3": {
+              "n": 21,
+              "joint": 0.2857142857142857,
+              "exact_object": 0.2857142857142857
+            },
+            "4": {
+              "n": 20,
+              "joint": 0.2,
+              "exact_object": 0.2
+            },
+            "5": {
+              "n": 3,
+              "joint": 0.6666666666666666,
+              "exact_object": 0.6666666666666666
+            },
+            "6": {
+              "n": 2,
+              "joint": 0.5,
+              "exact_object": 0.5
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        }
+      },
+      "Qwen3.8-27B": {
+        "bare": {
+          "joint": 0.1588235294117647,
+          "exact_object": 0.08235294117647059,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.0499,
+            "param_recall": 0.0852,
+            "param_f1": 0.063,
+            "must_not_fill_violations": 4,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.8846153846153846,
+              "exact_object": 0.5
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.056338028169014086,
+              "exact_object": 0.014084507042253521
+            },
+            "2": {
+              "n": 25,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "3": {
+              "n": 21,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "4": {
+              "n": 20,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "5": {
+              "n": 3,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "6": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        },
+        "harness": {
+          "joint": 0.3352941176470588,
+          "exact_object": 0.3352941176470588,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.7888,
+            "param_recall": 0.6,
+            "param_f1": 0.6816,
+            "must_not_fill_violations": 49,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.5769230769230769,
+              "exact_object": 0.5769230769230769
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.29577464788732394,
+              "exact_object": 0.29577464788732394
+            },
+            "2": {
+              "n": 25,
+              "joint": 0.24,
+              "exact_object": 0.24
+            },
+            "3": {
+              "n": 21,
+              "joint": 0.3333333333333333,
+              "exact_object": 0.3333333333333333
+            },
+            "4": {
+              "n": 20,
+              "joint": 0.3,
+              "exact_object": 0.3
+            },
+            "5": {
+              "n": 3,
+              "joint": 0.3333333333333333,
+              "exact_object": 0.3333333333333333
+            },
+            "6": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "7": {
+              "n": 2,
+              "joint": 0.5,
+              "exact_object": 0.5
+            }
+          }
+        }
+      },
+      "Qwen3.5-9B": {
+        "bare": {
+          "joint": 0.17058823529411765,
+          "exact_object": 0.08235294117647059,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.0405,
+            "param_recall": 0.059,
+            "param_f1": 0.0481,
+            "must_not_fill_violations": 2,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.9615384615384616,
+              "exact_object": 0.5
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.056338028169014086,
+              "exact_object": 0.014084507042253521
+            },
+            "2": {
+              "n": 25,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "3": {
+              "n": 21,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "4": {
+              "n": 20,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "5": {
+              "n": 3,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "6": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        },
+        "harness": {
+          "joint": 0.25882352941176473,
+          "exact_object": 0.25882352941176473,
+          "empty_string_false_matches": [],
+          "invalid_objects": [],
+          "historical_metrics": {
+            "scored": 170,
+            "param_precision": 0.7067,
+            "param_recall": 0.5213,
+            "param_f1": 0.6,
+            "must_not_fill_violations": 60,
+            "note": "key + canonical-value match (genome/bool aliases, region containment); must_not_fill reported separately"
+          },
+          "by_required_key_count": {
+            "0": {
+              "n": 26,
+              "joint": 0.34615384615384615,
+              "exact_object": 0.34615384615384615
+            },
+            "1": {
+              "n": 71,
+              "joint": 0.30985915492957744,
+              "exact_object": 0.30985915492957744
+            },
+            "2": {
+              "n": 25,
+              "joint": 0.24,
+              "exact_object": 0.24
+            },
+            "3": {
+              "n": 21,
+              "joint": 0.047619047619047616,
+              "exact_object": 0.047619047619047616
+            },
+            "4": {
+              "n": 20,
+              "joint": 0.2,
+              "exact_object": 0.2
+            },
+            "5": {
+              "n": 3,
+              "joint": 0.3333333333333333,
+              "exact_object": 0.3333333333333333
+            },
+            "6": {
+              "n": 2,
+              "joint": 0.5,
+              "exact_object": 0.5
+            },
+            "7": {
+              "n": 2,
+              "joint": 0,
+              "exact_object": 0
+            }
+          }
+        }
+      }
+    },
+    "joint_bootstrap": {
+      "seed": 20261122,
+      "iterations": 5000,
+      "models": {
+        "Claude Opus 5": {
+          "bare": 0.21764705882352942,
+          "harness": 0.5352941176470588,
+          "delta": 0.3176470588235294,
+          "delta_ci95": [
+            0.22941176470588234,
+            0.40588235294117647
+          ]
+        },
+        "Qwen3.5-27B": {
+          "bare": 0.17058823529411765,
+          "harness": 0.35294117647058826,
+          "delta": 0.1823529411764706,
+          "delta_ci95": [
+            0.09411764705882353,
+            0.27058823529411763
+          ]
+        },
+        "Qwen3.8-27B": {
+          "bare": 0.1588235294117647,
+          "harness": 0.3352941176470588,
+          "delta": 0.1764705882352941,
+          "delta_ci95": [
+            0.1,
+            0.2529411764705882
+          ]
+        },
+        "Qwen3.5-9B": {
+          "bare": 0.17058823529411765,
+          "harness": 0.25882352941176473,
+          "delta": 0.08823529411764708,
+          "delta_ci95": [
+            0.01161764705882358,
+            0.17058823529411765
+          ]
+        }
+      },
+      "mean": {
+        "bare": 0.17941176470588235,
+        "harness": 0.37058823529411766,
+        "delta": 0.19117647058823528,
+        "delta_ci95": [
+          0.12205882352941178,
+          0.26029411764705884
+        ]
+      }
+    }
+  },
+  "LLM_reannotation": {
+    "items": 60,
+    "annotation_files": 3,
+    "annotations": 180,
+    "original_class_counts": {
+      "PASS": 30,
+      "WARN": 21,
+      "FAIL": 9
+    },
+    "alternative_class_counts": {
+      "PASS": 32,
+      "WARN": 15,
+      "FAIL": 13
+    },
+    "agreement": 0.9,
+    "kappa": 0.8369565217391306,
+    "disagreements": [
+      {
+        "id": "hpt_035",
+        "original": "WARN",
+        "alternative": "FAIL"
+      },
+      {
+        "id": "hpt_036",
+        "original": "WARN",
+        "alternative": "FAIL"
+      },
+      {
+        "id": "hpt_037",
+        "original": "WARN",
+        "alternative": "PASS"
+      },
+      {
+        "id": "hpt_039",
+        "original": "WARN",
+        "alternative": "FAIL"
+      },
+      {
+        "id": "hpt_043",
+        "original": "WARN",
+        "alternative": "FAIL"
+      },
+      {
+        "id": "hpt_048",
+        "original": "WARN",
+        "alternative": "PASS"
+      }
+    ],
+    "unanimous_items": 51,
+    "scores": {
+      "original": {
+        "all_five": {
+          "bare": {
+            "accuracy": 0.57,
+            "balanced_accuracy": 0.6619047619047619,
+            "recall": {
+              "PASS": 0.5,
+              "WARN": 0.4857142857142857,
+              "FAIL": 1.0
+            }
+          },
+          "card_v1": {
+            "accuracy": 0.74,
+            "balanced_accuracy": 0.7321693121693121,
+            "recall": {
+              "PASS": 0.9933333333333333,
+              "WARN": 0.3142857142857143,
+              "FAIL": 0.8888888888888888
+            }
+          },
+          "card_v2": {
+            "accuracy": 0.8266666666666667,
+            "balanced_accuracy": 0.8344973544973545,
+            "recall": {
+              "PASS": 0.9733333333333334,
+              "WARN": 0.5523809523809524,
+              "FAIL": 0.9777777777777777
+            }
+          }
+        },
+        "non_annotators": {
+          "bare": {
+            "accuracy": 0.48333333333333334,
+            "balanced_accuracy": 0.6055555555555555,
+            "recall": {
+              "PASS": 0.31666666666666665,
+              "WARN": 0.5,
+              "FAIL": 1.0
+            }
+          },
+          "card_v1": {
+            "accuracy": 0.7083333333333334,
+            "balanced_accuracy": 0.6716931216931217,
+            "recall": {
+              "PASS": 0.9833333333333333,
+              "WARN": 0.30952380952380953,
+              "FAIL": 0.7222222222222222
+            }
+          },
+          "card_v2": {
+            "accuracy": 0.75,
+            "balanced_accuracy": 0.7584656084656084,
+            "recall": {
+              "PASS": 0.95,
+              "WARN": 0.38095238095238093,
+              "FAIL": 0.9444444444444444
+            }
+          }
+        }
+      },
+      "LLM_majority": {
+        "all_five": {
+          "bare": {
+            "accuracy": 0.6066666666666667,
+            "balanced_accuracy": 0.674198717948718,
+            "recall": {
+              "PASS": 0.46875,
+              "WARN": 0.6,
+              "FAIL": 0.9538461538461539
+            }
+          },
+          "card_v1": {
+            "accuracy": 0.7933333333333333,
+            "balanced_accuracy": 0.7233226495726496,
+            "recall": {
+              "PASS": 0.98125,
+              "WARN": 0.37333333333333335,
+              "FAIL": 0.8153846153846154
+            }
+          },
+          "card_v2": {
+            "accuracy": 0.86,
+            "balanced_accuracy": 0.8368803418803419,
+            "recall": {
+              "PASS": 0.925,
+              "WARN": 0.6933333333333334,
+              "FAIL": 0.8923076923076924
+            }
+          }
+        },
+        "non_annotators": {
+          "bare": {
+            "accuracy": 0.49166666666666664,
+            "balanced_accuracy": 0.5827190170940171,
+            "recall": {
+              "PASS": 0.296875,
+              "WARN": 0.5666666666666667,
+              "FAIL": 0.8846153846153846
+            }
+          },
+          "card_v1": {
+            "accuracy": 0.725,
+            "balanced_accuracy": 0.6263354700854701,
+            "recall": {
+              "PASS": 0.96875,
+              "WARN": 0.3333333333333333,
+              "FAIL": 0.5769230769230769
+            }
+          },
+          "card_v2": {
+            "accuracy": 0.775,
+            "balanced_accuracy": 0.7251602564102564,
+            "recall": {
+              "PASS": 0.90625,
+              "WARN": 0.5,
+              "FAIL": 0.7692307692307693
+            }
+          }
+        }
+      }
+    },
+    "bootstrap_seed": 20261118,
+    "bootstrap_iterations": 10000,
+    "reproduced_ci95": {
+      "v2_bal": [
+        0.7665,
+        0.8993
+      ],
+      "v1_bal": [
+        0.6582,
+        0.7875
+      ],
+      "bare_bal": [
+        0.6065,
+        0.7409
+      ],
+      "d_bal_v2_v1": [
+        0.0524,
+        0.1771
+      ],
+      "d_bal_v2_bare": [
+        0.0911,
+        0.2368
+      ],
+      "v2_warn": [
+        0.5091,
+        0.85
+      ],
+      "v1_warn": [
+        0.2143,
+        0.5333
+      ],
+      "d_warn_v2_v1": [
+        0.1667,
+        0.48
+      ]
+    },
+    "limits": "Three model annotators use a related author-supplied codebook and overlap with the evaluation roster. This is sensitivity to alternative labels, not independent expert validation or proof against construction bias."
+  },
+  "input_sha256": {
+    "evaluation/datasets/public_export/param_prefill/data.jsonl": "c093da8b5711d8a6b6082c493d0d864186131a7209801a2b80694e036b88fd2b",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl": "191938559f23248e6e8f1e01b6a213e91a4e70df9e545ca4cd3ff429495d1fb9",
+    "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl": "6ea383ca46617d3be8da453c0e380c2301af93eb0a42f756e4e39bee6bc4c097",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl": "d38e97540a21931813f1493bf45ec034610b6a96fa068b19395d0386dd900e09",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl": "e9e98bdacc4828301293bb7441341dbd9cfd9f1adda213caac0ef522e95f4a30",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl": "7488d1b584e407379da0b742aa8601f9d954b25da39ff8190845283df508bcdb",
+    "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl": "b2ffd852f3c64a66e19fe07da49bf16dfa3b98cfb1e1005d9c6326a70c573696",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl": "8ebeb324b64c40812c078dfb98f4bbe5cce787174c99798f284030eae443e7df",
+    "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl": "e0875fa5fd6e2ed7e4a46478bd89d8d3f4bf2c37642d19541a09d3de7140a96b",
+    "evaluation/results/isolation_experiments/heldout_validation/heldout_protocol_thresholds.jsonl": "21bddfeeb81893539ae56dcea3a47dd69bb125c4be6eb4a81a9da8a23b2e0843",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/anthropic_claude-opus-5.5.jsonl": "328c1f3c73e69254626a898fe086381901c34bb8526ea2c0c02ebef27fc21a07",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/openai_gpt-6.1-sol-pro.jsonl": "1066553e987dd1002db85867fa0fa81d2d0abe12e8ebed70a49fa996ce50ce4c",
+    "evaluation/results/isolation_experiments/independent_labels/annotations/google_gemini-3.8-flash.jsonl": "8e15d3b2d729af5ef4e8a7afe4123a986d8834aed7d16d5d3432c9566f5c2338",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/bare.jsonl": "cf0447349dd8e89f1afc56e905bedac54460d2a8712cd1a4f6638d09b79bc6aa",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/bare.jsonl": "e351eef4a548acf8f2af382ec407f5ab0592fe510393429bb835c2a33193852c",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/bare.jsonl": "d77794db85a0034dcb42a1daf34d9ce51a6fd2488e4f5b5525a35495051f51fe",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/bare.jsonl": "a6476b992778f75cbbba64277942e09909837e17c80ff8b4faad91e6a74bcafa",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/bare.jsonl": "459c9c076b89d5ce53a5de212592bed10662f3d8ed07411c104c28faec54fe4e",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v1.jsonl": "2723a733b06f9a31b630e290d6a1b2e19edbc11a800f2a3ff7d7ba7d2ca99881",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v1.jsonl": "80ff3b5577fd719e786f45d70b9bf80ad8e6f4aff4ee8d1fe048c0b530761cf9",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v1.jsonl": "7fed8e1a998424b8cc641959b70568092ca75e25590af338664d036bb686efd9",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v1.jsonl": "fba574361eb44e5dfb029d9ea5dd11764643e3148d94d56e15cfbdac5dbb20c6",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v1.jsonl": "d3dc323d057cd17f560b36d2cb5c3c561c21c599d48d7681e1af234b2639df5a",
+    "evaluation/results/isolation_experiments/heldout_validation/anthropic_claude-opus-5.5/card_v2.jsonl": "5670a0c323d369bcdf755c45a70079d799fa3204b5cbde2e7ef47adf56c1fdf0",
+    "evaluation/results/isolation_experiments/heldout_validation/openai_gpt-6.1-sol-pro/card_v2.jsonl": "3ef2e3f80311b4c011c9d34e6e64e001f10907d0f067cd58df3b58f2f9b4d849",
+    "evaluation/results/isolation_experiments/heldout_validation/google_gemini-3.8-flash/card_v2.jsonl": "7e4ec9c892b197772dbaa55eb64ab3b271b60c4d97bb89aaa92fe1c377167dad",
+    "evaluation/results/isolation_experiments/heldout_validation/deepseek_deepseek-v4-pro/card_v2.jsonl": "79ea14ec31c506c0d6d231feb32b5b2c5e1d2364e6094851cb714fa96085f44e",
+    "evaluation/results/isolation_experiments/heldout_validation/z-ai_glm-5.3-prime/card_v2.jsonl": "3e24f0301f96361a7974d137a36006b2ebcc1df5b887dd686a729d53ffccc49f"
+  }
+}

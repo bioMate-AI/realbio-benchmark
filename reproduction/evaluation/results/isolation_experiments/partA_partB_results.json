@@ -1,0 +1,967 @@
+{
+  "partA1_protocol_qc": {
+    "per_model": {
+      "anthropic_claude-opus-5.5": {
+        "bare": {
+          "balanced_accuracy": 0.8076,
+          "per_class_recall": {
+            "PASS": 0.7429,
+            "WARN": 0.68,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.74,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 52,
+              "WARN": 18,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 5,
+              "WARN": 17,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.7067,
+          "per_class_recall": {
+            "PASS": 1.0,
+            "WARN": 0.12,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.78,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 70,
+              "WARN": 0,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 21,
+              "WARN": 3,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      },
+      "deepseek_deepseek-v4-pro": {
+        "bare": {
+          "balanced_accuracy": 0.7171,
+          "per_class_recall": {
+            "PASS": 0.4714,
+            "WARN": 0.68,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.55,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 33,
+              "WARN": 32,
+              "FAIL": 5,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 6,
+              "WARN": 17,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.6752,
+          "per_class_recall": {
+            "PASS": 0.9857,
+            "WARN": 0.04,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.75,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 69,
+              "WARN": 0,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 23,
+              "WARN": 1,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      },
+      "google_gemini-3.8-flash": {
+        "bare": {
+          "balanced_accuracy": 0.7152,
+          "per_class_recall": {
+            "PASS": 0.3857,
+            "WARN": 0.76,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.51,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 27,
+              "WARN": 37,
+              "FAIL": 6,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 2,
+              "WARN": 19,
+              "FAIL": 4,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.679,
+          "per_class_recall": {
+            "PASS": 0.9571,
+            "WARN": 0.08,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.74,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 67,
+              "WARN": 3,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 22,
+              "WARN": 2,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      },
+      "openai_gpt-6.1-sol-pro": {
+        "bare": {
+          "balanced_accuracy": 0.7152,
+          "per_class_recall": {
+            "PASS": 0.3857,
+            "WARN": 0.76,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.51,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 27,
+              "WARN": 40,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 3,
+              "WARN": 19,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.6657,
+          "per_class_recall": {
+            "PASS": 0.9571,
+            "WARN": 0.04,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.73,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 67,
+              "WARN": 0,
+              "FAIL": 3,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 23,
+              "WARN": 1,
+              "FAIL": 1,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      },
+      "qwen_qwen3.5-9b": {
+        "bare": {
+          "balanced_accuracy": 0.6943,
+          "per_class_recall": {
+            "PASS": 0.4429,
+            "WARN": 0.64,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.52,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 31,
+              "WARN": 29,
+              "FAIL": 5,
+              "OTHER": 5
+            },
+            "WARN": {
+              "PASS": 3,
+              "WARN": 16,
+              "FAIL": 1,
+              "OTHER": 5
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.6476,
+          "per_class_recall": {
+            "PASS": 0.9429,
+            "WARN": 0.0,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.71,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 66,
+              "WARN": 2,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 25,
+              "WARN": 0,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      },
+      "z-ai_glm-5.3-prime": {
+        "bare": {
+          "balanced_accuracy": 0.6486,
+          "per_class_recall": {
+            "PASS": 0.3857,
+            "WARN": 0.56,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.46,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 27,
+              "WARN": 39,
+              "FAIL": 4,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 9,
+              "WARN": 14,
+              "FAIL": 2,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        },
+        "card": {
+          "balanced_accuracy": 0.6838,
+          "per_class_recall": {
+            "PASS": 0.9714,
+            "WARN": 0.08,
+            "FAIL": 1.0
+          },
+          "overall_accuracy": 0.75,
+          "confusion_matrix": {
+            "PASS": {
+              "PASS": 68,
+              "WARN": 2,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "WARN": {
+              "PASS": 23,
+              "WARN": 2,
+              "FAIL": 0,
+              "OTHER": 0
+            },
+            "FAIL": {
+              "PASS": 0,
+              "WARN": 0,
+              "FAIL": 5,
+              "OTHER": 0
+            }
+          }
+        }
+      }
+    },
+    "aggregate": {
+      "bare": {
+        "balanced_accuracy": 0.7163,
+        "per_class_recall": {
+          "PASS": 0.469,
+          "WARN": 0.68,
+          "FAIL": 1.0
+        },
+        "overall_accuracy": 0.5483,
+        "confusion_matrix": {
+          "PASS": {
+            "PASS": 197,
+            "WARN": 195,
+            "FAIL": 23,
+            "OTHER": 5
+          },
+          "WARN": {
+            "PASS": 28,
+            "WARN": 102,
+            "FAIL": 15,
+            "OTHER": 5
+          },
+          "FAIL": {
+            "PASS": 0,
+            "WARN": 0,
+            "FAIL": 30,
+            "OTHER": 0
+          }
+        }
+      },
+      "card": {
+        "balanced_accuracy": 0.6763,
+        "per_class_recall": {
+          "PASS": 0.969,
+          "WARN": 0.06,
+          "FAIL": 1.0
+        },
+        "overall_accuracy": 0.7433,
+        "confusion_matrix": {
+          "PASS": {
+            "PASS": 407,
+            "WARN": 7,
+            "FAIL": 6,
+            "OTHER": 0
+          },
+          "WARN": {
+            "PASS": 137,
+            "WARN": 9,
+            "FAIL": 4,
+            "OTHER": 0
+          },
+          "FAIL": {
+            "PASS": 0,
+            "WARN": 0,
+            "FAIL": 30,
+            "OTHER": 0
+          }
+        }
+      }
+    }
+  },
+  "partA2_empties_conditional": [
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.74,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.74,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.78,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.78,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 0.6,
+      "n_scored_all": 15,
+      "acc_among_valid": 0.6,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "anthropic_claude-opus-5.5",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.55,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.55,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.75,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.75,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 0.8,
+      "n_scored_all": 20,
+      "acc_among_valid": 0.8,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 0.95,
+      "n_scored_all": 20,
+      "acc_among_valid": 0.95,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 6,
+      "valid": 9,
+      "acc_all_items": 0.5333,
+      "n_scored_all": 15,
+      "acc_among_valid": 0.5333,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "deepseek_deepseek-v4-pro",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.51,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.51,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.74,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.74,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "google_gemini-3.8-flash",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.51,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.51,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.73,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.73,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "openai_gpt-6.1-sol-pro",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 10,
+      "valid": 90,
+      "acc_all_items": 0.52,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.5778,
+      "n_scored_valid": 90
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.71,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.71,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 7,
+      "valid": 13,
+      "acc_all_items": 0.15,
+      "n_scored_all": 20,
+      "acc_among_valid": 0.2308,
+      "n_scored_valid": 13
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 4,
+      "valid": 16,
+      "acc_all_items": 0.2,
+      "n_scored_all": 20,
+      "acc_among_valid": 0.25,
+      "n_scored_valid": 16
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 8,
+      "valid": 7,
+      "acc_all_items": 0.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 0.0,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "qwen_qwen3.5-9b",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 2,
+      "valid": 13,
+      "acc_all_items": 0.4,
+      "n_scored_all": 15,
+      "acc_among_valid": 0.4,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "protocol_thresholds",
+      "condition": "bare",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.46,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.46,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "protocol_thresholds",
+      "condition": "card",
+      "attempted": 100,
+      "empty": 0,
+      "valid": 100,
+      "acc_all_items": 0.75,
+      "n_scored_all": 100,
+      "acc_among_valid": 0.75,
+      "n_scored_valid": 100
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "boin_benchmark",
+      "condition": "bare",
+      "attempted": 20,
+      "empty": 2,
+      "valid": 18,
+      "acc_all_items": 0.9,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 18
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "boin_benchmark",
+      "condition": "card",
+      "attempted": 20,
+      "empty": 0,
+      "valid": 20,
+      "acc_all_items": 1.0,
+      "n_scored_all": 20,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 20
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "pbpk_benchmark",
+      "condition": "bare",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 0.7333,
+      "n_scored_all": 15,
+      "acc_among_valid": 0.7333,
+      "n_scored_valid": 15
+    },
+    {
+      "model": "z-ai_glm-5.3-prime",
+      "task": "pbpk_benchmark",
+      "condition": "card",
+      "attempted": 15,
+      "empty": 0,
+      "valid": 15,
+      "acc_all_items": 1.0,
+      "n_scored_all": 15,
+      "acc_among_valid": 1.0,
+      "n_scored_valid": 15
+    }
+  ],
+  "partA3_pbpk_knowledge_free_floor": {
+    "n": 15,
+    "reference_values_uM": [
+      0.038,
+      0.112,
+      0.215,
+      0.75,
+      1.065,
+      1.248,
+      1.38,
+      1.87,
+      2.951,
+      3.786,
+      4.354,
+      4.378,
+      10.089,
+      10.343,
+      12.118
+    ],
+    "median_uM": 1.87,
+    "geomean_uM": 1.5375,
+    "mean_uM": 3.6465,
+    "within2fold_const_median": 0.3333,
+    "within2fold_const_geomean": 0.3333,
+    "within2fold_const_mean": 0.3333,
+    "within2fold_best_constant": {
+      "const_uM": 2.2387,
+      "within2fold": 0.4667
+    },
+    "note": "knowledge-free = predict one fixed Cmax for every compound (ignores PK inputs). Replaces the tautological '5x-error floor = 0.0'. 'best_constant' is an oracle upper bound on any single-constant predictor (peeks at the ref distribution to pick the constant)."
+  },
+  "partB_param_decomposition": {
+    "per_model": {
+      "anthropic_claude-opus-5": {
+        "bare_F1_valeq": 0.1408,
+        "bare_F1_strict": 0.1328,
+        "scaffold_F1_valeq": 0.8049,
+        "scaffold_F1_strict": 0.7569,
+        "total_lift": 0.6641,
+        "in_context_schema_contribution": 0.6241,
+        "net_output_rule_contribution": 0.04,
+        "output_rule_effect_on_scaffold": 0.048,
+        "n_bare": 170,
+        "n_scaffold": 170
+      },
+      "qwen_qwen3.5-27b": {
+        "bare_F1_valeq": 0.0637,
+        "bare_F1_strict": 0.0593,
+        "scaffold_F1_valeq": 0.719,
+        "scaffold_F1_strict": 0.6751,
+        "total_lift": 0.6553,
+        "in_context_schema_contribution": 0.6158,
+        "net_output_rule_contribution": 0.0395,
+        "output_rule_effect_on_scaffold": 0.0439,
+        "n_bare": 170,
+        "n_scaffold": 170
+      },
+      "qwen_qwen3.8-27b": {
+        "bare_F1_valeq": 0.063,
+        "bare_F1_strict": 0.0583,
+        "scaffold_F1_valeq": 0.6816,
+        "scaffold_F1_strict": 0.6252,
+        "total_lift": 0.6186,
+        "in_context_schema_contribution": 0.5669,
+        "net_output_rule_contribution": 0.0517,
+        "output_rule_effect_on_scaffold": 0.0564,
+        "n_bare": 170,
+        "n_scaffold": 170
+      },
+      "qwen_qwen3.5-9b": {
+        "bare_F1_valeq": 0.0481,
+        "bare_F1_strict": 0.0428,
+        "scaffold_F1_valeq": 0.6,
+        "scaffold_F1_strict": 0.5564,
+        "total_lift": 0.5519,
+        "in_context_schema_contribution": 0.5136,
+        "net_output_rule_contribution": 0.0383,
+        "output_rule_effect_on_scaffold": 0.0436,
+        "n_bare": 170,
+        "n_scaffold": 170
+      }
+    },
+    "note": "F1 = param_f1 from committed score.py::score_param_prefill. val_eq (WITH output-rule) applies alias/bool/region normalization at score time; strict (WITHOUT) requires exact norm-equality. Decomposition of total lift S_v-B_v = in-context-schema (S_s-B_s) + net-output-rule [(S_v-S_s)-(B_v-B_s)].",
+    "mean_across_models": {
+      "bare_F1_valeq": 0.0789,
+      "bare_F1_strict": 0.0733,
+      "scaffold_F1_valeq": 0.7014,
+      "scaffold_F1_strict": 0.6534,
+      "total_lift": 0.6225,
+      "in_context_schema_contribution": 0.5801,
+      "net_output_rule_contribution": 0.0424
+    }
+  },
+  "rp_models": [
+    "anthropic_claude-opus-5.5",
+    "deepseek_deepseek-v4-pro",
+    "google_gemini-3.8-flash",
+    "openai_gpt-6.1-sol-pro",
+    "qwen_qwen3.5-9b",
+    "z-ai_glm-5.3-prime"
+  ],
+  "param_models": [
+    "anthropic_claude-opus-5",
+    "qwen_qwen3.5-27b",
+    "qwen_qwen3.8-27b",
+    "qwen_qwen3.5-9b"
+  ]
+}

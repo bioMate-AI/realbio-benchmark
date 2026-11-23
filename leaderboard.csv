@@ -1,11 +1,6 @@
-model,routing,param_prefill_F1,protocol_QC,pbpk_2fold,boin_mtd
-Claude Opus 5,0.615,0.757,0.33,0.133,0.444
-Gemini 3.1 Pro,0.58,0.693,0.63,0.0,0.278
-GPT-5.6,0.53,0.671,0.46,0.2,0.5
-Qwen3.8-Max,0.345,0.692,0.46,0.0,0.111
-GLM-5.2,0.4,0.641,0.44,0.0,0.111
-GPT-5.6-luna,0.355,0.624,0.34,0.2,0.389
-Kimi K3,0.45,0.628,0.36,0.0,0.167
-DeepSeek V4,0.415,0.621,0.42,0.067,0.167
-"BioMate (engine-free, C2)",0.965,0.848,0.925,1.0,0.80
-Biomni (A1 scaffold),0.95,0.708,0.5,0.0,0.5
+endpoint,items,models,bare_or_original,guided_or_revised,difference,difference_ci95_low,difference_ci95_high
+routing_accuracy,200,14,0.382,0.913,0.53,0.484,0.578
+parameter_f1,170,4,0.079,0.701,0.622,0.58,0.66
+parameter_joint_success,170,4,0.179,0.371,0.191,0.122,0.26
+method_selection_accuracy,40,8,0.925,0.9875,0.0625,0.022,0.116
+QC_out_of_family_balanced_accuracy_original_vs_revised,60,5,0.732,0.834,0.102,0.05,0.154

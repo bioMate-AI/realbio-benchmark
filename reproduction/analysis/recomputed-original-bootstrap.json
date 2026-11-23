@@ -1,0 +1,531 @@
+{
+  "iters": 5000,
+  "seed": 20261115,
+  "files_used": {
+    "routing": {
+      "Claude Opus 5": {
+        "bare": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Claude Opus 5.5": {
+        "bare": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/anthropic_claude-opus-5.5/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "GPT-6.1-sol-pro": {
+        "bare": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/openai_gpt-6.1-sol-pro/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Gemini 3.1 Pro": {
+        "bare": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/google_gemini-3.1-pro-preview/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Kimi K3": {
+        "bare": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/moonshotai_kimi-k3/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "DeepSeek V4-pro": {
+        "bare": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/deepseek_deepseek-v4-pro/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "GLM-5.2": {
+        "bare": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/z-ai_glm-5.2/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "GLM-5.3-prime": {
+        "bare": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/z-ai_glm-5.3-prime/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "GPT-5.6-luna": {
+        "bare": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/openai_gpt-5.6-luna/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Qwen2.5-72B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen-2.5-72b-instruct/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Qwen3.5-27B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Qwen3.8-27B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Qwen2.5-7B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen-2.5-7b-instruct/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      },
+      "Qwen3.5-9B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/cross_domain_routing_catalog_described.jsonl",
+        "n": 200
+      }
+    },
+    "param": {
+      "Claude Opus 5": {
+        "bare": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/anthropic_claude-opus-5/param_prefill.jsonl",
+        "n": 170
+      },
+      "Qwen3.5-27B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.5-27b/param_prefill.jsonl",
+        "n": 170
+      },
+      "Qwen3.8-27B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.8-27b/param_prefill.jsonl",
+        "n": 170
+      },
+      "Qwen3.5-9B": {
+        "bare": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill_bare.jsonl",
+        "harness": "evaluation/datasets/public_export/results/qwen_qwen3.5-9b/param_prefill.jsonl",
+        "n": 170
+      }
+    },
+    "method": {
+      "Claude Opus 5": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/anthropic_claude-opus-5_kb.jsonl",
+        "n": 40
+      },
+      "GPT-5.6": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/openai_gpt-5.6_kb.jsonl",
+        "n": 40
+      },
+      "Gemini 3.1 Pro": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/google_gemini-3.1-pro-preview_kb.jsonl",
+        "n": 40
+      },
+      "Kimi K3": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/moonshotai_kimi-k3_kb.jsonl",
+        "n": 40
+      },
+      "Qwen3.8 (2.4T)": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/qwen_qwen3.8-2.4t-a95b_kb.jsonl",
+        "n": 40
+      },
+      "GLM-5.3": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/z-ai_glm-5.3_kb.jsonl",
+        "n": 40
+      },
+      "DeepSeek V4-pro": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4-pro_kb.jsonl",
+        "n": 40
+      },
+      "DeepSeek V4.1-flash": {
+        "bare": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_bare.jsonl",
+        "harness": "evaluation/datasets/bioc_method_selection/results/deepseek_deepseek-v4.1-flash_kb.jsonl",
+        "n": 40
+      }
+    }
+  },
+  "tasks": {
+    "routing": {
+      "metric": "accuracy",
+      "n_items": 200,
+      "harness_condition": "cross_domain_routing_catalog_described.jsonl",
+      "bare_condition": "cross_domain_routing_bare.jsonl",
+      "models": [
+        {
+          "model": "Claude Opus 5",
+          "dir": "anthropic_claude-opus-5",
+          "n": 200,
+          "bare": 0.615,
+          "harness": 0.99,
+          "delta": 0.375,
+          "delta_ci95": [
+            0.305,
+            0.44
+          ]
+        },
+        {
+          "model": "Claude Opus 5.5",
+          "dir": "anthropic_claude-opus-5.5",
+          "n": 200,
+          "bare": 0.61,
+          "harness": 0.885,
+          "delta": 0.275,
+          "delta_ci95": [
+            0.205,
+            0.345
+          ]
+        },
+        {
+          "model": "GPT-6.1-sol-pro",
+          "dir": "openai_gpt-6.1-sol-pro",
+          "n": 200,
+          "bare": 0.59,
+          "harness": 0.985,
+          "delta": 0.395,
+          "delta_ci95": [
+            0.33,
+            0.465
+          ]
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "dir": "google_gemini-3.1-pro-preview",
+          "n": 200,
+          "bare": 0.58,
+          "harness": 0.975,
+          "delta": 0.395,
+          "delta_ci95": [
+            0.325,
+            0.465
+          ]
+        },
+        {
+          "model": "Kimi K3",
+          "dir": "moonshotai_kimi-k3",
+          "n": 200,
+          "bare": 0.495,
+          "harness": 0.97,
+          "delta": 0.475,
+          "delta_ci95": [
+            0.4,
+            0.545
+          ]
+        },
+        {
+          "model": "DeepSeek V4-pro",
+          "dir": "deepseek_deepseek-v4-pro",
+          "n": 200,
+          "bare": 0.415,
+          "harness": 0.85,
+          "delta": 0.435,
+          "delta_ci95": [
+            0.36,
+            0.51
+          ]
+        },
+        {
+          "model": "GLM-5.2",
+          "dir": "z-ai_glm-5.2",
+          "n": 200,
+          "bare": 0.4,
+          "harness": 0.95,
+          "delta": 0.55,
+          "delta_ci95": [
+            0.48,
+            0.625
+          ]
+        },
+        {
+          "model": "GLM-5.3-prime",
+          "dir": "z-ai_glm-5.3-prime",
+          "n": 200,
+          "bare": 0.375,
+          "harness": 0.955,
+          "delta": 0.58,
+          "delta_ci95": [
+            0.51,
+            0.65
+          ]
+        },
+        {
+          "model": "GPT-5.6-luna",
+          "dir": "openai_gpt-5.6-luna",
+          "n": 200,
+          "bare": 0.355,
+          "harness": 0.95,
+          "delta": 0.595,
+          "delta_ci95": [
+            0.52,
+            0.67
+          ]
+        },
+        {
+          "model": "Qwen2.5-72B",
+          "dir": "qwen_qwen-2.5-72b-instruct",
+          "n": 200,
+          "bare": 0.245,
+          "harness": 0.895,
+          "delta": 0.65,
+          "delta_ci95": [
+            0.58,
+            0.72
+          ]
+        },
+        {
+          "model": "Qwen3.5-27B",
+          "dir": "qwen_qwen3.5-27b",
+          "n": 200,
+          "bare": 0.24,
+          "harness": 0.935,
+          "delta": 0.695,
+          "delta_ci95": [
+            0.63,
+            0.755
+          ]
+        },
+        {
+          "model": "Qwen3.8-27B",
+          "dir": "qwen_qwen3.8-27b",
+          "n": 200,
+          "bare": 0.175,
+          "harness": 0.875,
+          "delta": 0.7,
+          "delta_ci95": [
+            0.63,
+            0.765
+          ]
+        },
+        {
+          "model": "Qwen2.5-7B",
+          "dir": "qwen_qwen-2.5-7b-instruct",
+          "n": 200,
+          "bare": 0.14,
+          "harness": 0.735,
+          "delta": 0.595,
+          "delta_ci95": [
+            0.525,
+            0.665
+          ]
+        },
+        {
+          "model": "Qwen3.5-9B",
+          "dir": "qwen_qwen3.5-9b",
+          "n": 200,
+          "bare": 0.12,
+          "harness": 0.83,
+          "delta": 0.71,
+          "delta_ci95": [
+            0.645,
+            0.775
+          ]
+        }
+      ],
+      "mean_delta": 0.5304,
+      "mean_delta_ci95": [
+        0.4839,
+        0.5779
+      ]
+    },
+    "param": {
+      "metric": "param-F1",
+      "n_items": 170,
+      "harness_condition": "param_prefill.jsonl",
+      "bare_condition": "param_prefill_bare.jsonl",
+      "models": [
+        {
+          "model": "Claude Opus 5",
+          "dir": "anthropic_claude-opus-5",
+          "n": 170,
+          "bare_f1": 0.1408,
+          "harness_f1": 0.8049,
+          "delta": 0.6641,
+          "delta_ci95": [
+            0.6188,
+            0.7056
+          ],
+          "viol_bare": 7,
+          "viol_harness": 35
+        },
+        {
+          "model": "Qwen3.5-27B",
+          "dir": "qwen_qwen3.5-27b",
+          "n": 170,
+          "bare_f1": 0.0637,
+          "harness_f1": 0.719,
+          "delta": 0.6553,
+          "delta_ci95": [
+            0.605,
+            0.6995
+          ],
+          "viol_bare": 4,
+          "viol_harness": 62
+        },
+        {
+          "model": "Qwen3.8-27B",
+          "dir": "qwen_qwen3.8-27b",
+          "n": 170,
+          "bare_f1": 0.063,
+          "harness_f1": 0.6816,
+          "delta": 0.6186,
+          "delta_ci95": [
+            0.5598,
+            0.6709
+          ],
+          "viol_bare": 4,
+          "viol_harness": 49
+        },
+        {
+          "model": "Qwen3.5-9B",
+          "dir": "qwen_qwen3.5-9b",
+          "n": 170,
+          "bare_f1": 0.0481,
+          "harness_f1": 0.6,
+          "delta": 0.5519,
+          "delta_ci95": [
+            0.4875,
+            0.6094
+          ],
+          "viol_bare": 2,
+          "viol_harness": 60
+        }
+      ],
+      "mean_delta": 0.6225,
+      "mean_delta_ci95": [
+        0.5795,
+        0.6603
+      ]
+    },
+    "method": {
+      "metric": "top1_accuracy",
+      "n_items": 40,
+      "harness_condition": "<model>_kb.jsonl",
+      "bare_condition": "<model>_bare.jsonl",
+      "models": [
+        {
+          "model": "Claude Opus 5",
+          "dir": "anthropic_claude-opus-5",
+          "n": 40,
+          "bare": 1.0,
+          "harness": 0.975,
+          "delta": -0.025,
+          "delta_ci95": [
+            -0.075,
+            0.0
+          ]
+        },
+        {
+          "model": "GPT-5.6",
+          "dir": "openai_gpt-5.6",
+          "n": 40,
+          "bare": 1.0,
+          "harness": 1.0,
+          "delta": 0.0,
+          "delta_ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "model": "Gemini 3.1 Pro",
+          "dir": "google_gemini-3.1-pro-preview",
+          "n": 40,
+          "bare": 0.975,
+          "harness": 1.0,
+          "delta": 0.025,
+          "delta_ci95": [
+            0.0,
+            0.075
+          ]
+        },
+        {
+          "model": "Kimi K3",
+          "dir": "moonshotai_kimi-k3",
+          "n": 40,
+          "bare": 0.975,
+          "harness": 1.0,
+          "delta": 0.025,
+          "delta_ci95": [
+            0.0,
+            0.075
+          ]
+        },
+        {
+          "model": "Qwen3.8 (2.4T)",
+          "dir": "qwen_qwen3.8-2.4t-a95b",
+          "n": 40,
+          "bare": 0.925,
+          "harness": 1.0,
+          "delta": 0.075,
+          "delta_ci95": [
+            0.0,
+            0.175
+          ]
+        },
+        {
+          "model": "GLM-5.3",
+          "dir": "z-ai_glm-5.3",
+          "n": 40,
+          "bare": 0.9,
+          "harness": 1.0,
+          "delta": 0.1,
+          "delta_ci95": [
+            0.025,
+            0.2
+          ]
+        },
+        {
+          "model": "DeepSeek V4-pro",
+          "dir": "deepseek_deepseek-v4-pro",
+          "n": 40,
+          "bare": 0.825,
+          "harness": 0.95,
+          "delta": 0.125,
+          "delta_ci95": [
+            0.0,
+            0.25
+          ]
+        },
+        {
+          "model": "DeepSeek V4.1-flash",
+          "dir": "deepseek_deepseek-v4.1-flash",
+          "n": 40,
+          "bare": 0.8,
+          "harness": 0.975,
+          "delta": 0.175,
+          "delta_ci95": [
+            0.075,
+            0.3
+          ]
+        }
+      ],
+      "mean_delta": 0.0625,
+      "mean_delta_ci95": [
+        0.0219,
+        0.1156
+      ],
+      "mean_delta_boot_p_two_sided": 0.0,
+      "mean_delta_ci_contains_0": false
+    }
+  },
+  "ratio_open_vs_closed": {
+    "note": "denominator = method-selection mean delta (point +0.0625). When the denominator resample is <=0 the ratio is undefined/negative; its instability is the headline finding.",
+    "routing_over_method": {
+      "median": 8.771,
+      "ci95": [
+        4.614,
+        24.736
+      ]
+    },
+    "param_over_method": {
+      "median": 10.291,
+      "ci95": [
+        5.476,
+        28.966
+      ]
+    },
+    "open_avg_over_method": {
+      "median": 9.534,
+      "ci95": [
+        5.073,
+        26.692
+      ]
+    },
+    "frac_iters_method_delta_le_0": 0.0004,
+    "n_iters_ratio_defined": 5000
+  }
+}

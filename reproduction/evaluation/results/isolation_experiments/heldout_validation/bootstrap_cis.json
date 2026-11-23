@@ -1,0 +1,83 @@
+{
+  "B": 10000,
+  "n_items": 60,
+  "models": [
+    "anthropic/claude-opus-5.5",
+    "openai/gpt-6.1-sol-pro",
+    "google/gemini-3.8-flash",
+    "deepseek/deepseek-v4-pro",
+    "z-ai/glm-5.3-prime"
+  ],
+  "seed": 20261118,
+  "metrics": {
+    "v2_bal": {
+      "point": 0.8345,
+      "ci95": [
+        0.7751,
+        0.8911
+      ],
+      "label": "card-v2 balanced accuracy"
+    },
+    "v1_bal": {
+      "point": 0.7322,
+      "ci95": [
+        0.6782,
+        0.7864
+      ],
+      "label": "card-v1 balanced accuracy"
+    },
+    "bare_bal": {
+      "point": 0.6619,
+      "ci95": [
+        0.6027,
+        0.7204
+      ],
+      "label": "bare balanced accuracy"
+    },
+    "d_bal_v2_v1": {
+      "point": 0.1023,
+      "ci95": [
+        0.05,
+        0.1543
+      ],
+      "label": "\u0394 balanced acc  card-v2 \u2212 card-v1"
+    },
+    "d_bal_v2_bare": {
+      "point": 0.1726,
+      "ci95": [
+        0.111,
+        0.234
+      ],
+      "label": "\u0394 balanced acc  card-v2 \u2212 bare"
+    },
+    "v2_warn": {
+      "point": 0.5524,
+      "ci95": [
+        0.3809,
+        0.7143
+      ],
+      "label": "card-v2 WARN recall"
+    },
+    "v1_warn": {
+      "point": 0.3143,
+      "ci95": [
+        0.1875,
+        0.4476
+      ],
+      "label": "card-v1 WARN recall"
+    },
+    "d_warn_v2_v1": {
+      "point": 0.2381,
+      "ci95": [
+        0.1,
+        0.3765
+      ],
+      "label": "\u0394 WARN recall  card-v2 \u2212 card-v1"
+    }
+  },
+  "bootstrap_sign": {
+    "frac_iters_d_bal_v2_v1_gt0": 1.0,
+    "frac_iters_d_warn_v2_v1_gt0": 0.9994,
+    "frac_iters_d_bal_v2_bare_gt0": 1.0
+  }
+}
